@@ -1,0 +1,36 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <div class="header">
+      <img src="assets/game.logo.svg" alt="game logo">
+    </div>
+    <div class="buttons__wrapper">
+      <ng-container *ngIf="hasCurrentPlayer | async">
+        Playing with...
+      </ng-container>
+      <ng-container *ngIf="hasPlayers | async; else newPlayer">
+        <ion-button color="primary" class="buttons__item">Change player</ion-button>
+      </ng-container>
+      <ng-template #newPlayer>
+        <ion-button
+          [routerLink]="['/players/new']"
+          color="primary"
+          class="buttons__item">
+          New player
+      </ion-button>
+      </ng-template>
+      <ion-button
+        *ngIf="hasCurrentPlayer | async"
+        color="primary" class="buttons__item">
+        Play
+      </ion-button>
+      <ion-button
+        *ngIf="hasPlayers | async"
+        color="primary" class="buttons__item">
+        Players
+      </ion-button>
+      <ion-button color="primary" class="buttons__item">Scores</ion-button>
+    </div>
+    <div class="footer">
+    </div>
+  </div>
+</ion-content>

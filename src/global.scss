@@ -24,3 +24,37 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// Swiper
+@import '~swiper/scss';
+@import '~swiper/scss/autoplay';
+@import '~swiper/scss/keyboard';
+@import '~swiper/scss/pagination';
+@import '~swiper/scss/scrollbar';
+@import '~swiper/scss/zoom';
+@import '~@ionic/angular/css/ionic-swiper';
+
+@font-face {
+  font-family: 'Lobster';
+  src: url('./assets/fonts/Lobster-Regular.ttf');
+}
+
+ion-header {
+  &::after { 
+    display: none;
+  }
+
+  ion-toolbar {
+    --background: rgba(171,0,255,1);
+  }
+}
+
+ion-footer {
+  &::before {
+    display: none;
+  }
+}
+
+ion-content {
+  --background: linear-gradient(0deg, rgba(99,112,255,1) 0%, rgba(158,166,250,1) 15%, rgba(255,255,255,1) 41%, rgba(255,255,255,1) 60%, rgba(203,116,246,1) 85%, rgba(171,0,255,1) 100%);
+}

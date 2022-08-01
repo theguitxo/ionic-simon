@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Help
+      <ion-button shape="round" color="secondary" [routerLink]="['/home']">Volver</ion-button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-row>
+    <ion-col>
+      <ion-button [routerLink]="['/help/how-play']">
+        <ion-icon slot="start" name="star"></ion-icon>
+        How to play
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button [routerLink]="['/help/about']">
+        About
+        <ion-icon slot="end" name="star"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="height: calc(100vh - 10rem);">
+      <ion-router-outlet></ion-router-outlet>
+    </ion-col>
+  </ion-row>
+</ion-content>
