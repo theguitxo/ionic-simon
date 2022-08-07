@@ -12,6 +12,8 @@ import { storeReducer } from './store/store.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { playersReducer } from './store/players/players.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { PlayersEffects } from './store/players/players.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +31,10 @@ import { playersReducer } from './store/players/players.reducer';
       maxAge: 50,
       logOnly: environment.production,
       autoPause: true
-    })
+    }),
+    EffectsModule.forRoot([
+      PlayersEffects
+    ]),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

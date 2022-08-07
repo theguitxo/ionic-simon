@@ -10,5 +10,10 @@ export const getHasCurrentPlayer = createSelector(
 
 export const getHasPlayers = createSelector(
   playersState,
-  (state: PlayersState): boolean => !!(state?.players?.length > 0)
+  (state: PlayersState): boolean => (state?.players?.length > 0)
+);
+
+export const getPlayersNames = createSelector(
+  playersState,
+  (state: PlayersState): Array<string> => state?.players?.map(player => player.name)
 );

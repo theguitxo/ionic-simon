@@ -1,10 +1,10 @@
 import { Action, createReducer } from "@ngrx/store";
-import { initialState, StoreState } from "../store.state";
+import { playersInitialState, PlayersState } from "./players.state";
 
 const _playersRecuder = createReducer (
-  initialState,
+  playersInitialState,
 );
 
-export function playersReducer(state: StoreState | undefined, action: Action): StoreState {
+export function playersReducer(state: PlayersState | undefined, action: Action): PlayersState {
   return _playersRecuder(state, action);
 }
