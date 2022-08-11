@@ -39,22 +39,22 @@
   src: url('./assets/fonts/Lobster-Regular.ttf');
 }
 
-ion-header {
-  &::after { 
-    display: none;
-  }
+// ion-header {
+//   &::after { 
+//     display: none;
+//   }
 
-  ion-toolbar {
-    --background: rgba(171,0,255,1);
-  }
-}
+//   ion-toolbar {
+//     --background: rgba(171,0,255,1);
+//   }
+// }
 
-ion-footer {
-  &::before {
-    display: none;
-  }
-}
+// ion-footer {
+//   &::before {
+//     display: none;
+//   }
+// }
 
-ion-content {
-  --background: linear-gradient(0deg, rgba(99,112,255,1) 0%, rgba(158,166,250,1) 15%, rgba(255,255,255,1) 41%, rgba(255,255,255,1) 60%, rgba(203,116,246,1) 85%, rgba(171,0,255,1) 100%);
-}
+// ion-content {
+//   --background: linear-gradient(0deg, rgba(99,112,255,1) 0%, rgba(158,166,250,1) 15%, rgba(255,255,255,1) 41%, rgba(255,255,255,1) 60%, rgba(203,116,246,1) 85%, rgba(171,0,255,1) 100%);
+// }

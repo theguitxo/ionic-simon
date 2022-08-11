@@ -1,9 +1,11 @@
 import { createAction, props } from "@ngrx/store";
+import { languageTypeInfo } from "../models/app.models";
 
 export enum ACTIONS {
   START_GAME = '[APP] Start Game',
   SHOW_TOAST = '[APP] Show toast',
-  RESET_TOAST = '[APP] Reset toast'
+  RESET_TOAST = '[APP] Reset toast',
+  SET_LANGUAGE = '[APP] Set language'
 }
 
 export const startGame = createAction (
@@ -20,4 +22,12 @@ export const showToast = createAction (
 
 export const resetToast = createAction (
   ACTIONS.RESET_TOAST
+);
+
+export const setLanguage = createAction (
+  ACTIONS.SET_LANGUAGE,
+  props<{
+    infoType: languageTypeInfo,
+    value: string
+  }>()
 );

@@ -1,8 +1,10 @@
-import { DEFAULT_TOAST_DURATION, ToastOptions } from "../models/app.models";
+import { DEFAULT_TOAST_DURATION, AppToastOptions} from "../models/app.models";
 
 export interface StoreState {
+  deviceLanguage?: string;
+  userLanguage?: string;
   playing: boolean;
-  toastOptions: ToastOptions;
+  toastOptions: AppToastOptions;
 }
 
 export const initialState: StoreState = {

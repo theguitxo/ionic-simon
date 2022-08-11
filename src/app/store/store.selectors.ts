@@ -1,5 +1,6 @@
 import { getSelectors } from '@ngrx/router-store';
-import { createFeatureSelector } from '@ngrx/store';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { AppToastOptions } from '../models/app.models';
 import { StoreState } from './store.state';
 
 export const {
@@ -14,4 +15,9 @@ export const {
   selectTitle, // Select the title if available
 } = getSelectors();
 
-export const selectState = createFeatureSelector<StoreState>('store');
+export const appState = createFeatureSelector<StoreState>('store');
+
+export const getToastOptions = createSelector(
+  appState,
+  (state: StoreState): AppToastOptions => state?.toastOptions
+);

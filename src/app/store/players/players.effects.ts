@@ -4,7 +4,8 @@ import { Store } from "@ngrx/store";
 import * as PLAYERS_ACTIONS from './players.actions';
 import * as PLAYERS_SELECTORS from "./players.selectors";
 import { PlayersState } from "./players.state";
-import { tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import * as APP_ACTIONS from "../store.actions";
 
 @Injectable()
 export class PlayersEffects {
@@ -15,15 +16,22 @@ export class PlayersEffects {
   ) {}
 
   newPlayer$ = createEffect(() => this.action$.pipe(
-      ofType(PLAYERS_ACTIONS.PLAYER_ACTIONS.NEW_PLAYER),
+      ofType(PLAYERS_ACTIONS.newPlayer),
       concatLatestFrom(() => this.store.select(PLAYERS_SELECTORS.getPlayersNames)),
-      tap(([action, players]) => {
+      map(([action, players]) => {
         console.log(action);
         console.log(players);
+        if (players.map(i => i.toUpperCase()).indexOf(action.player.toUpperCase()) > -1) {
+          return APP_ACTIONS.showToast({
+            message: `Palyer ${action.player} exits`
+          });
+        }
+        return APP_ACTIONS.showToast({
+          message: `Palyer ${action.player} exits`
+        });
       })
     ),
     {
-      dispatch: false,
       useEffectsErrorHandler: false 
     }
   );
