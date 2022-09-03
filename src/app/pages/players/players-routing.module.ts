@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: 'new',
         component: NewPlayerPage,
-        title: 'New player'
+        title: 'player.newPlayer'
       }
     ]
   }

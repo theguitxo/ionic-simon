@@ -1,0 +1,15 @@
+{
+  "player": {
+    "newPlayer": "New player",
+    "players": "Players",
+    "changePlayer": "Change player",
+    "playingWith": "Playing with..."
+  },
+  "settings": {
+    "settings": "Settings"
+  },
+  "languages": {
+    "es": "Spanish",
+    "en": "English"
+  }
+}

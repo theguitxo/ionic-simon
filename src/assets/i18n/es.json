@@ -1,0 +1,15 @@
+{
+  "player": {
+    "newPlayer": "Nuevo jugador",
+    "players": "Jugadores",
+    "changePlayer": "Cambiar jugador",
+    "playingWith": "Jugando con..."
+  },
+  "settings": {
+    "settings": "Configuración"
+  },
+  "languages": {
+    "es": "Español",
+    "en": "Inglés"
+  }
+}

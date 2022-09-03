@@ -14,11 +14,30 @@ import { environment } from '../environments/environment';
 import { playersReducer } from './store/players/players.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { PlayersEffects } from './store/players/players.effects';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { StorageService } from './services/storage.service';
+import { Drivers } from '@ionic/storage';
+import { LanguageService } from './services/language.service';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    HttpClientModule,
     BrowserModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     IonicModule.forRoot(),
     AppRoutingModule,
     StoreModule.forRoot({
@@ -35,8 +54,19 @@ import { PlayersEffects } from './store/players/players.effects';
     EffectsModule.forRoot([
       PlayersEffects
     ]),
+    IonicStorageModule.forRoot({
+      name: '__simonData',
+      driverOrder:  [Drivers.IndexedDB, Drivers.LocalStorage]
+    })
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    {
+      provide: RouteReuseStrategy,
+      useClass: IonicRouteStrategy
+    },
+    StorageService,
+    LanguageService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

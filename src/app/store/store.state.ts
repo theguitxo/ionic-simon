@@ -1,4 +1,5 @@
-import { DEFAULT_TOAST_DURATION, AppToastOptions} from "../models/app.models";
+import { DEFAULT_TOAST_DURATION } from "../models/app.constants";
+import { AppToastOptions } from "../models/app.models";
 
 export interface StoreState {
   deviceLanguage?: string;

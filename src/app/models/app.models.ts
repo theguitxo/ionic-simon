@@ -1,5 +1,3 @@
-export const DEFAULT_TOAST_DURATION = 2000;
-
 export interface AppToastOptions {
   showToast: boolean;
   toastMessage: string;
@@ -7,3 +5,9 @@ export interface AppToastOptions {
 }
 
 export type languageTypeInfo = 'device' | 'user' | 'both';
+
+export interface ConfigLanguageItem {
+  code: string;
+  name: string;
+  selected: boolean;
+}

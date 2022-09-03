@@ -4,18 +4,20 @@
       <img src="assets/game.logo.svg" alt="game logo">
     </div>
     <div class="buttons__wrapper">
-      <ng-container *ngIf="hasCurrentPlayer | async">
-        Playing with...
-      </ng-container>
+      <ng-container *ngIf="hasCurrentPlayer | async" [translate]="'player.playingWith'"></ng-container>
       <ng-container *ngIf="hasPlayers | async; else newPlayer">
-        <ion-button color="primary" class="buttons__item">Change player</ion-button>
+        <ion-button
+          color="primary"
+          class="buttons__item"
+          [translate]="'player.changePlayer'">
+        </ion-button>
       </ng-container>
       <ng-template #newPlayer>
         <ion-button
           [routerLink]="['/players/new']"
           color="primary"
-          class="buttons__item">
-          New player
+          class="buttons__item"
+          [translate]="'player.newPlayer'">
       </ion-button>
       </ng-template>
       <ion-button
@@ -25,10 +27,17 @@
       </ion-button>
       <ion-button
         *ngIf="hasPlayers | async"
-        color="primary" class="buttons__item">
-        Players
+        color="primary" class="buttons__item"
+        [translate]="'player.players'">
       </ion-button>
       <ion-button color="primary" class="buttons__item">Scores</ion-button>
+      <ion-button
+        [routerLink]="['/settings']"
+        color="primary"
+        class="buttons__item">
+        <ion-icon slot="start" name="settings-outline"></ion-icon>
+        <ng-container slot="end">{{ 'settings.settings' | translate }}</ng-container>
+      </ion-button>
     </div>
     <div class="footer">
     </div>

@@ -1,5 +1,6 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import { DEFAULT_TOAST_DURATION, languageTypeInfo } from "../models/app.models";
+import { DEFAULT_TOAST_DURATION } from "../models/app.constants";
+import { languageTypeInfo } from "../models/app.models";
 import * as ACTIONS from "./store.actions";
 import { initialState, StoreState } from "./store.state";
 
