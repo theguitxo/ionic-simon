@@ -1,15 +1,32 @@
 {
+  "game": {
+    "game": "Game",
+    "play": "Play"
+  },
+  "language": {
+    "languages": {
+      "en": "English",
+      "es": "Spanish"
+    },
+    "title": "Language"
+  },
   "player": {
-    "newPlayer": "New player",
-    "players": "Players",
     "changePlayer": "Change player",
-    "playingWith": "Playing with..."
+    "currentPlayer": "Current player: {{name}}",
+    "formNewPlayer": {
+      "errors": {
+        "userExists": "Player {{player}} already exists"
+      },
+      "name": "Name",
+      "save": "Save"
+    },
+    "newPlayer": "New player",
+    "players": "Players"
+  },
+  "scores": {
+    "scores": "Scores"
   },
   "settings": {
     "settings": "Settings"
-  },
-  "languages": {
-    "es": "Spanish",
-    "en": "English"
   }
 }

@@ -1,21 +1,21 @@
-import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { IonicModule } from "@ionic/angular";
 import { TranslateModule } from "@ngx-translate/core";
 import { ComponentsModule } from "../../components/components.module";
-import { SettingsPageRoutingModule } from "./settings-routing.module";
-import { SettingsPage } from "./settings.page";
+import { GamePage } from "./game.page";
+import { GamePageRoutingModule } from "./game-routing.module";
 
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
-    SettingsPageRoutingModule,
+    GamePageRoutingModule,
     TranslateModule,
     ComponentsModule
   ],
   declarations: [
-    SettingsPage
+    GamePage
   ]
 })
-export class SettingsPageModule {}
+export class GamePageModule {}

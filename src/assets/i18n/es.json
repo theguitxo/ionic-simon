@@ -1,15 +1,32 @@
 {
+  "game": {
+    "game": "Juego",
+    "play": "Jugar"
+  },
+  "language": {
+    "languages": {
+      "en": "Inglés",
+      "es": "Español"
+    },
+    "title": "Idioma"
+  },
   "player": {
-    "newPlayer": "Nuevo jugador",
-    "players": "Jugadores",
     "changePlayer": "Cambiar jugador",
-    "playingWith": "Jugando con..."
+    "currentPlayer": "Jugador actual: {{name}}",
+    "formNewPlayer": {
+      "errors": {
+        "userExists": "El jugador {{player}} ya existe"
+      },
+      "name": "Nombre",
+      "save": "Guardar"
+    },
+    "newPlayer": "Nuevo jugador",
+    "players": "Jugadores"
+  },
+  "scores": {
+    "scores": "Puntuaciones"
   },
   "settings": {
     "settings": "Configuración"
-  },
-  "languages": {
-    "es": "Español",
-    "en": "Inglés"
   }
 }

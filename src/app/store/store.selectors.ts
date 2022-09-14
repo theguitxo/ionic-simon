@@ -1,6 +1,6 @@
 import { getSelectors } from '@ngrx/router-store';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { AppToastOptions } from '../models/app.models';
+import { AppToastOptions, StateLanguages } from '../models/app.models';
 import { StoreState } from './store.state';
 
 export const {
@@ -20,4 +20,20 @@ export const appState = createFeatureSelector<StoreState>('store');
 export const getToastOptions = createSelector(
   appState,
   (state: StoreState): AppToastOptions => state?.toastOptions
+);
+
+export const getLanguages = createSelector(
+  appState,
+  (state: StoreState): StateLanguages => ({
+    user: state?.userLanguage,
+    device: state?.deviceLanguage
+  })
+);
+
+export const getItemsAreReady = createSelector(
+  appState,
+  (state: StoreState): boolean => {
+    const itemsState = Array.from(state?.itemsReady.values());
+    return itemsState?.every(item => item);
+  }
 );

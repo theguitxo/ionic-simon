@@ -8,6 +8,10 @@ export type languageTypeInfo = 'device' | 'user' | 'both';
 
 export interface ConfigLanguageItem {
   code: string;
-  name: string;
   selected: boolean;
+}
+
+export interface StateLanguages {
+  user: string;
+  device: string;
 }

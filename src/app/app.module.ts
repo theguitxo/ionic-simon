@@ -21,6 +21,8 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { StorageService } from './services/storage.service';
 import { Drivers } from '@ionic/storage';
 import { LanguageService } from './services/language.service';
+import { StoreEffects } from './store/store.effects';
+import { scoresReducer } from './store/score/score.reducer';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -43,6 +45,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     StoreModule.forRoot({
       router: routerReducer,
       players: playersReducer,
+      scores: scoresReducer,
       store: storeReducer
     }),
     StoreRouterConnectingModule.forRoot(),
@@ -52,6 +55,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       autoPause: true
     }),
     EffectsModule.forRoot([
+      StoreEffects,
       PlayersEffects
     ]),
     IonicStorageModule.forRoot({

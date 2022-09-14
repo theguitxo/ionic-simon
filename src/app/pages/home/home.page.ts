@@ -1,47 +1,34 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ViewDidEnter, ViewDidLeave, ViewWillEnter, ViewWillLeave } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { StoreState } from '../../store/store.state';
 import * as PLAYERS_SELECTORS from '../../store/players/players.selectors';
-import { PlayersState } from '../../store/players/players.state';
+import * as SCORES_SELECTORS from '../../store/score/score.selectors';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit, OnDestroy, ViewWillEnter, ViewDidEnter, ViewWillLeave, ViewDidLeave {
-  hasCurrentPlayer!: Observable<boolean>;
-  hasPlayers!: Observable<boolean>;
+export class HomePage implements OnInit {
+  hasCurrentPlayer: Observable<boolean>;
+  currentPlayer: Observable<string>;
+  hasPlayers: Observable<boolean>;
+  hasScores: Observable<boolean>;
 
   constructor(
-    private readonly players: Store<PlayersState>
+    private readonly store: Store<StoreState>
   ) {}
 
   ngOnInit(): void {
-    this.hasCurrentPlayer = this.players.select(PLAYERS_SELECTORS.getHasCurrentPlayer);
-    this.hasPlayers = this.players.select(PLAYERS_SELECTORS.getHasPlayers);
-    console.log('on init');
+    this.initSubscriptions();
   }
 
-  ngOnDestroy(): void {
-    console.log('no destroy');
-  }
-
-  ionViewDidEnter(): void {
-    console.log('ion view did enter');
-  }
-
-  ionViewDidLeave(): void {
-    console.log('ion view did leave');
-  }
-
-  ionViewWillEnter(): void {
-    console.log('ion view will enter');
-  }
-
-  ionViewWillLeave(): void {
-    console.log('ion view will leave');
+  private initSubscriptions(): void {
+    this.hasCurrentPlayer = this.store.select(PLAYERS_SELECTORS.getHasCurrentPlayer);
+    this.currentPlayer = this.store.select(PLAYERS_SELECTORS.getCurrentPlayer);
+    this.hasPlayers = this.store.select(PLAYERS_SELECTORS.getHasPlayers);
+    this.hasScores = this.store.select(SCORES_SELECTORS.getHasScores);
   }
 }
 

@@ -3,16 +3,13 @@ import { ToastController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { AppToastOptions } from './models/app.models';
-import { resetToast, setLanguage } from './store/store.actions';
-import { getToastOptions } from './store/store.selectors';
+import { resetToast } from './store/store.actions';
+import { getItemsAreReady, getToastOptions } from './store/store.selectors';
 import { StoreState } from './store/store.state';
-import { Device } from '@capacitor/device';
-import { TranslateService } from '@ngx-translate/core';
 import { StorageService } from './services/storage.service';
-import { APP_LANGUAGE_KEY, DEFAULT_APP_LANGUAGE } from './models/app.constants';
 import { Router } from '@angular/router';
-import { LanguageService } from './services/language.service';
-import { take } from 'rxjs/operators';
+import * as STORE_ACTIONS from './store/store.actions';
+import * as PLAYERS_ACTIONS from './store/players/players.actions';
 
 @Component({
   selector: 'app-root',
@@ -26,10 +23,8 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private readonly store: Store<StoreState>,
     public toastController: ToastController,
-    private readonly translate: TranslateService,
     private readonly storageService: StorageService,
-    private readonly router: Router,
-    private readonly languageService: LanguageService
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -52,38 +47,21 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.storageService.storageReady$.subscribe((ready: boolean) => {
         if (ready) {
-          this.getLanguageValues();
+          this.store.dispatch(STORE_ACTIONS.initLanguages());
+          this.store.dispatch(PLAYERS_ACTIONS.getPlayersStorage());
         }
       })
     );
-  }
 
-  private getLanguageValues(): void {
-    Promise.all([
-      this.languageService.getDeviceLanguage(),
-      this.languageService.getLanguageFromStorage()
-    ]).then(([deviceLanguage, storageLanguage]) => {
-      this.setAppLanguage(deviceLanguage, storageLanguage);
-    });
-  }
-
-  private setAppLanguage(deviceLanguage: string, storageLanguage: string): void {
-    this.languageService.setLanguageInStore(deviceLanguage, 'device');
-    this.languageService.setLanguageInStore(storageLanguage ?? deviceLanguage, 'user');
-
-    this.languageService.setLanguageInTranslate(storageLanguage ?? deviceLanguage);
-
-    this.languageService.setLanguageInStorage(storageLanguage ?? deviceLanguage)
-      .then(() => {
-        this.setAppIsReady();
-      });
-  }
-
-  private setAppIsReady(): void {
-    this.appIsReady$.next(true);
-    this.appIsReady$.complete();
-
-    this.router.navigate(['/home']);
+    this.subscriptions.add(
+      this.store.select(getItemsAreReady).subscribe((ready: boolean) => {
+        if (ready) {
+          this.appIsReady$.next(true);
+          this.appIsReady$.complete();
+          this.router.navigate(['/home']);
+        }
+      })
+    );
   }
 
   private async showToast(message: string, duration: number): Promise<void> {

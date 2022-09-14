@@ -9,7 +9,8 @@ const _storeReducer = createReducer (
   on(ACTIONS.startGame, (state: StoreState) => ({ ...state, playing: true })),
   on(ACTIONS.showToast, (state: StoreState, { message, duration }) => ({..._showToast(state, message, duration)})),
   on(ACTIONS.resetToast, (state: StoreState) => ({..._resetToast(state)})),
-  on(ACTIONS.setLanguage, (state: StoreState, { infoType, value }) => ({..._setLanguage(state, infoType, value)}))
+  on(ACTIONS.setLanguage, (state: StoreState, { infoType, value }) => ({..._setLanguage(state, infoType, value)})),
+  on(ACTIONS.initItemReady, (state: StoreState, { key }) => ({..._initItemReady(state, key)}))
 );
 
 export function storeReducer(state: StoreState | undefined, action: Action): StoreState {
@@ -43,5 +44,12 @@ function _setLanguage(state: StoreState, infoType: languageTypeInfo, value: stri
     ...state,
     deviceLanguage: (infoType === 'device' || infoType === 'both') ? value : state.deviceLanguage,
     userLanguage: (infoType === 'user' || infoType === 'both') ? value : state.userLanguage
+  }
+}
+
+function _initItemReady(state: StoreState, key: string): StoreState {
+  return {
+    ...state,
+    itemsReady: state.itemsReady.set(key, true)
   }
 }

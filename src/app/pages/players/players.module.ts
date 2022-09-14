@@ -3,7 +3,8 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { IonicModule } from "@ionic/angular";
 import { TranslateModule } from "@ngx-translate/core";
-import { ComponentsModule } from "src/app/components/components.module";
+import { ComponentsModule } from "../../components/components.module";
+import { ListPlayersPage } from "./list/list-players.page";
 import { NewPlayerPage } from "./new/new-player.page";
 import { PlayersPageRoutingModule } from "./players-routing.module";
 import { PlayersPage } from "./players.page";
@@ -20,7 +21,8 @@ import { PlayersPage } from "./players.page";
   ],
   declarations: [
     PlayersPage,
-    NewPlayerPage
+    NewPlayerPage,
+    ListPlayersPage
   ]
 })
 export class PlayersPageModule {}

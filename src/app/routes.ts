@@ -15,7 +15,10 @@ export const routes: Routes = [
   },
   {
     path: 'settings',
-    loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsPageModule),
-    title: 'settings.settings'
+    loadChildren: () => import('./pages/settings/settings.module').then(m => m.SettingsPageModule)
+  },
+  {
+    path: 'game',
+    loadChildren: () => import('./pages/game/game.module').then(m => m.GamePageModule)
   }
 ];

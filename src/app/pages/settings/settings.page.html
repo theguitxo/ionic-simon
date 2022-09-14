@@ -3,12 +3,10 @@
 </ion-header>
 <ion-content>
   <ion-list>
-    <ion-list-header>
-      Idioma
-    </ion-list-header>
-    <ion-item>
-      <ion-label>Ingles</ion-label>
-      <ion-toggle slot="start" [checked]="true"></ion-toggle>
+    <ion-list-header>{{ 'language.title' | translate }}</ion-list-header>
+    <ion-item *ngFor="let lang of languagesInfo" (click)="changeLanguage(lang.code)">
+      <ion-label>{{ 'language.languages.' + lang.code | translate }}</ion-label>
+      <ion-toggle slot="start" [checked]="lang.selected"></ion-toggle>
     </ion-item>
   </ion-list>
 </ion-content>

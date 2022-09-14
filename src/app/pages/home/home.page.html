@@ -4,40 +4,60 @@
       <img src="assets/game.logo.svg" alt="game logo">
     </div>
     <div class="buttons__wrapper">
-      <ng-container *ngIf="hasCurrentPlayer | async" [translate]="'player.playingWith'"></ng-container>
-      <ng-container *ngIf="hasPlayers | async; else newPlayer">
+      <div *ngIf="hasCurrentPlayer | async">
+        {{ 'player.currentPlayer' | translate: { name: currentPlayer | async } }}
+      </div>
+      <div>
         <ion-button
+          *ngIf="hasCurrentPlayer | async"
+          [routerLink]="['/game']"
           color="primary"
           class="buttons__item"
-          [translate]="'player.changePlayer'">
+          expand="full"
+          shape="round"
+          size="large">
+          <ion-icon slot="start" name="game-controller-outline"></ion-icon>
+          <ng-container slot="end">{{ 'game.play' | translate }}</ng-container>
         </ion-button>
-      </ng-container>
-      <ng-template #newPlayer>
+      </div>
+      <div>
         <ion-button
-          [routerLink]="['/players/new']"
+          *ngIf="hasPlayers | async"
+          [routerLink]="['/players/list']"
           color="primary"
           class="buttons__item"
-          [translate]="'player.newPlayer'">
-      </ion-button>
-      </ng-template>
-      <ion-button
-        *ngIf="hasCurrentPlayer | async"
-        color="primary" class="buttons__item">
-        Play
-      </ion-button>
-      <ion-button
-        *ngIf="hasPlayers | async"
-        color="primary" class="buttons__item"
-        [translate]="'player.players'">
-      </ion-button>
-      <ion-button color="primary" class="buttons__item">Scores</ion-button>
-      <ion-button
-        [routerLink]="['/settings']"
-        color="primary"
-        class="buttons__item">
-        <ion-icon slot="start" name="settings-outline"></ion-icon>
-        <ng-container slot="end">{{ 'settings.settings' | translate }}</ng-container>
-      </ion-button>
+          expand="full"
+          shape="round"
+          size="large">
+          <ion-icon slot="start" name="people-outline"></ion-icon>
+          <ng-container slot="end">{{ 'player.players' | translate }}</ng-container>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button
+          *ngIf="hasScores | async"
+          [routerLink]="['/players/scores']"
+          color="primary"
+          class="buttons__item"
+          expand="full"
+          shape="round"
+          size="large">
+          <ion-icon slot="start" name="medal-outline"></ion-icon>
+          <ng-container slot="end">{{ 'player.scores' | translate }}</ng-container>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button
+          [routerLink]="['/settings']"
+          color="primary"
+          class="buttons__item"
+          expand="block"
+          shape="round"
+          size="large">
+          <ion-icon slot="start" name="settings-outline"></ion-icon>
+          <ng-container slot="end">{{ 'settings.settings' | translate }}</ng-container>
+        </ion-button>
+      </div>
     </div>
     <div class="footer">
     </div>
