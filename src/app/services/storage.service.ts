@@ -35,7 +35,5 @@ export class StorageService {
   public async getObservable(key: string) {
     const value = await this._storage?.get(key);
     this.get$.next(value);
-    console.log(value);
-    // this.get$.complete();
   }
 }

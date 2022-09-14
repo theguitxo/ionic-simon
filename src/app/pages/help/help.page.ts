@@ -5,8 +5,7 @@ import { StoreState } from '../../store/store.state';
 
 @Component({
   selector: 'app-help',
-  templateUrl: './help.page.html',
-  styleUrls: ['./help.page.scss'],
+  templateUrl: './help.page.html'
 })
 export class HelpPage implements OnInit {
 

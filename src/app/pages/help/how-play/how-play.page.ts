@@ -3,8 +3,7 @@ import { SwiperOptions } from "swiper";
 
 @Component({
   selector: 'app-how-play',
-  templateUrl: './how-play.page.html',
-  styleUrls: ['./how-play.page.scss']
+  templateUrl: './how-play.page.html'
 })
 export class HowPlayPage {
   swiperOptions: SwiperOptions = {

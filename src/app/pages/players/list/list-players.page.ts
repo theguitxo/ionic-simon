@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { StoreState } from "src/app/store/store.state";
 
@@ -6,12 +6,9 @@ import { StoreState } from "src/app/store/store.state";
   selector: 'app-list-players',
   templateUrl: './list-players.page.html'
 })
-export class ListPlayersPage implements OnInit {
+export class ListPlayersPage {
 
   constructor(
     private readonly store: Store<StoreState>
   ) {}
-
-  ngOnInit(): void {
-  }
 }

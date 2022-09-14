@@ -1,4 +1,5 @@
-import { ScoreRecord } from "src/app/models/player.model";
+import { ScoreRecord } from "../../models/scores.model";
+
 
 export interface ScoreState {
   scores: ScoreRecord[];

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { APP_CURRENT_PLAYER_KEY, APP_PLAYERS_KEY } from '../models/app.constants';
 import { Player } from '../models/player.model';
-import { StoreState } from '../store/store.state';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -11,8 +9,7 @@ import { StorageService } from './storage.service';
 export class PlayersService {
 
   constructor(
-    private readonly storageService: StorageService,
-    private readonly store: Store<StoreState>
+    private readonly storageService: StorageService
   ) {}
 
   getPlayersFromStorage(): Promise<Player[]> {
