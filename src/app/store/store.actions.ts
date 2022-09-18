@@ -10,7 +10,8 @@ export enum ACTIONS {
   INIT_LANGUAGES = '[APP] Init languages',
   SET_LANGUAGE = '[APP] Set language',
   SAVE_LANGUAGE_STORAGE = '[APP] Save language storage',
-  INIT_ITEM_READY = '[APP] Init item ready'
+  INIT_ITEM_READY = '[APP] Init item ready',
+  SET_REDIRECT_TO = '[APP] Set redirect to'
 }
 
 export const startGame = createAction (
@@ -63,5 +64,12 @@ export const initItemReady = createAction (
   ACTIONS.INIT_ITEM_READY,
   props<{
     key: string
+  }>()
+);
+
+export const setRedirectTo = createAction (
+  ACTIONS.SET_REDIRECT_TO,
+  props<{
+    route: string
   }>()
 );

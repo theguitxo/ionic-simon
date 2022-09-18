@@ -11,17 +11,23 @@
     "title": "Idioma"
   },
   "player": {
-    "changePlayer": "Cambiar jugador",
-    "currentPlayer": "Jugador actual: {{name}}",
-    "formNewPlayer": {
-      "errors": {
-        "userExists": "El jugador {{player}} ya existe"
-      },
-      "name": "Nombre",
+    "buttons": {
       "save": "Guardar"
     },
+    "current": "Actual",
+    "changePlayer": "Cambiar jugador",
+    "currentPlayer": "Jugador actual: {{name}}",
+    "errors": {
+      "userExists": "El jugador {{player}} ya existe",
+      "savingPlayer": "Error guardando el nuevo jugador",
+      "savingCurrentPlayer": "Error guardando el jugador actual"
+    },
+    "formFields": {
+      "name": "Nombre"
+    },
     "newPlayer": "Nuevo jugador",
-    "players": "Jugadores"
+    "players": "Jugadores",
+    "select": "Seleccionar"
   },
   "scores": {
     "scores": "Puntuaciones"

@@ -10,7 +10,8 @@ const _storeReducer = createReducer (
   on(ACTIONS.showToast, (state: StoreState, { message, duration }) => ({..._showToast(state, message, duration)})),
   on(ACTIONS.resetToast, (state: StoreState) => ({..._resetToast(state)})),
   on(ACTIONS.setLanguage, (state: StoreState, { infoType, value }) => ({..._setLanguage(state, infoType, value)})),
-  on(ACTIONS.initItemReady, (state: StoreState, { key }) => ({..._initItemReady(state, key)}))
+  on(ACTIONS.initItemReady, (state: StoreState, { key }) => ({..._initItemReady(state, key)})),
+  on(ACTIONS.setRedirectTo, (state: StoreState, { route }) => ({..._setRedirectTo(state, route)}))
 );
 
 export function storeReducer(state: StoreState | undefined, action: Action): StoreState {
@@ -51,5 +52,12 @@ function _initItemReady(state: StoreState, key: string): StoreState {
   return {
     ...state,
     itemsReady: state.itemsReady.set(key, true)
+  }
+}
+
+function _setRedirectTo(state: StoreState, redirectTo: string): StoreState {
+  return {
+    ...state,
+    redirectTo
   }
 }

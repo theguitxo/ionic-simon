@@ -20,5 +20,9 @@ export const routes: Routes = [
   {
     path: 'game',
     loadChildren: () => import('./pages/game/game.module').then(m => m.GamePageModule)
+  },
+  {
+    path: 'scores',
+    loadChildren: () => import('./pages/scores/scores.module').then(m => m.ScoresPageModule)
   }
 ];

@@ -14,10 +14,6 @@ export function playersReducer(state: PlayersState | undefined, action: Action):
 }
 
 export function _setPlayersList(state: PlayersState, players: Player[]): PlayersState {
-  console.log({
-    ...state,
-    players
-  });
   return {
     ...state,
     players

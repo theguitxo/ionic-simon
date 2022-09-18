@@ -4,12 +4,13 @@ import { Store } from '@ngrx/store';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { AppToastOptions } from './models/app.models';
 import { resetToast } from './store/store.actions';
-import { getItemsAreReady, getToastOptions } from './store/store.selectors';
 import { StoreState } from './store/store.state';
 import { StorageService } from './services/storage.service';
 import { Router } from '@angular/router';
-import * as STORE_ACTIONS from './store/store.actions';
+import * as APP_ACTIONS from './store/store.actions';
 import * as PLAYERS_ACTIONS from './store/players/players.actions';
+import * as SCORES_ACTIONS from './store/scores/scores.actions';
+import * as APP_SELECTORS from './store/store.selectors';
 
 @Component({
   selector: 'app-root',
@@ -37,7 +38,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private initSubscriptions(): void {
     this.subscriptions.add(
-      this.store.select(getToastOptions).subscribe((data: AppToastOptions) => {
+      this.store.select(APP_SELECTORS.getToastOptions).subscribe((data: AppToastOptions) => {
         if (data.showToast) {
           this.showToast(data.toastMessage, data.toastDuration);
         }
@@ -47,18 +48,28 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.storageService.storageReady$.subscribe((ready: boolean) => {
         if (ready) {
-          this.store.dispatch(STORE_ACTIONS.initLanguages());
+          this.store.dispatch(APP_ACTIONS.initLanguages());
           this.store.dispatch(PLAYERS_ACTIONS.getPlayersStorage());
+          this.store.dispatch(SCORES_ACTIONS.getScoresStorage());
         }
       })
     );
 
     this.subscriptions.add(
-      this.store.select(getItemsAreReady).subscribe((ready: boolean) => {
+      this.store.select(APP_SELECTORS.getItemsAreReady).subscribe((ready: boolean) => {
         if (ready) {
           this.appIsReady$.next(true);
           this.appIsReady$.complete();
           this.router.navigate(['/home']);
+        }
+      })
+    );
+    
+    this.subscriptions.add(
+      this.store.select(APP_SELECTORS.getRedirectTo).subscribe((route) => {
+        if (route) {
+          this.router.navigate([route]);
+          this.store.dispatch(APP_ACTIONS.setRedirectTo({route: ''}));
         }
       })
     );

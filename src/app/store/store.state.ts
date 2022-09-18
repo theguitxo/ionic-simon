@@ -1,4 +1,4 @@
-import { APP_LANGUAGE_KEY, APP_PLAYERS_KEY, DEFAULT_TOAST_DURATION } from "../models/app.constants";
+import { APP_LANGUAGE_KEY, APP_PLAYERS_KEY, APP_SCORES_KEY, DEFAULT_TOAST_DURATION } from "../models/app.constants";
 import { AppToastOptions } from "../models/app.models";
 
 export interface StoreState {
@@ -10,7 +10,8 @@ export interface StoreState {
   alertOptions: {
     showAlert: boolean;
     text: string;
-  }
+  },
+  redirectTo: string;
 }
 
 export const initialState: StoreState = {
@@ -20,9 +21,13 @@ export const initialState: StoreState = {
     toastDuration: DEFAULT_TOAST_DURATION,
     toastMessage: ''
   },
-  itemsReady: new Map().set(APP_LANGUAGE_KEY, false).set(APP_PLAYERS_KEY, false),
+  itemsReady: new Map()
+    .set(APP_LANGUAGE_KEY, false)
+    .set(APP_PLAYERS_KEY, false)
+    .set(APP_SCORES_KEY, false),
   alertOptions: {
     showAlert: false,
     text: ''
-  }
+  },
+  redirectTo: ''
 };

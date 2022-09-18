@@ -37,3 +37,8 @@ export const getItemsAreReady = createSelector(
     return itemsState?.every(item => item);
   }
 );
+
+export const getRedirectTo = createSelector(
+  appState,
+  (state: StoreState): string => state?.redirectTo
+);

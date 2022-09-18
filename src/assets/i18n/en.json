@@ -11,17 +11,23 @@
     "title": "Language"
   },
   "player": {
-    "changePlayer": "Change player",
-    "currentPlayer": "Current player: {{name}}",
-    "formNewPlayer": {
-      "errors": {
-        "userExists": "Player {{player}} already exists"
-      },
-      "name": "Name",
+    "buttons": {
       "save": "Save"
     },
+    "current": "Current",
+    "changePlayer": "Change player",
+    "currentPlayer": "Current player: {{name}}",
+    "errors": {
+      "userExists": "Player {{player}} already exists",
+      "savingPlayer": "Error saving the new player",
+      "savingCurrentPlayer": "Error saving current player"
+    },
+    "formFields": {
+      "name": "Name"
+    },
     "newPlayer": "New player",
-    "players": "Players"
+    "players": "Players",
+    "select": "Select"
   },
   "scores": {
     "scores": "Scores"

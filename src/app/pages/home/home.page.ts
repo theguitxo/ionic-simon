@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { StoreState } from '../../store/store.state';
 import * as PLAYERS_SELECTORS from '../../store/players/players.selectors';
-import * as SCORES_SELECTORS from '../../store/score/score.selectors';
+import * as SCORES_SELECTORS from '../../store/scores/scores.selectors';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +26,7 @@ export class HomePage implements OnInit {
 
   private initSubscriptions(): void {
     this.hasCurrentPlayer = this.store.select(PLAYERS_SELECTORS.getHasCurrentPlayer);
-    this.currentPlayer = this.store.select(PLAYERS_SELECTORS.getCurrentPlayer);
+    this.currentPlayer = this.store.select(PLAYERS_SELECTORS.getCurrentPlayerName);
     this.hasPlayers = this.store.select(PLAYERS_SELECTORS.getHasPlayers);
     this.hasScores = this.store.select(SCORES_SELECTORS.getHasScores);
   }

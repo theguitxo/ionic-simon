@@ -36,14 +36,14 @@
       <div>
         <ion-button
           *ngIf="hasScores | async"
-          [routerLink]="['/players/scores']"
+          [routerLink]="['/scores']"
           color="primary"
           class="buttons__item"
           expand="full"
           shape="round"
           size="large">
           <ion-icon slot="start" name="medal-outline"></ion-icon>
-          <ng-container slot="end">{{ 'player.scores' | translate }}</ng-container>
+          <ng-container slot="end">{{ 'scores.scores' | translate }}</ng-container>
         </ion-button>
       </div>
       <div>

@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { Player } from "src/app/models/player.model";
+import { Player, PlayerList } from "../../models/player.model";
 import { PlayersState } from "./players.state";
 
 export const playersState = createFeatureSelector<PlayersState>('players');
@@ -11,10 +11,20 @@ export const getHasCurrentPlayer = createSelector(
 
 export const getCurrentPlayer = createSelector(
   playersState,
-  (state: PlayersState): string => {
+  (state: PlayersState): Player => {
     const current = state?.players?.find(item => item.id === state?.currentPlayer);
-    return current?.name;
+    return current;
   }
+);
+
+export const getCurrentPlayerName = createSelector(
+  getCurrentPlayer,
+  (player: Player): string => player?.name
+);
+
+export const getCurrentPlayerId = createSelector(
+  getCurrentPlayer,
+  (player: Player): string => player?.id
 );
 
 export const getHasPlayers = createSelector(
@@ -29,5 +39,10 @@ export const getPlayersNames = createSelector(
 
 export const getPlayers = createSelector(
   playersState,
-  (state: PlayersState): Player[] => state?.players
+  (state: PlayersState): PlayerList[] => (
+    state?.players?.map(item => ({
+      ...item,
+      isCurrent: item.id === state?.currentPlayer
+    }))
+  )
 );

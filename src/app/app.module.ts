@@ -22,7 +22,8 @@ import { StorageService } from './services/storage.service';
 import { Drivers } from '@ionic/storage';
 import { LanguageService } from './services/language.service';
 import { StoreEffects } from './store/store.effects';
-import { scoresReducer } from './store/score/score.reducer';
+import { scoresReducer } from './store/scores/scores.reducer';
+import { ScoresEffects } from './store/scores/scores.effects';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -56,7 +57,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
     EffectsModule.forRoot([
       StoreEffects,
-      PlayersEffects
+      PlayersEffects,
+      ScoresEffects
     ]),
     IonicStorageModule.forRoot({
       name: '__simonData',

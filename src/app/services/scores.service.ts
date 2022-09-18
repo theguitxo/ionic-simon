@@ -23,4 +23,16 @@ export class ScoresService {
         });
     });
   }
+
+  setNewScore(scores: ScoreRecord[]): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.storageService.set(APP_SCORES_KEY, scores)
+        .then(() => {
+          resolve();
+        })
+        .catch(() => {
+          reject();
+        });
+    });
+  }
 }

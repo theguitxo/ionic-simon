@@ -11,7 +11,6 @@ import * as APP_ACTIONS from "../store.actions";
 import { APP_PLAYERS_KEY } from "../../models/app.constants";
 import { TranslateService } from "@ngx-translate/core";
 
-
 @Injectable()
 export class PlayersEffects {
 
@@ -56,7 +55,7 @@ export class PlayersEffects {
         if (players.map(i => i.toUpperCase()).indexOf(action.player.name.toUpperCase()) > -1) {
           return {
             type: APP_ACTIONS.ACTIONS.SHOW_TOAST,
-            message: this.translate.instant('player.formNewPlayer.errors.userExists', { player: action.player.name })
+            message: this.translate.instant('player.errors.userExists', { player: action.player.name })
           };
         }
         return {
@@ -89,8 +88,27 @@ export class PlayersEffects {
             currentPlayer: action.player.id
           }
         ]),
-        catchError(() => of(APP_ACTIONS.showToast({ message: 'error saving player' })))
+        catchError(() => of(APP_ACTIONS.showToast({ message: this.translate.instant('player.errors.savingPlayer') })))
       )
     ))
   );
+
+  saveCurrentPlayer$ = createEffect(() => this.action$.pipe(
+    ofType(PLAYERS_ACTIONS.saveCurrentPlayer),
+    switchMap(action => from(this.playersService.setCurrentPlayerInStorage(action.currentPlayer))
+      .pipe(
+        mergeMap(() => [
+          {
+            type: PLAYERS_ACTIONS.PLAYER_ACTIONS.SET_CURRENT_PLAYER,
+            currentPlayer: action.currentPlayer
+          },
+          {
+            type: APP_ACTIONS.ACTIONS.SET_REDIRECT_TO,
+            route: '/home'
+          }
+        ]),
+        catchError(() => of(APP_ACTIONS.showToast({ message: this.translate.instant('player.errors.savingCurrentPlayer') })))
+      )
+    )
+  ));
 }

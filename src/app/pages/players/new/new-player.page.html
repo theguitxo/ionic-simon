@@ -1,13 +1,13 @@
-<ion-content class="ion-padding" action="#" method="post">
-  <form [formGroup]="newPlayerForm" (ngSubmit)="createNewPlayer()" novalidate>
+<ion-content class="ion-padding">
+  <form [formGroup]="newPlayerForm" action="#" method="post" (ngSubmit)="createNewPlayer()" novalidate>
     <ion-item>
-      <ion-label position="fixed">{{ 'player.formNewPlayer.name' | translate }}</ion-label>
+      <ion-label position="fixed">{{ 'player.formFields.name' | translate }}</ion-label>
       <ion-input formControlName="name" [inputmode]="'text'" [clearInput]="true"></ion-input>
     </ion-item>
     <ion-row>
       <ion-col>
         <ion-button type="submit" color="primary" expand="block" [disabled]="newPlayerForm.invalid">
-          {{ 'player.formNewPlayer.save' | translate }}
+          {{ 'player.buttons.save' | translate }}
         </ion-button>
       </ion-col>
     </ion-row>
