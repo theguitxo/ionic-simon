@@ -30,6 +30,11 @@ export const getLanguages = createSelector(
   })
 );
 
+export const getUserLanguage = createSelector(
+  appState,
+  (state: StoreState): string => state?.userLanguage
+);
+
 export const getItemsAreReady = createSelector(
   appState,
   (state: StoreState): boolean => {

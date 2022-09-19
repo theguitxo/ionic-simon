@@ -30,6 +30,7 @@
     "select": "Select"
   },
   "scores": {
+    "latest": "Latest {{scores}} scores", 
     "scores": "Scores"
   },
   "settings": {

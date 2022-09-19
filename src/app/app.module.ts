@@ -25,6 +25,9 @@ import { StoreEffects } from './store/store.effects';
 import { scoresReducer } from './store/scores/scores.reducer';
 import { ScoresEffects } from './store/scores/scores.effects';
 
+import '@angular/common/locales/global/es';
+import '@angular/common/locales/global/en';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

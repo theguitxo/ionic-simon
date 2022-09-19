@@ -30,6 +30,7 @@
     "select": "Seleccionar"
   },
   "scores": {
+    "latest": "Ultimos {{scores}} puntuaciones", 
     "scores": "Puntuaciones"
   },
   "settings": {

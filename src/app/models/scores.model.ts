@@ -2,6 +2,7 @@ export interface ScoreRecord {
   id: string;
   player: string;
   date: number;
+  dateFormatted?: string;
   score: number;
 }
 
