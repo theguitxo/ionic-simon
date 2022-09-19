@@ -1,4 +1,7 @@
 {
+  "buttons": {
+    "ok": "OK"
+  },
   "game": {
     "game": "Juego",
     "play": "Jugar"
@@ -25,6 +28,9 @@
     "formFields": {
       "name": "Nombre"
     },
+    "messages": {
+      "newCreated": "Creado nuevo jugador"
+    },    
     "newPlayer": "Nuevo jugador",
     "players": "Jugadores",
     "select": "Seleccionar"

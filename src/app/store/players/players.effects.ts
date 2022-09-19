@@ -86,6 +86,10 @@ export class PlayersEffects {
           {
             type: PLAYERS_ACTIONS.PLAYER_ACTIONS.SET_CURRENT_PLAYER,
             currentPlayer: action.player.id
+          },
+          {
+            type: APP_ACTIONS.ACTIONS.SHOW_ALERT,
+            text: this.translate.instant('player.messages.newCreated')
           }
         ]),
         catchError(() => of(APP_ACTIONS.showToast({ message: this.translate.instant('player.errors.savingPlayer') })))

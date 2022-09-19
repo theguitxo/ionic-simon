@@ -1,5 +1,5 @@
 import { APP_LANGUAGE_KEY, APP_PLAYERS_KEY, APP_SCORES_KEY, DEFAULT_TOAST_DURATION } from "../models/app.constants";
-import { AppToastOptions } from "../models/app.models";
+import { AppAlertOptions, AppToastOptions } from "../models/app.models";
 
 export interface StoreState {
   deviceLanguage?: string;
@@ -7,10 +7,7 @@ export interface StoreState {
   playing: boolean;
   toastOptions: AppToastOptions;
   itemsReady: Map<string, boolean>;
-  alertOptions: {
-    showAlert: boolean;
-    text: string;
-  },
+  alertOptions: AppAlertOptions,
   redirectTo: string;
 }
 

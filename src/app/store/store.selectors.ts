@@ -1,6 +1,6 @@
 import { getSelectors } from '@ngrx/router-store';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { AppToastOptions, StateLanguages } from '../models/app.models';
+import { AppAlertOptions, AppToastOptions, StateLanguages } from '../models/app.models';
 import { StoreState } from './store.state';
 
 export const {
@@ -46,4 +46,9 @@ export const getItemsAreReady = createSelector(
 export const getRedirectTo = createSelector(
   appState,
   (state: StoreState): string => state?.redirectTo
+);
+
+export const getAlertOptions = createSelector(
+  appState,
+  (state: StoreState): AppAlertOptions => state?.alertOptions
 );
