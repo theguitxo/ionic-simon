@@ -1,0 +1,97 @@
+$border-size: .75rem;
+$border-colors: solid $border-size #000;
+$size-center: 9rem;
+
+.game {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__table {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 90vw;
+    width: 90vw;
+    border: solid ($border-size * 2) #000;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__buttons {
+    flex: 1 1 auto;
+  }
+
+  &__messages {
+    flex: 1 1 auto;
+  }
+
+  &__blue {
+    border-bottom: $border-colors;
+    border-right: $border-colors;
+
+    &--off {
+      background-color: #0066ff;
+    }
+    &--on {
+      
+    }
+  }
+
+  &__red {
+    border-bottom: $border-colors;
+    border-left: $border-colors;
+
+    &--off {
+      background-color: #ff5555;
+    }
+    &--on {
+      
+    }
+  }
+
+  &__yellow {
+    border-top: $border-colors;
+    border-right: $border-colors;
+
+    &--off {
+      background-color: #ffe680;
+    }
+    &--on {
+      
+    }
+  }
+
+  &__green {
+    border-top: $border-colors;
+    border-left: $border-colors;
+
+    &--off {
+      background-color: #99ff55;
+    }
+    &--on {
+      
+    }
+  }
+
+  &__center {
+    background-color: black;
+    width: $size-center;
+    height: $size-center;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - ($size-center / 2));
+    left: calc(50% - ($size-center / 2));
+  }
+}

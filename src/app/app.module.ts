@@ -27,6 +27,7 @@ import { ScoresEffects } from './store/scores/scores.effects';
 
 import '@angular/common/locales/global/es';
 import '@angular/common/locales/global/en';
+import { gameReducer } from './store/game/game.reducers';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -50,7 +51,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       router: routerReducer,
       players: playersReducer,
       scores: scoresReducer,
-      store: storeReducer
+      store: storeReducer,
+      game: gameReducer
     }),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({

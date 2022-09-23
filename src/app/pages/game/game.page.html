@@ -1,6 +1,59 @@
 <ion-header>
   <app-common-header></app-common-header>
 </ion-header>
-<ion-content>
-  <ion-button (click)="newScore()">new</ion-button>
+<ion-content class="ion-padding">
+  <div class="game__wrapper">
+    <div class="game__container">
+      
+      <div class="game__table">
+        <div class="game__center"></div>
+        <div
+          class="game__blue game__blue--off"
+          (click)="lightPressed(blueCode)">
+        </div>
+        <div
+          class="game__red game__red--off"
+          (click)="lightPressed(redCode)">
+        </div>
+        <div
+          class="game__yellow game__yellow--off"
+          (click)="lightPressed(yellowCode)">
+        </div>
+        <div
+          class="game__green game__green--off"
+          (click)="lightPressed(greenCode)">
+        </div>
+      </div>
+
+    </div>
+    <div class="game__buttons">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-button
+              color="primary"
+              expand="full"
+              shape="round"
+              [disabled]="gameStarted | async"
+              (click)="startGame()">
+              <ion-icon slot="start" name="play-outline"></ion-icon>
+              <ng-container slot="end">{{ 'game.play' | translate}}</ng-container>
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button
+              color="primary"
+              expand="full"
+              shape="round"
+              [disabled]="!(gameStarted | async) || (playingSequence | async)"
+              (click)="stopGame()">
+              <ion-icon slot="start" name="stop-outline"></ion-icon>
+              <ng-container slot="end">{{ 'game.stop' | translate}}</ng-container>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="game__messages">mensajes</div>
+  </div>
 </ion-content>

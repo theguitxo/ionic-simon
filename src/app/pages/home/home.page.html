@@ -22,6 +22,19 @@
       </div>
       <div>
         <ion-button
+          *ngIf="!(hasPlayers | async)"
+          [routerLink]="['/players/new']"
+          color="primary"
+          class="buttons__item"
+          expand="full"
+          shape="round"
+          size="large">
+          <ion-icon slot="start" name="person-add-outline"></ion-icon>
+          <ng-container slot="end">{{ 'player.newPlayer' | translate }}</ng-container>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button
           *ngIf="hasPlayers | async"
           [routerLink]="['/players/list']"
           color="primary"

@@ -4,7 +4,8 @@
   },
   "game": {
     "game": "Juego",
-    "play": "Jugar"
+    "play": "Jugar",
+    "stop": "Parar"
   },
   "language": {
     "languages": {
