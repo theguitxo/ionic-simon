@@ -5,6 +5,7 @@
   "game": {
     "game": "Game",
     "play": "Play",
+    "score": "Score",
     "stop": "Stop"
   },
   "language": {
@@ -37,7 +38,7 @@
     "select": "Select"
   },
   "scores": {
-    "latest": "Latest {{scores}} scores", 
+    "latest": "Latest {{scores}} scores",
     "scores": "Scores"
   },
   "settings": {

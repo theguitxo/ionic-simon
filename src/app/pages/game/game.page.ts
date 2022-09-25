@@ -3,9 +3,9 @@ import { ViewDidEnter, ViewDidLeave } from '@ionic/angular';
 import { Store } from "@ngrx/store";
 import { Observable, Subscription } from "rxjs";
 import { take } from "rxjs/operators";
-import { getButtonsEnabled, getGameSequence, getGameStarted, getPlayingSequence } from "../../store/game/game.selectors";
 import { StoreState } from "../../store/store.state";
 import * as GAME_ACTIONS from '../../store/game/game.actions';
+import * as GAME_SELECTORS from "../../store/game/game.selectors";
 import { COLOR_CODES } from "../../models/game.model";
 
 @Component({
@@ -15,7 +15,8 @@ import { COLOR_CODES } from "../../models/game.model";
 })
 export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
   gameStarted: Observable<boolean>;
-  playingSequence: Observable<boolean>;
+  playingSequence: boolean;
+  score: Observable<number>;
 
   blueCode = COLOR_CODES.BLUE;
   redCode = COLOR_CODES.RED;
@@ -30,36 +31,35 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
 
   subscriptions: Subscription[] = [];
 
-  audio: HTMLAudioElement = new Audio();
-
   sequence: COLOR_CODES[] = [];
   indexSequence: number;
+  colorPlaying: COLOR_CODES;
+
+  audio: HTMLAudioElement = new Audio();
 
   constructor(
     private readonly store: Store<StoreState>
   ){}
 
   ngOnInit(): void {
-    this.gameStarted = this.store.select(getGameStarted);
-    this.playingSequence = this.store.select(getPlayingSequence);
+    this.gameStarted = this.store.select(GAME_SELECTORS.getGameStarted);
+    this.score = this.store.select(GAME_SELECTORS.getScore);
+
+    this.audio.onloadeddata = () => this.playAudio();
+    this.audio.onended = () => this.audioEnded();
   }
 
   ionViewDidEnter(): void {
     this.setSubscriptions();
-    this.audio.addEventListener('loadeddata', () => this.playAudio());
-    this.audio.addEventListener('ended', () => this.audioEnded());
   }
 
   ionViewDidLeave(): void {
     this.subscriptions.forEach(item => item.unsubscribe());
-    this.audio.removeEventListener('loadeddata', () => this.playAudio());
-    this.audio.removeEventListener('ended', () => this.audioEnded());
+    this.store.dispatch(GAME_ACTIONS.resetGameData());
   }
 
   startGame(): void {
-    
     this.store.dispatch(GAME_ACTIONS.initGame());
-
     this.addAndPlaySequence();
   }
 
@@ -68,44 +68,79 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
   }
 
   lightPressed(code: COLOR_CODES): void {
-    this.store.select(getButtonsEnabled).pipe(take(1))
+    this.store.select(GAME_SELECTORS.getButtonsEnabled).pipe(take(1))
       .subscribe((value: boolean) => {
         if (value) {
-          console.log(code);
+          this.store.dispatch(GAME_ACTIONS.startPlayerAction());
+          this.playPlayerAction(code);
         }
       });
   }
 
   private setSubscriptions(): void {
     this.subscriptions.push(
-      this.store.select(getGameSequence).subscribe((sequence: COLOR_CODES[]) => {
-        if (sequence.length) {
-          this.sequence = sequence;
-          this.indexSequence = 0;
-          setTimeout(() => this.playSequence(), 1000);
-        }
-      })
+      this.store
+        .select(GAME_SELECTORS.getPlayingSequence)
+        .subscribe((value: boolean) => this.playingSequence = value)
     );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getGameSequence)
+        .subscribe((sequence: COLOR_CODES[]) => this.initSequence(sequence))
+    );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getContinueGame)
+        .subscribe((value: boolean) => {
+          if (value) {
+            this.addAndPlaySequence();
+          }
+        })
+    );
+  }
+
+  private initSequence(sequence): void {
+    if (sequence.length) {
+      this.sequence = sequence;
+      this.indexSequence = 0;
+      setTimeout(() => this.playSequence(), 1000);
+    }
   }
 
   private playSequence(): void {
     this.audio.src = this.colorAudios.get(this.sequence[this.indexSequence]);
   }
 
+  private playPlayerAction(colorCode: COLOR_CODES): void {
+    this.colorPlaying = colorCode;
+    this.audio.src = this.colorAudios.get(colorCode);
+  }
+
   private playAudio(): void {
+    if (this.playingSequence) {
+      this.colorPlaying = this.sequence[this.indexSequence];
+    }
     this.audio.play();
   }
 
   private audioEnded(): void {
-    const newIndexSequence = this.indexSequence + 1;
-    if (newIndexSequence < this.sequence.length) {
-      this.indexSequence = newIndexSequence;
-      this.playSequence();
+    if (this.playingSequence) {
+      if (this.sequence[this.indexSequence + 1]) {
+        this.indexSequence++;
+        this.playSequence();
+      } else {
+        this.store.dispatch(GAME_ACTIONS.stopPlayingSequence());
+      }
+    } else {
+      this.store.dispatch(GAME_ACTIONS.checkPlayerAction({ colorCode: this.colorPlaying}));
     }
+    this.colorPlaying = null;
   }
 
   private addAndPlaySequence(): void {
     this.store.dispatch(GAME_ACTIONS.newInSequence());
-    this.store.dispatch(GAME_ACTIONS.playSequence());
+    this.store.dispatch(GAME_ACTIONS.startPlayingSequence());
   }
 }

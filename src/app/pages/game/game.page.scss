@@ -36,6 +36,10 @@ $size-center: 9rem;
     flex: 1 1 auto;
   }
 
+  &__score {
+    flex: 1 1 auto;
+  }
+
   &__blue {
     border-bottom: $border-colors;
     border-right: $border-colors;
@@ -44,7 +48,7 @@ $size-center: 9rem;
       background-color: #0066ff;
     }
     &--on {
-      
+      background-color: #98C2FF;
     }
   }
 
@@ -53,9 +57,10 @@ $size-center: 9rem;
     border-left: $border-colors;
 
     &--off {
-      background-color: #ff5555;
+      background-color: #D90000;
     }
     &--on {
+      background-color: #FF9292;
       
     }
   }
@@ -65,10 +70,10 @@ $size-center: 9rem;
     border-right: $border-colors;
 
     &--off {
-      background-color: #ffe680;
+      background-color: #E1B500;
     }
     &--on {
-      
+      background-color: #FFF5CC;
     }
   }
 
@@ -77,10 +82,10 @@ $size-center: 9rem;
     border-left: $border-colors;
 
     &--off {
-      background-color: #99ff55;
+      background-color: #358500;
     }
     &--on {
-      
+      background-color: #D7FFBD;
     }
   }
 

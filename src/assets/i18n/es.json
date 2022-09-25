@@ -5,6 +5,7 @@
   "game": {
     "game": "Juego",
     "play": "Jugar",
+    "score": "Puntuación",
     "stop": "Parar"
   },
   "language": {

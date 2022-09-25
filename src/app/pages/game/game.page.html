@@ -8,19 +8,23 @@
       <div class="game__table">
         <div class="game__center"></div>
         <div
-          class="game__blue game__blue--off"
+          class="game__blue"
+          [ngClass]="colorPlaying === blueCode ? 'game__blue--on' : 'game__blue--off'"
           (click)="lightPressed(blueCode)">
         </div>
         <div
           class="game__red game__red--off"
+          [ngClass]="colorPlaying === redCode ? 'game__red--on' : 'game__red--off'"
           (click)="lightPressed(redCode)">
         </div>
         <div
           class="game__yellow game__yellow--off"
+          [ngClass]="colorPlaying === yellowCode ? 'game__yellow--on' : 'game__yellow--off'"
           (click)="lightPressed(yellowCode)">
         </div>
         <div
           class="game__green game__green--off"
+          [ngClass]="colorPlaying === greenCode ? 'game__green--on' : 'game__green--off'"
           (click)="lightPressed(greenCode)">
         </div>
       </div>
@@ -45,7 +49,7 @@
               color="primary"
               expand="full"
               shape="round"
-              [disabled]="!(gameStarted | async) || (playingSequence | async)"
+              [disabled]="!(gameStarted | async) || playingSequence"
               (click)="stopGame()">
               <ion-icon slot="start" name="stop-outline"></ion-icon>
               <ng-container slot="end">{{ 'game.stop' | translate}}</ng-container>
@@ -54,6 +58,11 @@
         </ion-row>
       </ion-grid>
     </div>
-    <div class="game__messages">mensajes</div>
+    <div class="game__messages">
+      messages
+    </div>
+    <div class="game__score" *ngIf="gameStarted | async">
+      {{ 'game.score' | translate }}: {{ score | async }}
+    </div>
   </div>
 </ion-content>

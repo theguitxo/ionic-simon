@@ -1,11 +1,15 @@
-import { createAction } from "@ngrx/store";
+import { createAction, props } from "@ngrx/store";
+import { COLOR_CODES } from "src/app/models/game.model";
 
 export enum GAME_ACTIONS {
   INIT_GAME = '[GAME ACTIONS] Init game',
   STOP_GAME = '[GAME ACTIONS] Stop game',
-  PLAY_SEQUENCE = '[GAME ACTIONS] Play sequence',
-  STOP_SEQUENCE = '[GAME ACTIONS] Stop sequence',
-  NEW_IN_SEQUENCE = '[GAME ACTIONS] New in sequence'
+  RESET_GAME_DATA = '[GAME ACTIONS] Reset game data',
+  START_PLAYING_SEQUENCE = '[GAME ACTIONS] Start playing sequence',
+  STOP_PLAYING_SEQUENCE = '[GAME ACTIONS] Stop playing sequence',
+  NEW_IN_SEQUENCE = '[GAME ACTIONS] New in sequence',
+  START_PLAYER_ACTION = '[GAME ACTIONS] Start player action',
+  CHECK_PLAYER_ACTION = '[GAME ACTIONS] Check player action'
 }
 
 export const initGame = createAction (
@@ -16,14 +20,29 @@ export const stopGame = createAction (
   GAME_ACTIONS.STOP_GAME
 );
 
-export const playSequence = createAction (
-  GAME_ACTIONS.PLAY_SEQUENCE
+export const resetGameData = createAction(
+  GAME_ACTIONS.RESET_GAME_DATA
 );
 
-export const stopSequence = createAction (
-  GAME_ACTIONS.STOP_SEQUENCE
+export const startPlayingSequence = createAction (
+  GAME_ACTIONS.START_PLAYING_SEQUENCE
+);
+
+export const stopPlayingSequence = createAction (
+  GAME_ACTIONS.STOP_PLAYING_SEQUENCE
 );
 
 export const newInSequence = createAction (
   GAME_ACTIONS.NEW_IN_SEQUENCE
-)
+);
+
+export const startPlayerAction = createAction (
+  GAME_ACTIONS.START_PLAYER_ACTION
+);
+
+export const checkPlayerAction = createAction (
+  GAME_ACTIONS.CHECK_PLAYER_ACTION,
+  props<{
+    colorCode: COLOR_CODES
+  }>()
+);
