@@ -72,7 +72,7 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
       .subscribe((value: boolean) => {
         if (value) {
           this.store.dispatch(GAME_ACTIONS.startPlayerAction());
-          this.playPlayerAction(code);
+          this.playButtonSound(code);
         }
       });
   }
@@ -93,29 +93,31 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
     this.subscriptions.push(
       this.store
         .select(GAME_SELECTORS.getContinueGame)
-        .subscribe((value: boolean) => {
-          if (value) {
-            this.addAndPlaySequence();
-          }
-        })
+        .subscribe((value: boolean) => this.canContinueGame(value))
     );
+  }
+
+  private canContinueGame(canContinue: boolean): void {
+    if (canContinue) {
+      this.addAndPlaySequence();
+    }
   }
 
   private initSequence(sequence): void {
     if (sequence.length) {
       this.sequence = sequence;
       this.indexSequence = 0;
-      setTimeout(() => this.playSequence(), 1000);
+      setTimeout(() => this.playButtonSound(), 1000);
     }
   }
 
-  private playSequence(): void {
-    this.audio.src = this.colorAudios.get(this.sequence[this.indexSequence]);
-  }
-
-  private playPlayerAction(colorCode: COLOR_CODES): void {
-    this.colorPlaying = colorCode;
-    this.audio.src = this.colorAudios.get(colorCode);
+  private playButtonSound(colorCode?: COLOR_CODES): void {
+    if (this.playingSequence) {
+      this.audio.src = this.colorAudios.get(this.sequence[this.indexSequence]);
+    } else {
+      this.colorPlaying = colorCode;
+      this.audio.src = this.colorAudios.get(colorCode);
+    }
   }
 
   private playAudio(): void {
@@ -129,7 +131,7 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
     if (this.playingSequence) {
       if (this.sequence[this.indexSequence + 1]) {
         this.indexSequence++;
-        this.playSequence();
+        this.playButtonSound();
       } else {
         this.store.dispatch(GAME_ACTIONS.stopPlayingSequence());
       }
