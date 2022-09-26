@@ -1,3 +1,5 @@
+import { Action } from "@ngrx/store";
+
 export interface AppToastOptions {
   showToast: boolean;
   toastMessage: string;
@@ -7,6 +9,15 @@ export interface AppToastOptions {
 export interface AppAlertOptions {
   showAlert: boolean;
   text: string;
+  resetOnClose?: boolean;
+  showAccept?: boolean;
+  showCancel?: boolean;
+  AcceptText?: string;
+  CancelText?: string;
+  redirectOnAccept?: boolean;
+  redirectOnCancel?: boolean;
+  additionalAcceptActions?: Action[]
+  additionalCancelActions?: Action[]
 }
 
 export type languageTypeInfo = 'device' | 'user' | 'both';

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertButton, AlertController, ToastController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { AppAlertOptions, AppToastOptions } from './models/app.models';
@@ -51,7 +51,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.store.select(APP_SELECTORS.getAlertOptions).subscribe((data: AppAlertOptions) => {
         if (data.showAlert) {
-          this.showAlert(data.text);
+          this.showAlert(data);
         }
       })
     );
@@ -75,7 +75,7 @@ export class AppComponent implements OnInit, OnDestroy {
         }
       })
     );
-    
+
     this.subscriptions.add(
       this.store.select(APP_SELECTORS.getRedirectTo).subscribe((route) => {
         if (route) {
@@ -95,21 +95,43 @@ export class AppComponent implements OnInit, OnDestroy {
     this.store.dispatch(resetToast());
   }
 
-  private async showAlert(message: string): Promise<void> {
-    const alert = await this.alertController.create({
-      message,
-      buttons: [
-        {
-          text: this.translate.instant('buttons.ok'),
-          role: 'confirm',
-          handler: () => {
+  private async showAlert(data: AppAlertOptions): Promise<void> {
+    const buttons: AlertButton[] = [];
+    if (data.showAccept) {
+      buttons.push({
+        text: data.AcceptText,
+        role: 'confirm',
+        handler: () => {
+          if (data.resetOnClose) {
             this.store.dispatch(APP_ACTIONS.resetAlert());
+          }
+          if (data.redirectOnAccept) {
             this.store.dispatch(APP_ACTIONS.setRedirectTo({
               route: '/home'
             }));
           }
         }
-      ]
+      });
+    }
+    if (data.showCancel) {
+      buttons.push({
+        text: data.CancelText,
+        role: 'cancel',
+        handler: () => {
+          if (data.resetOnClose) {
+            this.store.dispatch(APP_ACTIONS.resetAlert());
+          }
+          if (data.redirectOnCancel) {
+            this.store.dispatch(APP_ACTIONS.setRedirectTo({
+              route: '/home'
+            }));
+          }
+        }
+      });
+    }
+    const alert = await this.alertController.create({
+      message: data.text,
+      buttons
     });
 
     await alert.present();

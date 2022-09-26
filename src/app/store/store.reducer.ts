@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { DEFAULT_TOAST_DURATION } from "../models/app.constants";
-import { languageTypeInfo } from "../models/app.models";
+import { AppAlertOptions, languageTypeInfo } from "../models/app.models";
 import * as ACTIONS from "./store.actions";
 import { initialState, StoreState } from "./store.state";
 
@@ -9,7 +9,7 @@ const _storeReducer = createReducer (
   on(ACTIONS.startGame, (state: StoreState) => ({ ...state, playing: true })),
   on(ACTIONS.showToast, (state: StoreState, { message, duration }) => ({..._showToast(state, message, duration)})),
   on(ACTIONS.resetToast, (state: StoreState) => ({..._resetToast(state)})),
-  on(ACTIONS.showAlert, (state: StoreState, { text }) => ({..._showAlert(state, text)})),
+  on(ACTIONS.showAlert, (state: StoreState, { options }) => ({..._showAlert(state, options)})),
   on(ACTIONS.resetAlert, (state: StoreState) => ({..._resetAlert(state)})),
   on(ACTIONS.setLanguage, (state: StoreState, { infoType, value }) => ({..._setLanguage(state, infoType, value)})),
   on(ACTIONS.initItemReady, (state: StoreState, { key }) => ({..._initItemReady(state, key)})),
@@ -42,12 +42,12 @@ function _resetToast(state: StoreState): StoreState {
   }
 }
 
-function _showAlert(state: StoreState, text: string): StoreState {
+function _showAlert(state: StoreState, options: AppAlertOptions): StoreState {
   return {
     ...state,
     alertOptions: {
-      showAlert: true,
-      text
+      ...state.alertOptions,
+      ...options
     }
   }
 }
@@ -57,7 +57,16 @@ function _resetAlert(state: StoreState): StoreState {
     ...state,
     alertOptions: {
       showAlert: false,
-      text: ''
+      text: '',
+      resetOnClose: true,
+      showAccept: false,
+      showCancel: false,
+      AcceptText: '',
+      CancelText: '',
+      redirectOnAccept: false,
+      redirectOnCancel: false,
+      additionalAcceptActions: [],
+      additionalCancelActions: []
     }
   }
 }

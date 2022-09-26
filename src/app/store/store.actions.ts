@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { languageTypeInfo } from "../models/app.models";
+import { AppAlertOptions, languageTypeInfo } from "../models/app.models";
 
 export enum ACTIONS {
   START_GAME = '[APP] Start Game',
@@ -33,7 +33,7 @@ export const resetToast = createAction (
 export const showAlert = createAction (
   ACTIONS.SHOW_ALERT,
   props<{
-    text: string
+    options: AppAlertOptions
   }>()
 );
 

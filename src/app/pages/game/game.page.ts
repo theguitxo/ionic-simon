@@ -7,6 +7,7 @@ import { StoreState } from "../../store/store.state";
 import * as GAME_ACTIONS from '../../store/game/game.actions';
 import * as GAME_SELECTORS from "../../store/game/game.selectors";
 import { COLOR_CODES } from "../../models/game.model";
+import * as APP_ACTIONS from '../../store/store.actions';
 
 @Component({
   selector: 'app-game',
@@ -64,7 +65,17 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
   }
 
   stopGame(): void {
-    this.store.dispatch(GAME_ACTIONS.stopGame());
+    // this.store.dispatch(GAME_ACTIONS.stopGame());
+    this.store.dispatch(APP_ACTIONS.showAlert({
+      options: {
+        showAlert: true,
+        text: 'hola',
+        showAccept: true,
+        showCancel: true,
+        AcceptText: 'ok',
+        CancelText: 'cancel'
+      }
+    }))
   }
 
   lightPressed(code: COLOR_CODES): void {

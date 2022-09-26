@@ -89,7 +89,14 @@ export class PlayersEffects {
           },
           {
             type: APP_ACTIONS.ACTIONS.SHOW_ALERT,
-            text: this.translate.instant('player.messages.newCreated')
+            options: {
+              showAlert: true,
+              text: this.translate.instant('player.messages.newCreated'),
+              resetOnClose: true,
+              showAccept: true,
+              AcceptText: this.translate.instant('buttons.ok'),
+              redirectOnAccept: true
+            }
           }
         ]),
         catchError(() => of(APP_ACTIONS.showToast({ message: this.translate.instant('player.errors.savingPlayer') })))

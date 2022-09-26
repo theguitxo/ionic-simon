@@ -24,7 +24,16 @@ export const initialState: StoreState = {
     .set(APP_SCORES_KEY, false),
   alertOptions: {
     showAlert: false,
-    text: ''
+    text: '',
+    resetOnClose: true,
+    showAccept: false,
+    showCancel: false,
+    AcceptText: '',
+    CancelText: '',
+    redirectOnAccept: false,
+    redirectOnCancel: false,
+    additionalAcceptActions: [],
+    additionalCancelActions: []
   },
   redirectTo: ''
 };
