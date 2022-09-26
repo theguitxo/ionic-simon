@@ -7,14 +7,18 @@ import { SwiperModule } from 'swiper/angular';
 import { HelpPage } from './help.page';
 import { AboutPage } from './about/about.page';
 import { HowPlayPage } from './how-play/how-play.page';
+import { ComponentsModule } from '../../components/components.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    TranslateModule,
     HelpPageRoutingModule,
-    SwiperModule
+    SwiperModule,
+    ComponentsModule
   ],
   declarations: [
     HelpPage,

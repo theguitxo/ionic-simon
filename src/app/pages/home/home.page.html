@@ -22,7 +22,7 @@
       </div>
       <div>
         <ion-button
-          *ngIf="!(hasPlayers | async)"
+          *ngIf="(hasPlayers | async) === false"
           [routerLink]="['/players/new']"
           color="primary"
           class="buttons__item"
@@ -69,6 +69,18 @@
           size="large">
           <ion-icon slot="start" name="settings-outline"></ion-icon>
           <ng-container slot="end">{{ 'settings.settings' | translate }}</ng-container>
+        </ion-button>
+      </div>
+      <div>
+        <ion-button
+          [routerLink]="['/help']"
+          color="primary"
+          class="buttons__item"
+          expand="block"
+          shape="round"
+          size="large">
+          <ion-icon slot="start" name="help-circle-outline"></ion-icon>
+          <ng-container slot="end">{{ 'help.button' | translate }}</ng-container>
         </ion-button>
       </div>
     </div>

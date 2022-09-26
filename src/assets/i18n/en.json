@@ -8,6 +8,15 @@
     "score": "Score",
     "stop": "Stop"
   },
+  "help": {
+    "button": "Help",
+    "howToPlay": {
+      "title": "How to play"
+    },
+    "about": {
+      "title": "About"
+    }
+  },
   "language": {
     "languages": {
       "en": "English",

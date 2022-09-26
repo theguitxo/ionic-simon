@@ -8,6 +8,15 @@
     "score": "Puntuación",
     "stop": "Parar"
   },
+  "help": {
+    "button": "Ayuda",
+    "howToPlay": {
+      "title": "Como jugar"
+    },
+    "about": {
+      "title": "Sobre"
+    }
+  },
   "language": {
     "languages": {
       "en": "Inglés",
@@ -32,13 +41,13 @@
     },
     "messages": {
       "newCreated": "Creado nuevo jugador"
-    },    
+    },
     "newPlayer": "Nuevo jugador",
     "players": "Jugadores",
     "select": "Seleccionar"
   },
   "scores": {
-    "latest": "Ultimos {{scores}} puntuaciones", 
+    "latest": "Ultimos {{scores}} puntuaciones",
     "scores": "Puntuaciones"
   },
   "settings": {

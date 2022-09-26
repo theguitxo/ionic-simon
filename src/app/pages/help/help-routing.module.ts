@@ -17,12 +17,12 @@ const routes: Routes = [
       {
         path: 'how-play',
         component: HowPlayPage,
-        title: 'How to play'
+        title: 'help.howToPlay.title'
       },
       {
         path: 'about',
         component: AboutPage,
-        title: 'About'
+        title: 'help.about.title'
       }
     ]
   }
