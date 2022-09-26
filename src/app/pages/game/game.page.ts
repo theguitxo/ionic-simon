@@ -8,6 +8,8 @@ import * as GAME_ACTIONS from '../../store/game/game.actions';
 import * as GAME_SELECTORS from "../../store/game/game.selectors";
 import { COLOR_CODES } from "../../models/game.model";
 import * as APP_ACTIONS from '../../store/store.actions';
+import { TranslateService } from "@ngx-translate/core";
+import * as SCORE_ACTIONS from '../../store/scores/scores.actions';
 
 @Component({
   selector: 'app-game',
@@ -17,7 +19,7 @@ import * as APP_ACTIONS from '../../store/store.actions';
 export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
   gameStarted: Observable<boolean>;
   playingSequence: boolean;
-  score: Observable<number>;
+  score: number;
 
   blueCode = COLOR_CODES.BLUE;
   redCode = COLOR_CODES.RED;
@@ -39,13 +41,12 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
   audio: HTMLAudioElement = new Audio();
 
   constructor(
-    private readonly store: Store<StoreState>
+    private readonly store: Store<StoreState>,
+    private readonly translate: TranslateService
   ){}
 
   ngOnInit(): void {
     this.gameStarted = this.store.select(GAME_SELECTORS.getGameStarted);
-    this.score = this.store.select(GAME_SELECTORS.getScore);
-
     this.audio.onloadeddata = () => this.playAudio();
     this.audio.onended = () => this.audioEnded();
   }
@@ -65,15 +66,21 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
   }
 
   stopGame(): void {
-    // this.store.dispatch(GAME_ACTIONS.stopGame());
     this.store.dispatch(APP_ACTIONS.showAlert({
       options: {
         showAlert: true,
-        text: 'hola',
+        text: this.translate.instant('game.confirmStopGame'),
         showAccept: true,
         showCancel: true,
-        AcceptText: 'ok',
-        CancelText: 'cancel'
+        AcceptText: this.translate.instant('buttons.yes'),
+        CancelText: this.translate.instant('buttons.no'),
+        additionalAcceptActions: [
+          SCORE_ACTIONS.newScore({ score: this.score }),
+          GAME_ACTIONS.resetGameData(),
+          GAME_ACTIONS.stopGame()
+        ],
+        redirectOnAccept: true,
+        redirectOnCancel: false
       }
     }))
   }
@@ -105,6 +112,18 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
       this.store
         .select(GAME_SELECTORS.getContinueGame)
         .subscribe((value: boolean) => this.canContinueGame(value))
+    );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getScore)
+        .subscribe((value: number) => this.score = value)
+    );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getGameOver)
+        .subscribe((value: boolean) => this.checkGameOver(value))
     );
   }
 
@@ -155,5 +174,24 @@ export class GamePage implements OnInit, ViewDidEnter, ViewDidLeave {
   private addAndPlaySequence(): void {
     this.store.dispatch(GAME_ACTIONS.newInSequence());
     this.store.dispatch(GAME_ACTIONS.startPlayingSequence());
+  }
+
+  private checkGameOver(gameOver: boolean): void {
+    if (gameOver) {
+      this.store.dispatch(APP_ACTIONS.showAlert({
+        options: {
+          showAlert: true,
+          text: this.translate.instant('game.gameOver', { score: this.score }),
+          showAccept: true,
+          AcceptText: this.translate.instant('buttons.accept'),
+          additionalAcceptActions: [
+            SCORE_ACTIONS.newScore({ score: this.score }),
+            GAME_ACTIONS.resetGameData(),
+            GAME_ACTIONS.stopGame()
+          ],
+          redirectOnAccept: true
+        }
+      }))
+    }
   }
 }

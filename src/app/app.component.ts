@@ -102,6 +102,7 @@ export class AppComponent implements OnInit, OnDestroy {
         text: data.AcceptText,
         role: 'confirm',
         handler: () => {
+          data.additionalAcceptActions?.forEach(action => this.store.dispatch(action));
           if (data.resetOnClose) {
             this.store.dispatch(APP_ACTIONS.resetAlert());
           }
@@ -118,6 +119,7 @@ export class AppComponent implements OnInit, OnDestroy {
         text: data.CancelText,
         role: 'cancel',
         handler: () => {
+          data.additionalCancelActions?.forEach(action => this.store.dispatch(action));
           if (data.resetOnClose) {
             this.store.dispatch(APP_ACTIONS.resetAlert());
           }

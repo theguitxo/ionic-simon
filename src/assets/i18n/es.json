@@ -1,9 +1,14 @@
 {
   "buttons": {
-    "ok": "OK"
+    "accept": "Aceptar",
+    "no": "No",
+    "ok": "OK",
+    "yes": "Si"
   },
   "game": {
+    "confirmStopGame": "¿Quieres detener la partida?",
     "game": "Juego",
+    "gameOver": "<ul><li>Juego terminado</li><li>Puntuación: {{score}}</li></ul>",
     "play": "Jugar",
     "score": "Puntuación",
     "stop": "Parar"

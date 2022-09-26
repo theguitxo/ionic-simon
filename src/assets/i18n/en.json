@@ -1,9 +1,14 @@
 {
   "buttons": {
-    "ok": "OK"
+    "accept": "Accept",
+    "no": "No",
+    "ok": "OK",
+    "yes": "Yes"
   },
   "game": {
+    "confirmStopGame": "Do you want to stop the game?.<br>core: {{score}}",
     "game": "Game",
+    "gameOver": "<ul><li>Game over</li><li>Score: {{score}}</li></ul>",
     "play": "Play",
     "score": "Score",
     "stop": "Stop"

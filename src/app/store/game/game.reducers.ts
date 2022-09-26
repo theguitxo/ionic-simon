@@ -38,10 +38,13 @@ function _stopGame(state: GameState): GameState {
 function _resetGameData(state: GameState): GameState {
   return {
     ...state,
-    playerSequence: [],
     gameSequence: [],
+    playerSequence: [],
+    playingSequence: false,
+    gameOver: false,
     score: 0,
-    gameOver: false
+    buttonsBlocked: false,
+    sequenceChecked: false
   };
 }
 
