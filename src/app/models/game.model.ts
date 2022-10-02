@@ -4,3 +4,9 @@ export enum COLOR_CODES {
   YELLOW = 3,
   GREEN = 4
 }
+
+export interface CurrentColorPlay {
+  index: number;
+  colorCodePlaying: COLOR_CODES;
+  soundPath: null | string;
+}

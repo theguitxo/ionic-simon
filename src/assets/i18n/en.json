@@ -36,6 +36,7 @@
     "current": "Current",
     "changePlayer": "Change player",
     "currentPlayer": "Current player: {{name}}",
+    "currentPlayerNoName": "Current player",
     "errors": {
       "userExists": "Player {{player}} already exists",
       "savingPlayer": "Error saving the new player",
@@ -48,6 +49,7 @@
       "newCreated": "New player created"
     },
     "newPlayer": "New player",
+    "otherPlayers": "Other players",
     "players": "Players",
     "select": "Select"
   },

@@ -2,9 +2,15 @@
   <app-common-header></app-common-header>
 </ion-header>
 <ion-content class="ion-padding">
+  <ion-item *ngIf="currentPlayerHasScores | async">
+    {{ 'player.currentPlayerNoName' | translate }}
+  </ion-item>
+  <ion-item *ngIf="otherPlayersHaveScores | async">
+    {{ 'player.otherPlayers' | translate }}
+  </ion-item>
   <ion-accordion-group>
   <ion-accordion
-    *ngFor="let scoreItem of scoresList$ | async"
+    *ngFor="let scoreItem of scoresList | async"
     [value]="scoreItem.player">
     <ion-item slot="header" color="primary">
       <ion-label slot="start">{{ scoreItem.playerName }}</ion-label>

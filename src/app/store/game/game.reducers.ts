@@ -13,8 +13,9 @@ const _gameReducer = createReducer (
   on(ACTIONS.newInSequence, (state: GameState) => ({..._newInSequence(state)})),
   on(ACTIONS.startPlayingSequence, (state: GameState) => ({..._startStopPlayingSequence(state, true)})),
   on(ACTIONS.stopPlayingSequence, (state: GameState) => ({..._startStopPlayingSequence(state, false)})),
-  on(ACTIONS.startPlayerAction, (state) => ({..._startPlayerAction(state)})),
-  on(ACTIONS.checkPlayerAction, (state: GameState, { colorCode }) => ({..._checkPlayerAction(state, colorCode)}))
+  on(ACTIONS.nextPlayingSequence, (state: GameState) => ({..._nextPlayingSequence(state)})),
+  on(ACTIONS.startPlayerAction, (state: GameState, {colorCode}) => ({..._startPlayerAction(state, colorCode)})),
+  on(ACTIONS.checkPlayerAction, (state: GameState) => ({..._checkPlayerAction(state)}))
 );
 
 export function gameReducer(state: GameState | undefined, action: Action): GameState {
@@ -24,14 +25,17 @@ export function gameReducer(state: GameState | undefined, action: Action): GameS
 function _initGame(state: GameState): GameState {
   return {
     ...state,
-    gameStarted: true
+    gameStarted: true,
+    colorCodePlaying: null
   };
 }
 
 function _stopGame(state: GameState): GameState {
   return {
     ...state,
-    gameStarted: false
+    gameStarted: false,
+    indexPlayingSequence: -1,
+    colorCodePlaying: null
   };
 }
 
@@ -63,23 +67,34 @@ function _newInSequence(state: GameState): GameState {
 function _startStopPlayingSequence(state: GameState, value: boolean): GameState {
   return {
     ...state,
-    playingSequence: value
+    playingSequence: value,
+    indexPlayingSequence: 0
   };
 }
 
-function _startPlayerAction(state: GameState): GameState {
+function _nextPlayingSequence(state: GameState): GameState {
+  const newIndex = state?.indexPlayingSequence + 1;
+  return {
+    ...state,
+    indexPlayingSequence: state?.gameSequence[newIndex] ? newIndex : -1,
+    playingSequence: state?.gameSequence[newIndex] !== undefined
+  }
+}
+
+function _startPlayerAction(state: GameState, colorCode: COLOR_CODES): GameState {
   return {
     ...state,
     buttonsBlocked: true,
-    sequenceChecked: false
+    sequenceChecked: false,
+    playerCodeCheck: colorCode
   };
 }
 
-function _checkPlayerAction(state: GameState, colorCode: COLOR_CODES): GameState {
+function _checkPlayerAction(state: GameState): GameState {
   const gameSequence = state?.gameSequence;
   const playerSequenceCheck = [
     ...state?.playerSequence,
-    colorCode
+    state?.playerCodeCheck
   ];
   const gameSequenceCheck = gameSequence.slice(0, playerSequenceCheck.length);
   const isOk = gameSequenceCheck?.join() === playerSequenceCheck?.join();
@@ -90,6 +105,7 @@ function _checkPlayerAction(state: GameState, colorCode: COLOR_CODES): GameState
     score: state.score + Number(sequenceChecked && isOk),
     gameOver: !isOk,
     playerSequence: sequenceChecked ? [] : playerSequenceCheck,
+    playerCodeCheck: null,
     buttonsBlocked: false,
     sequenceChecked
   };

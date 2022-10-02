@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { COLOR_CODES } from "src/app/models/game.model";
+import { COLOR_CODES, CurrentColorPlay } from "src/app/models/game.model";
 import { GameState } from "./game.state";
 
 export const gameState = createFeatureSelector<GameState>('game');
@@ -37,4 +37,32 @@ export const getScore = createSelector(
 export const getContinueGame = createSelector(
   gameState,
   (state: GameState): boolean => (state?.sequenceChecked && !state?.gameOver)
+);
+
+export const getColorCodePlayInSequence = createSelector (
+  gameState,
+  (state: GameState): COLOR_CODES | null => state?.indexPlayingSequence < 0 ? null : state?.gameSequence[state?.indexPlayingSequence]
+);
+
+export const getPlayingInSequence = createSelector(
+  gameState,
+  getColorCodePlayInSequence,
+  (state: GameState, colorCode: COLOR_CODES | null): CurrentColorPlay => {
+    return {
+      index: state?.indexPlayingSequence,
+      colorCodePlaying: colorCode,
+      soundPath: state?.colorAudios?.get(colorCode)
+    }
+  }
+);
+
+export const getColorCodePlayerCheck = createSelector (
+  gameState,
+  (state: GameState): COLOR_CODES | null => state?.playerCodeCheck
+);
+
+export const getAudioColorCodePlayerCheck = createSelector(
+  gameState,
+  getColorCodePlayerCheck,
+  (state: GameState, colorCode: COLOR_CODES | null): string => state?.colorAudios?.get(colorCode)
 );

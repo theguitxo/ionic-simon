@@ -7,6 +7,7 @@ export enum GAME_ACTIONS {
   RESET_GAME_DATA = '[GAME ACTIONS] Reset game data',
   START_PLAYING_SEQUENCE = '[GAME ACTIONS] Start playing sequence',
   STOP_PLAYING_SEQUENCE = '[GAME ACTIONS] Stop playing sequence',
+  NEXT_PLAYING_SEQUENCE = '[GAME ACTIONS] Next playing sequence',
   NEW_IN_SEQUENCE = '[GAME ACTIONS] New in sequence',
   START_PLAYER_ACTION = '[GAME ACTIONS] Start player action',
   CHECK_PLAYER_ACTION = '[GAME ACTIONS] Check player action'
@@ -32,17 +33,21 @@ export const stopPlayingSequence = createAction (
   GAME_ACTIONS.STOP_PLAYING_SEQUENCE
 );
 
+export const nextPlayingSequence = createAction (
+  GAME_ACTIONS.NEXT_PLAYING_SEQUENCE
+);
+
 export const newInSequence = createAction (
   GAME_ACTIONS.NEW_IN_SEQUENCE
 );
 
 export const startPlayerAction = createAction (
-  GAME_ACTIONS.START_PLAYER_ACTION
-);
-
-export const checkPlayerAction = createAction (
-  GAME_ACTIONS.CHECK_PLAYER_ACTION,
+  GAME_ACTIONS.START_PLAYER_ACTION,
   props<{
     colorCode: COLOR_CODES
   }>()
+);
+
+export const checkPlayerAction = createAction (
+  GAME_ACTIONS.CHECK_PLAYER_ACTION
 );
