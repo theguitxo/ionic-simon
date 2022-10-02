@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, concatLatestFrom, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { from } from "rxjs";
-import { map, mergeMap, switchMap, tap } from "rxjs/operators";
+import { map, mergeMap, switchMap } from "rxjs/operators";
 import { ScoreRecord } from "src/app/models/scores.model";
 import { ScoresService } from "../../services/scores.service";
 import { StoreState } from "../store.state";
