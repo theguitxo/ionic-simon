@@ -1,5 +1,4 @@
 import { DatePipe } from "@angular/common";
-import { INJECTOR, LOCALE_ID } from "@angular/core";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { PlayerList } from "../../models/player.model";
 import { ScoreRecord, ScoresInfo, ScoresListItem } from "../../models/scores.model";
