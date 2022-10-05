@@ -2,7 +2,6 @@ import { createAction, props } from "@ngrx/store";
 import { AppAlertOptions, languageTypeInfo } from "../models/app.models";
 
 export enum ACTIONS {
-  START_GAME = '[APP] Start Game',
   SHOW_TOAST = '[APP] Show toast',
   RESET_TOAST = '[APP] Reset toast',
   SHOW_ALERT = '[APP] Show alert',
@@ -13,10 +12,6 @@ export enum ACTIONS {
   INIT_ITEM_READY = '[APP] Init item ready',
   SET_REDIRECT_TO = '[APP] Set redirect to'
 }
-
-export const startGame = createAction (
-  ACTIONS.START_GAME
-);
 
 export const showToast = createAction (
   ACTIONS.SHOW_TOAST,

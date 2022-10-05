@@ -6,7 +6,6 @@ import { initialState, StoreState } from "./store.state";
 
 const _storeReducer = createReducer (
   initialState,
-  on(ACTIONS.startGame, (state: StoreState) => ({ ...state, playing: true })),
   on(ACTIONS.showToast, (state: StoreState, { message, duration }) => ({..._showToast(state, message, duration)})),
   on(ACTIONS.resetToast, (state: StoreState) => ({..._resetToast(state)})),
   on(ACTIONS.showAlert, (state: StoreState, { options }) => ({..._showAlert(state, options)})),

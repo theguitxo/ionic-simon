@@ -4,7 +4,6 @@ import { AppAlertOptions, AppToastOptions } from "../models/app.models";
 export interface StoreState {
   deviceLanguage?: string;
   userLanguage?: string;
-  playing: boolean;
   toastOptions: AppToastOptions;
   itemsReady: Map<string, boolean>;
   alertOptions: AppAlertOptions,
@@ -12,7 +11,6 @@ export interface StoreState {
 }
 
 export const initialState: StoreState = {
-  playing: false,
   toastOptions: {
     showToast: false,
     toastDuration: DEFAULT_TOAST_DURATION,

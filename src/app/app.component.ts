@@ -11,7 +11,6 @@ import * as APP_ACTIONS from './store/store.actions';
 import * as PLAYERS_ACTIONS from './store/players/players.actions';
 import * as SCORES_ACTIONS from './store/scores/scores.actions';
 import * as APP_SELECTORS from './store/store.selectors';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -27,8 +26,7 @@ export class AppComponent implements OnInit, OnDestroy {
     public toastController: ToastController,
     private readonly alertController: AlertController,
     private readonly storageService: StorageService,
-    private readonly router: Router,
-    private readonly translate: TranslateService
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {

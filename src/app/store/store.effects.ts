@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { from } from "rxjs";
 import { switchMap, tap } from "rxjs/operators";
-import { APP_LANGUAGE_KEY } from "../models/app.constants";
+import * as APP_CONSTANTS from "../models/app.constants";
 import { LanguageService } from "../services/language.service";
 import * as STORE_ACTIONS from './store.actions';
 import { StoreState } from "./store.state";
@@ -23,17 +23,19 @@ export class StoreEffects {
         this.languageService.getDeviceLanguage(),
         this.languageService.getLanguageFromStorage()
       ])).pipe(tap(([deviceLanguage, storageLanguage]) => {
+        const appDeviceIsAvailable = APP_CONSTANTS.AVAILABLE_LANGUAGES.includes(deviceLanguage);
+        const appLanguage = appDeviceIsAvailable ? deviceLanguage : APP_CONSTANTS.DEFAULT_APP_LANGUAGE;
         this.store.dispatch(STORE_ACTIONS.setLanguage({
           infoType: 'device',
-          value: deviceLanguage
+          value: appLanguage
         }));
         this.store.dispatch(STORE_ACTIONS.setLanguage({
           infoType: 'user',
-          value: storageLanguage
+          value: storageLanguage || appLanguage
         }));
         this.languageService.setLanguageInTranslate(storageLanguage ||  deviceLanguage);
         this.store.dispatch(STORE_ACTIONS.saveLanguageStorage({
-          language: storageLanguage || deviceLanguage
+          language: storageLanguage || appLanguage
         }));
       }))
     )),
@@ -45,7 +47,7 @@ export class StoreEffects {
     switchMap(action => from(this.languageService.setLanguageInStorage(action.language))
       .pipe(tap(() => {
         this.store.dispatch(STORE_ACTIONS.initItemReady({
-          key: APP_LANGUAGE_KEY
+          key: APP_CONSTANTS.APP_LANGUAGE_KEY
         }));
       }))
     )),
