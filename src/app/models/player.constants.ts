@@ -1,0 +1,4 @@
+export enum OPTIONS_MENU {
+  DELETE_PLAYER = 1,
+  RESET_SCORES = 2
+}

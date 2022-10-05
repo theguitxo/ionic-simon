@@ -7,7 +7,9 @@ export enum PLAYER_ACTIONS {
   SAVE_NEW_PLAYER = '[PLAYER ACTIONS] Save new player',
   SET_PLAYERS_LIST = '[PLAYER ACTIONS] Set players list',
   SET_CURRENT_PLAYER = '[PLAYER ACTIONS] Set current player',
-  SAVE_CURRENT_PLAYER = '[PLAYER ACTIONS] Save current player'
+  SAVE_CURRENT_PLAYER = '[PLAYER ACTIONS] Save current player',
+  SHOW_PLAYER_MENU = '[PLAYER ACTIONS] Show player menu',
+  RESET_PLAYER_MENU = '[PLAYER ACTIONS] Reset player menu'
 }
 
 /**
@@ -53,4 +55,15 @@ export const saveCurrentPlayer = createAction (
   props<{
     currentPlayer: string
   }>()
+);
+
+export const showPlayerMenu = createAction (
+  PLAYER_ACTIONS.SHOW_PLAYER_MENU,
+  props<{
+    player: Player
+  }>()
+);
+
+export const resetPlayerMenu = createAction (
+  PLAYER_ACTIONS.RESET_PLAYER_MENU
 );

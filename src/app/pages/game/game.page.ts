@@ -142,7 +142,7 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
       setTimeout(() => {
         this.colorPlaying = data.colorCodePlaying;
         this.audio.src = data.soundPath;
-      }, data.index > 0 ? 0 : 1000);
+      }, data.index > 0 ? 500 : 1000);
     }
   }
 
