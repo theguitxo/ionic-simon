@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { COLOR_CODES, CurrentColorPlay } from "src/app/models/game.model";
+import { COLOR_CODES, CurrentColorPlay } from "src/app/models/game/game.model";
 import { GameState } from "./game.state";
 
 export const gameState = createFeatureSelector<GameState>('game');

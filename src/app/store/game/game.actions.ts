@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { COLOR_CODES } from "src/app/models/game.model";
+import { COLOR_CODES } from "src/app/models/game/game.model";
 
 export enum GAME_ACTIONS {
   INIT_GAME = '[GAME ACTIONS] Init game',

@@ -1,25 +1,25 @@
-import { APP_LANGUAGE_KEY, APP_PLAYERS_KEY, APP_SCORES_KEY, DEFAULT_TOAST_DURATION } from "../models/app.constants";
-import { AppAlertOptions, AppToastOptions } from "../models/app.models";
+import * as APP_CONSTANTS from "../../models/app/app.constants";
+import * as APP_MODELS from "../../models/app/app.models";
 
-export interface StoreState {
+export interface AppState {
   deviceLanguage?: string;
   userLanguage?: string;
-  toastOptions: AppToastOptions;
+  toastOptions: APP_MODELS.AppToastOptions;
   itemsReady: Map<string, boolean>;
-  alertOptions: AppAlertOptions,
+  alertOptions: APP_MODELS.AppAlertOptions,
   redirectTo: string;
 }
 
-export const initialState: StoreState = {
+export const initialState: AppState = {
   toastOptions: {
     showToast: false,
-    toastDuration: DEFAULT_TOAST_DURATION,
+    toastDuration: APP_CONSTANTS.DEFAULT_TOAST_DURATION,
     toastMessage: ''
   },
   itemsReady: new Map()
-    .set(APP_LANGUAGE_KEY, false)
-    .set(APP_PLAYERS_KEY, false)
-    .set(APP_SCORES_KEY, false),
+    .set(APP_CONSTANTS.APP_LANGUAGE_KEY, false)
+    .set(APP_CONSTANTS.APP_PLAYERS_KEY, false)
+    .set(APP_CONSTANTS.APP_SCORES_KEY, false),
   alertOptions: {
     showAlert: false,
     text: '',

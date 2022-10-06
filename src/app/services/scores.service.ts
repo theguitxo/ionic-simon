@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { APP_SCORES_KEY } from "../models/app.constants";
-import { ScoreRecord } from "../models/scores.model";
+import { APP_SCORES_KEY } from "../models/app/app.constants";
+import { ScoreRecord } from "../models/scores/scores.model";
 import { StorageService } from "./storage.service";
 
 @Injectable({

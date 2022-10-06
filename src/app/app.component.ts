@@ -2,15 +2,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AlertButton, AlertController, ToastController } from '@ionic/angular';
 import { Store } from '@ngrx/store';
 import { BehaviorSubject, Subscription } from 'rxjs';
-import { AppAlertOptions, AppToastOptions } from './models/app.models';
-import { resetToast } from './store/store.actions';
-import { StoreState } from './store/store.state';
 import { StorageService } from './services/storage.service';
 import { Router } from '@angular/router';
-import * as APP_ACTIONS from './store/store.actions';
+import { AppState } from './store/app/app.state';
+import * as APP_MODELS from './models/app/app.models';
+import * as APP_ACTIONS from './store/app/app.actions';
+import * as APP_SELECTORS from './store/app/app.selectors';
 import * as PLAYERS_ACTIONS from './store/players/players.actions';
 import * as SCORES_ACTIONS from './store/scores/scores.actions';
-import * as APP_SELECTORS from './store/store.selectors';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
   appIsReady$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(
-    private readonly store: Store<StoreState>,
+    private readonly store: Store<AppState>,
     public toastController: ToastController,
     private readonly alertController: AlertController,
     private readonly storageService: StorageService,
@@ -39,7 +38,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private initSubscriptions(): void {
     this.subscriptions.add(
-      this.store.select(APP_SELECTORS.getToastOptions).subscribe((data: AppToastOptions) => {
+      this.store.select(APP_SELECTORS.getToastOptions).subscribe((data: APP_MODELS.AppToastOptions) => {
         if (data.showToast) {
           this.showToast(data.toastMessage, data.toastDuration);
         }
@@ -47,7 +46,7 @@ export class AppComponent implements OnInit, OnDestroy {
     );
 
     this.subscriptions.add(
-      this.store.select(APP_SELECTORS.getAlertOptions).subscribe((data: AppAlertOptions) => {
+      this.store.select(APP_SELECTORS.getAlertOptions).subscribe((data: APP_MODELS.AppAlertOptions) => {
         if (data.showAlert) {
           this.showAlert(data);
         }
@@ -90,10 +89,10 @@ export class AppComponent implements OnInit, OnDestroy {
       duration
     });
     toast.present();
-    this.store.dispatch(resetToast());
+    this.store.dispatch(APP_ACTIONS.resetToast());
   }
 
-  private async showAlert(data: AppAlertOptions): Promise<void> {
+  private async showAlert(data: APP_MODELS.AppAlertOptions): Promise<void> {
     const buttons: AlertButton[] = [];
     if (data.showAccept) {
       buttons.push({

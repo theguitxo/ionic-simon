@@ -1,10 +1,10 @@
 import { DatePipe } from "@angular/common";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { PlayerList } from "../../models/player.model";
-import { ScoreRecord, ScoresInfo, ScoresListItem } from "../../models/scores.model";
-import { getCurrentPlayerId, getCurrentPlayerName, getPlayers } from "../players/players.selectors";
-import { getUserLanguage } from "../store.selectors";
 import { ScoreState } from "./scores.state";
+import * as PLAYER_MODEL from "../../models/player/player.model";
+import * as SCORES_MODEL from "../../models/scores/scores.model";
+import * as PLAYERS_SELECTORS from "../players/players.selectors";
+import * as APP_SELECTORS from "../app/app.selectors";
 
 export const scoresState = createFeatureSelector<ScoreState>('scores');
 
@@ -15,13 +15,13 @@ export const getHasScores = createSelector(
 
 export const getScores = createSelector(
   scoresState,
-  (state: ScoreState): ScoreRecord[] => state?.scores
+  (state: ScoreState): SCORES_MODEL.ScoreRecord[] => state?.scores
 );
 
 export const getNewScoreInfo = createSelector(
-  getCurrentPlayerId,
+  PLAYERS_SELECTORS.getCurrentPlayerId,
   getScores,
-  (playerId: string, scores: ScoreRecord[]): ScoresInfo => ({
+  (playerId: string, scores: SCORES_MODEL.ScoreRecord[]): SCORES_MODEL.ScoresInfo => ({
     playerId,
     scores
   })
@@ -29,9 +29,9 @@ export const getNewScoreInfo = createSelector(
 
 export const getScoresList = createSelector (
   getScores,
-  getPlayers,
-  getUserLanguage,
-  (scores: ScoreRecord[], players: PlayerList[], userLanguage: string): ScoresListItem[] => {
+  PLAYERS_SELECTORS.getPlayers,
+  APP_SELECTORS.getUserLanguage,
+  (scores: SCORES_MODEL.ScoreRecord[], players: PLAYER_MODEL.PlayerList[], userLanguage: string): SCORES_MODEL.ScoresListItem[] => {
     const scorePlayersIds = Array.from(new Set(scores.map(i => i.player)));
     return scorePlayersIds.map(id => 
       getScoreListItem(
@@ -41,16 +41,16 @@ export const getScoresList = createSelector (
         userLanguage,
         5
       )
-    )?.sort((a: ScoresListItem, b: ScoresListItem) => a.totalScore > b.totalScore ? -1 : 1);
+    )?.sort((a: SCORES_MODEL.ScoresListItem, b: SCORES_MODEL.ScoresListItem) => a.totalScore > b.totalScore ? -1 : 1);
   }
 );
 
 export const getScoresCurrentPlayer = createSelector (
   getScores,
-  getCurrentPlayerId,
-  getCurrentPlayerName,
-  getUserLanguage,
-  (scores: ScoreRecord[], currentPlayerId: string, currentPlayerName: string, userLanguage: string): ScoresListItem => {
+  PLAYERS_SELECTORS.getCurrentPlayerId,
+  PLAYERS_SELECTORS.getCurrentPlayerName,
+  APP_SELECTORS.getUserLanguage,
+  (scores: SCORES_MODEL.ScoreRecord[], currentPlayerId: string, currentPlayerName: string, userLanguage: string): SCORES_MODEL.ScoresListItem => {
     return {
       player: currentPlayerId,
       playerName: currentPlayerName,
@@ -62,17 +62,17 @@ export const getScoresCurrentPlayer = createSelector (
 
 export const getCurrentPlayerHasScores = createSelector (
   getScores,
-  getCurrentPlayerId,
-  (scores: ScoreRecord[], currentPlayerId: string): boolean => scores?.filter(i => i.player === currentPlayerId)?.length > 0
+  PLAYERS_SELECTORS.getCurrentPlayerId,
+  (scores: SCORES_MODEL.ScoreRecord[], currentPlayerId: string): boolean => scores?.filter(i => i.player === currentPlayerId)?.length > 0
 );
 
 export const getOtherPlayersHaveScores = createSelector (
   getScores,
-  getCurrentPlayerId,
-  (scores: ScoreRecord[], currentPlayerId: string): boolean => scores?.filter(i => i.player !== currentPlayerId)?.length > 0
+  PLAYERS_SELECTORS.getCurrentPlayerId,
+  (scores: SCORES_MODEL.ScoreRecord[], currentPlayerId: string): boolean => scores?.filter(i => i.player !== currentPlayerId)?.length > 0
 );
 
-function getScoreListItem(scores: ScoreRecord[], playerId: string, playerName: string, userLanguage: string, scoresNumItems: number): ScoresListItem {
+function getScoreListItem(scores: SCORES_MODEL.ScoreRecord[], playerId: string, playerName: string, userLanguage: string, scoresNumItems: number): SCORES_MODEL.ScoresListItem {
   return {
     player: playerId,
     playerName: playerName,
@@ -81,13 +81,13 @@ function getScoreListItem(scores: ScoreRecord[], playerId: string, playerName: s
   };
 }
 
-function getPlayerTotalScore(scores: ScoreRecord[], id: string): number {
+function getPlayerTotalScore(scores: SCORES_MODEL.ScoreRecord[], id: string): number {
   return scores.filter(i => i.player === id)?.
     map(n => n.score)?.
     reduce((previous, current) => previous + current, 0);
 }
 
-function getPlayerLastScores(scores: ScoreRecord[], id: string, userLanguage: string, items: number): ScoreRecord[] {
+function getPlayerLastScores(scores: SCORES_MODEL.ScoreRecord[], id: string, userLanguage: string, items: number): SCORES_MODEL.ScoreRecord[] {
   return scores.filter(i => i.player === id)?.
     map(s => ({
       ...s,

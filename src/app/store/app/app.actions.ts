@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { AppAlertOptions, languageTypeInfo } from "../models/app.models";
+import { AppAlertOptions, languageTypeInfo } from "../../models/app/app.models";
 
 export enum ACTIONS {
   SHOW_TOAST = '[APP] Show toast',

@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import { ScoreRecord } from "src/app/models/scores.model";
+import { ScoreRecord } from "src/app/models/scores/scores.model";
 import { scoresInitialState, ScoreState } from "./scores.state";
 import * as SCORES_ACTIONS from '../scores/scores.actions';
 

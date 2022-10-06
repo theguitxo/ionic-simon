@@ -1,4 +1,4 @@
-import { COLOR_CODES } from "src/app/models/game.model";
+import { COLOR_CODES } from "src/app/models/game/game.model";
 
 export interface GameState {
   buttonsBlocked: boolean;

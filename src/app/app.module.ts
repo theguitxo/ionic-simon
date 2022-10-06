@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
-import { storeReducer } from './store/store.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { playersReducer } from './store/players/players.reducer';
@@ -21,13 +18,14 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { StorageService } from './services/storage.service';
 import { Drivers } from '@ionic/storage';
 import { LanguageService } from './services/language.service';
-import { StoreEffects } from './store/store.effects';
 import { scoresReducer } from './store/scores/scores.reducer';
 import { ScoresEffects } from './store/scores/scores.effects';
+import { gameReducer } from './store/game/game.reducers';
+import { appReducer } from './store/app/app.reducer';
+import { AppEffects } from './store/app/app.effects';
 
 import '@angular/common/locales/global/es';
 import '@angular/common/locales/global/en';
-import { gameReducer } from './store/game/game.reducers';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -51,7 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       router: routerReducer,
       players: playersReducer,
       scores: scoresReducer,
-      store: storeReducer,
+      app: appReducer,
       game: gameReducer
     }),
     StoreRouterConnectingModule.forRoot(),
@@ -61,7 +59,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       autoPause: true
     }),
     EffectsModule.forRoot([
-      StoreEffects,
+      AppEffects,
       PlayersEffects,
       ScoresEffects
     ]),

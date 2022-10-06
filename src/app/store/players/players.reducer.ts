@@ -1,8 +1,8 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { playersInitialState, PlayersState } from "./players.state";
 import * as ACTIONS from "./players.actions";
-import { Player } from '../../models/player.model';
-import * as PLAYER_CONSTANTS from '../../models/player.constants';
+import * as PLAYER_MODEL from '../../models/player/player.model';
+import * as PLAYER_CONSTANTS from '../../models/player/player.constants';
 
 const _playersRecuder = createReducer (
   playersInitialState,
@@ -15,7 +15,7 @@ export function playersReducer(state: PlayersState | undefined, action: Action):
   return _playersRecuder(state, action);
 }
 
-export function _setPlayersList(state: PlayersState, players: Player[]): PlayersState {
+export function _setPlayersList(state: PlayersState, players: PLAYER_MODEL.Player[]): PlayersState {
   return {
     ...state,
     players
@@ -29,7 +29,7 @@ export function _setCurrentPlayer(state: PlayersState, currentPlayer: string): P
   }
 }
 
-export function _showPlayerMenu(state: PlayersState, player: Player): PlayersState {
+export function _showPlayerMenu(state: PlayersState, player: PLAYER_MODEL.Player): PlayersState {
   return {
     ...state,
     showPlayerMenu: true,

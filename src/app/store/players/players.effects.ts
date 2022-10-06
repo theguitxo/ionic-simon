@@ -3,20 +3,20 @@ import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
 import { Store } from "@ngrx/store";
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 import { from, of } from "rxjs";
+import { TranslateService } from "@ngx-translate/core";
 import { PlayersService } from "../../services/players.service";
-import { StoreState } from "../store.state";
+import { AppState } from "../app/app.state";
 import * as PLAYERS_ACTIONS from './players.actions';
 import * as PLAYERS_SELECTORS from "./players.selectors";
-import * as APP_ACTIONS from "../store.actions";
-import { APP_PLAYERS_KEY } from "../../models/app.constants";
-import { TranslateService } from "@ngx-translate/core";
+import * as APP_ACTIONS from "../app/app.actions";
+import * as APP_CONSTANTS from "../../models/app/app.constants";
 
 @Injectable()
 export class PlayersEffects {
 
   constructor(
     private readonly action$: Actions,
-    private readonly store: Store<StoreState>,
+    private readonly store: Store<AppState>,
     private readonly playersService: PlayersService,
     private readonly translate: TranslateService
   ) {}
@@ -41,7 +41,7 @@ export class PlayersEffects {
           },
           {
             type: APP_ACTIONS.ACTIONS.INIT_ITEM_READY,
-            key: APP_PLAYERS_KEY
+            key: APP_CONSTANTS.APP_PLAYERS_KEY
           }
         ]))
       )

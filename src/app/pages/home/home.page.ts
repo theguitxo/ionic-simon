@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { StoreState } from '../../store/store.state';
+import { AppState } from '../../store/app/app.state';
 import * as PLAYERS_SELECTORS from '../../store/players/players.selectors';
 import * as SCORES_SELECTORS from '../../store/scores/scores.selectors';
 
@@ -17,7 +17,7 @@ export class HomePage implements OnInit {
   hasScores: Observable<boolean>;
 
   constructor(
-    private readonly store: Store<StoreState>
+    private readonly store: Store<AppState>
   ) {}
 
   ngOnInit(): void {

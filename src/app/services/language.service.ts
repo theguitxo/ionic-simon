@@ -2,11 +2,11 @@ import { Injectable } from "@angular/core";
 import { Device } from "@capacitor/device";
 import { Store } from "@ngrx/store";
 import { TranslateService } from "@ngx-translate/core";
-import { APP_LANGUAGE_KEY, DEFAULT_APP_LANGUAGE } from "../models/app.constants";
-import { languageTypeInfo } from "../models/app.models";
-import { setLanguage } from "../store/store.actions";
-import { StoreState } from "../store/store.state";
 import { StorageService } from "./storage.service";
+import { AppState } from "../store/app/app.state";
+import * as APP_CONSTANTS from "../models/app/app.constants";
+import * as APP_MODELS from "../models/app/app.models";
+import * as APP_ACTIONS from "../store/app/app.actions";
 
 @Injectable({
   providedIn: "root"
@@ -14,7 +14,7 @@ import { StorageService } from "./storage.service";
 export class LanguageService {
   constructor (
     private readonly storageService: StorageService,
-    private readonly store: Store<StoreState>,
+    private readonly store: Store<AppState>,
     private readonly translate: TranslateService
   ) {}
 
@@ -22,17 +22,17 @@ export class LanguageService {
     return new Promise((resolve) => {
       Device.getLanguageCode()
         .then(info => {
-          resolve(info?.value ?? DEFAULT_APP_LANGUAGE);
+          resolve(info?.value ?? APP_CONSTANTS.DEFAULT_APP_LANGUAGE);
         })
         .catch(_e => {
-          resolve(DEFAULT_APP_LANGUAGE);
+          resolve(APP_CONSTANTS.DEFAULT_APP_LANGUAGE);
         });
     });
   }
 
   getLanguageFromStorage(): Promise<string> {
     return new Promise((resolve) => {
-      this.storageService.get(APP_LANGUAGE_KEY)
+      this.storageService.get(APP_CONSTANTS.APP_LANGUAGE_KEY)
         .then((value: string) => {
           resolve(value);
         })
@@ -44,7 +44,7 @@ export class LanguageService {
 
   setLanguageInStorage(language: string): Promise<void> {
     return new Promise((resolve) => {
-      this.storageService.set(APP_LANGUAGE_KEY, language)
+      this.storageService.set(APP_CONSTANTS.APP_LANGUAGE_KEY, language)
         .then(() => {
           resolve();
         })
@@ -54,8 +54,8 @@ export class LanguageService {
     });
   }
 
-  setLanguageInStore(language: string, type: languageTypeInfo): void {
-    this.store.dispatch(setLanguage({
+  setLanguageInStore(language: string, type: APP_MODELS.languageTypeInfo): void {
+    this.store.dispatch(APP_ACTIONS.setLanguage({
       infoType: type,
       value: language
     }));

@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { ConfigLanguageItem, StateLanguages } from "../../models/app.models";
-import * as CONSTANTS from '../../models/app.constants';
-import { StoreState } from "../../store/store.state";
+import { ConfigLanguageItem, StateLanguages } from "../../models/app/app.models";
+import * as APP_CONSTANTS from '../../models/app/app.constants';
+import { AppState } from "../../store/app/app.state";
 import { Store } from "@ngrx/store";
-import { getLanguages } from "../../store/store.selectors";
+import { getLanguages } from "../../store/app/app.selectors";
 import { take } from "rxjs/operators";
 import { Subscription } from "rxjs";
 import { LanguageService } from "../../services/language.service";
@@ -18,7 +18,7 @@ export class SettingsPage implements OnInit, OnDestroy {
   deviceLanguage: string;
 
   constructor(
-    private readonly store: Store<StoreState>,
+    private readonly store: Store<AppState>,
     private readonly languageService: LanguageService
   ) {}
 
@@ -49,7 +49,7 @@ export class SettingsPage implements OnInit, OnDestroy {
     this.deviceLanguage = data.device;
     this.languageService.setLanguageInTranslate(data.user);
     this.languageService.setLanguageInStore(data.user, 'user');
-    this.languagesInfo = CONSTANTS.AVAILABLE_LANGUAGES.map(item => ({
+    this.languagesInfo = APP_CONSTANTS.AVAILABLE_LANGUAGES.map(item => ({
       code: item,
       selected: item === data.user
     }));

@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { Player, PlayerList } from "../../models/player.model";
+import { Player, PlayerList } from "../../models/player/player.model";
 import { PlayersState } from "./players.state";
 
 export const playersState = createFeatureSelector<PlayersState>('players');

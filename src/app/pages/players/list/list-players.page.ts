@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
-import { PlayerList } from "../../../models/player.model";
-import { StoreState } from "../../../store/store.state";
+import { PlayerList } from "../../../models/player/player.model";
+import { AppState } from "../../../store/app/app.state";
 import * as PLAYERS_SELECTORS from '../../../store/players/players.selectors';
 import * as PLAYERS_ACTIONS from '../../../store/players/players.actions';
 import { ActionSheetController } from "@ionic/angular";
@@ -15,7 +15,7 @@ export class ListPlayersPage implements OnInit {
   playersList$: Observable<PlayerList[]>;
 
   constructor(
-    private readonly store: Store<StoreState>,
+    private readonly store: Store<AppState>,
     private readonly actionSheetCtrl: ActionSheetController
   ) {}
 

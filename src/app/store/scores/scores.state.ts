@@ -1,4 +1,4 @@
-import { ScoreRecord } from "../../models/scores.model";
+import { ScoreRecord } from "../../models/scores/scores.model";
 
 
 export interface ScoreState {

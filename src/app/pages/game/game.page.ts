@@ -4,12 +4,12 @@ import { ViewDidEnter, ViewDidLeave } from '@ionic/angular';
 import { Store } from "@ngrx/store";
 import { Observable, Subscription } from "rxjs";
 import { take } from "rxjs/operators";
-import { StoreState } from "../../store/store.state";
+import { AppState } from "../../store/app/app.state";
 import * as GAME_ACTIONS from '../../store/game/game.actions';
 import * as GAME_SELECTORS from "../../store/game/game.selectors";
-import * as APP_ACTIONS from '../../store/store.actions';
+import * as APP_ACTIONS from '../../store/app/app.actions';
 import * as SCORE_ACTIONS from '../../store/scores/scores.actions';
-import * as GAME_MODEL from "../../models/game.model";
+import * as GAME_MODEL from "../../models/game/game.model";
 
 @Component({
   selector: 'app-game',
@@ -32,7 +32,7 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
   audio: HTMLAudioElement = new Audio();
 
   constructor(
-    private readonly store: Store<StoreState>,
+    private readonly store: Store<AppState>,
     private readonly translate: TranslateService
   ){}
 

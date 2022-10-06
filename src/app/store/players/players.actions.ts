@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Player } from "../../models/player.model";
+import { Player } from "../../models/player/player.model";
 
 export enum PLAYER_ACTIONS {
   GET_PLAYERS_STORAGE = '[PLAYER ACTIONS] Get players storage',

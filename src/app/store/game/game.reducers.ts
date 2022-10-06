@@ -1,7 +1,7 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { gameInitialState, GameState } from "./game.state";
 import * as ACTIONS from './game.actions';
-import { COLOR_CODES } from "../../models/game.model";
+import { COLOR_CODES } from "../../models/game/game.model";
 
 const colorCodes = Object.values(COLOR_CODES)?.filter(value => parseInt(<string>value));
 

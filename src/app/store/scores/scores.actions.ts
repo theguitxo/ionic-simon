@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { ScoreRecord } from "../../models/scores.model";
+import { ScoreRecord } from "../../models/scores/scores.model";
 
 export enum SCORES_ACTIONS {
   GET_SCORES_STORAGE = '[SCORES ACTIONS] Get scores storage',

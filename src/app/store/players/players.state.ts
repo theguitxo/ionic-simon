@@ -1,5 +1,5 @@
-import { OPTIONS_MENU } from "src/app/models/player.constants";
-import { Player } from "../../models/player.model";
+import { OPTIONS_MENU } from "src/app/models/player/player.constants";
+import { Player } from "../../models/player/player.model";
 
 export interface PlayersState {
   players: Array<Player>;

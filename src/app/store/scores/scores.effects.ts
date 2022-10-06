@@ -3,12 +3,12 @@ import { Actions, concatLatestFrom, createEffect, ofType } from "@ngrx/effects";
 import { Store } from "@ngrx/store";
 import { from } from "rxjs";
 import { map, mergeMap, switchMap } from "rxjs/operators";
-import { ScoreRecord } from "src/app/models/scores.model";
+import { ScoreRecord } from "src/app/models/scores/scores.model";
 import { ScoresService } from "../../services/scores.service";
-import { StoreState } from "../store.state";
+import { AppState } from "../app/app.state";
 import * as SCORES_ACTIONS from './scores.actions';
-import * as APP_ACTIONS from "../store.actions";
-import { APP_SCORES_KEY } from "src/app/models/app.constants";
+import * as APP_ACTIONS from "../app/app.actions";
+import * as APP_CONSTANTS from "src/app/models/app/app.constants";
 import * as SCORES_SELECTORS from './scores.selectors';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -17,7 +17,7 @@ export class ScoresEffects {
 
   constructor(
     private readonly action$: Actions,
-    private readonly store: Store<StoreState>,
+    private readonly store: Store<AppState>,
     private readonly scoresService: ScoresService
   ) {}
 
@@ -34,7 +34,7 @@ export class ScoresEffects {
         },
         {
           type: APP_ACTIONS.ACTIONS.INIT_ITEM_READY,
-          key: APP_SCORES_KEY
+          key: APP_CONSTANTS.APP_SCORES_KEY
         }
       ]))
     ))
