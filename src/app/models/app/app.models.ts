@@ -20,7 +20,32 @@ export interface AppAlertOptions {
   additionalCancelActions?: Action[]
 }
 
-export type languageTypeInfo = 'device' | 'user' | 'both';
+export interface AppActionSheetButton {
+  text: string;
+  actions: Action[];
+  confirm?: AppActionSheetConfirm;
+}
+
+export interface AppActionSheetConfirm {
+  useConfirm?: boolean;
+  confirmText?: string;
+  redirectOnConfirm?: boolean;
+  redirectOnCancel?: boolean;
+  acceptText?: string;
+  cancelText?: string;
+}
+
+export interface AppActionSheetOptions {
+  showActionSheet?: boolean;
+  header?: string;
+  subHeader?: string;
+  buttons?: AppActionSheetButton[];
+}
+
+export interface AppActionSheetResponse {
+  actions?: Action[];
+  confirm?: AppActionSheetConfirm;
+}
 
 export interface ConfigLanguageItem {
   code: string;

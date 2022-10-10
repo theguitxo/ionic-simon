@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { AppState } from "../../store/app/app.state";
-import * as SCORES_MDOEL from "../../models/scores/scores.model";
+import * as SCORES_MDOEL from "../../models/scores/scores.models";
 import * as SCORES_SELECTORS from '../../store/scores/scores.selectors';
 
 @Component({

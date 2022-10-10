@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Player } from "../../models/player/player.model";
+import * as PLAYER_MODELS from "../../models/player/player.models";
 
 export enum PLAYER_ACTIONS {
   GET_PLAYERS_STORAGE = '[PLAYER ACTIONS] Get players storage',
@@ -8,8 +8,8 @@ export enum PLAYER_ACTIONS {
   SET_PLAYERS_LIST = '[PLAYER ACTIONS] Set players list',
   SET_CURRENT_PLAYER = '[PLAYER ACTIONS] Set current player',
   SAVE_CURRENT_PLAYER = '[PLAYER ACTIONS] Save current player',
-  SHOW_PLAYER_MENU = '[PLAYER ACTIONS] Show player menu',
-  RESET_PLAYER_MENU = '[PLAYER ACTIONS] Reset player menu'
+  REMOVE_PLAYER = '[PLAYER ACTIONS] Remove player',
+  CHANGE_CURRENT_PLAYER = '[PLAYER ACTIONS] Change current player'
 }
 
 /**
@@ -25,21 +25,21 @@ export const getPlayersStorage = createAction (
 export const newPlayer = createAction (
   PLAYER_ACTIONS.NEW_PLAYER,
   props<{
-    player: Player
+    player: PLAYER_MODELS.Player
   }>()
 );
 
 export const saveNewPlayer = createAction (
   PLAYER_ACTIONS.SAVE_NEW_PLAYER,
   props<{
-    player: Player
+    player: PLAYER_MODELS.Player
   }>()
 );
 
 export const setPlayersList = createAction (
   PLAYER_ACTIONS.SET_PLAYERS_LIST,
   props<{
-    players: Player[]
+    players: PLAYER_MODELS.Player[]
   }>()
 );
 
@@ -57,13 +57,16 @@ export const saveCurrentPlayer = createAction (
   }>()
 );
 
-export const showPlayerMenu = createAction (
-  PLAYER_ACTIONS.SHOW_PLAYER_MENU,
+export const removePlayer = createAction (
+  PLAYER_ACTIONS.REMOVE_PLAYER,
   props<{
-    player: Player
+    player: PLAYER_MODELS.Player
   }>()
 );
 
-export const resetPlayerMenu = createAction (
-  PLAYER_ACTIONS.RESET_PLAYER_MENU
+export const changeCurrentPlayer = createAction (
+  PLAYER_ACTIONS.CHANGE_CURRENT_PLAYER,
+  props<{
+    player: PLAYER_MODELS.Player
+  }>()
 );

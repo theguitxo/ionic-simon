@@ -1,17 +1,17 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { AppAlertOptions, AppToastOptions, StateLanguages } from '../../models/app/app.models';
 import { AppState } from './app.state';
+import * as APP_MODELS from '../../models/app/app.models';
 
 export const appState = createFeatureSelector<AppState>('app');
 
 export const getToastOptions = createSelector(
   appState,
-  (state: AppState): AppToastOptions => state?.toastOptions
+  (state: AppState): APP_MODELS.AppToastOptions => state?.toastOptions
 );
 
 export const getLanguages = createSelector(
   appState,
-  (state: AppState): StateLanguages => ({
+  (state: AppState): APP_MODELS.StateLanguages => ({
     user: state?.userLanguage,
     device: state?.deviceLanguage
   })
@@ -37,5 +37,10 @@ export const getRedirectTo = createSelector(
 
 export const getAlertOptions = createSelector(
   appState,
-  (state: AppState): AppAlertOptions => state?.alertOptions
+  (state: AppState): APP_MODELS.AppAlertOptions => state?.alertOptions
+);
+
+export const getActionSheetOptions = createSelector (
+  appState,
+  (state: AppState): APP_MODELS.AppActionSheetOptions => state?.actionSheetOptions
 );

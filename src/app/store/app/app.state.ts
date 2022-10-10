@@ -6,7 +6,8 @@ export interface AppState {
   userLanguage?: string;
   toastOptions: APP_MODELS.AppToastOptions;
   itemsReady: Map<string, boolean>;
-  alertOptions: APP_MODELS.AppAlertOptions,
+  alertOptions: APP_MODELS.AppAlertOptions;
+  actionSheetOptions: APP_MODELS.AppActionSheetOptions;
   redirectTo: string;
 }
 
@@ -33,5 +34,6 @@ export const initialState: AppState = {
     additionalAcceptActions: [],
     additionalCancelActions: []
   },
+  actionSheetOptions: {},
   redirectTo: ''
 };

@@ -1,5 +1,6 @@
 import { createAction, props } from "@ngrx/store";
-import { AppAlertOptions, languageTypeInfo } from "../../models/app/app.models";
+import * as APP_MODELS from "../../models/app/app.models";
+import * as APP_CONSTANTS from '../../models/app/app.constants';
 
 export enum ACTIONS {
   SHOW_TOAST = '[APP] Show toast',
@@ -10,7 +11,9 @@ export enum ACTIONS {
   SET_LANGUAGE = '[APP] Set language',
   SAVE_LANGUAGE_STORAGE = '[APP] Save language storage',
   INIT_ITEM_READY = '[APP] Init item ready',
-  SET_REDIRECT_TO = '[APP] Set redirect to'
+  SET_REDIRECT_TO = '[APP] Set redirect to',
+  SHOW_ACTION_SHEET = '[APP] Show action sheet',
+  RESET_ACTION_SHEET = '[APP] Reset action sheet'
 }
 
 export const showToast = createAction (
@@ -28,7 +31,7 @@ export const resetToast = createAction (
 export const showAlert = createAction (
   ACTIONS.SHOW_ALERT,
   props<{
-    options: AppAlertOptions
+    options: APP_MODELS.AppAlertOptions
   }>()
 );
 
@@ -39,7 +42,7 @@ export const resetAlert = createAction (
 export const setLanguage = createAction (
   ACTIONS.SET_LANGUAGE,
   props<{
-    infoType: languageTypeInfo,
+    infoType: APP_CONSTANTS.languageTypeInfo,
     value: string
   }>()
 );
@@ -67,4 +70,15 @@ export const setRedirectTo = createAction (
   props<{
     route: string
   }>()
+);
+
+export const showActionSheet = createAction (
+  ACTIONS.SHOW_ACTION_SHEET,
+  props<{
+    options: APP_MODELS.AppActionSheetOptions
+  }>()
+);
+
+export const resetActionSheet = createAction (
+  ACTIONS.RESET_ACTION_SHEET
 );

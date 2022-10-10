@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
 import { Actions, concatLatestFrom, createEffect, ofType } from '@ngrx/effects';
-import { Store } from "@ngrx/store";
+import { Action, Store } from "@ngrx/store";
 import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
 import { from, of } from "rxjs";
 import { TranslateService } from "@ngx-translate/core";
 import { PlayersService } from "../../services/players.service";
 import { AppState } from "../app/app.state";
+import * as PLAYER_MODELS from '../../models/player/player.models';
 import * as PLAYERS_ACTIONS from './players.actions';
 import * as PLAYERS_SELECTORS from "./players.selectors";
 import * as APP_ACTIONS from "../app/app.actions";
@@ -66,42 +67,58 @@ export class PlayersEffects {
     )
   );
 
-  saveNewPlayer$ = createEffect(() => this.action$.pipe(
-    ofType(PLAYERS_ACTIONS.saveNewPlayer),
+  saveNewPlayerChangeCurrent$ = createEffect(() => this.action$.pipe(
+    ofType(PLAYERS_ACTIONS.saveNewPlayer, PLAYERS_ACTIONS.changeCurrentPlayer),
     concatLatestFrom(() => this.store.select(PLAYERS_SELECTORS.getPlayers)),
-    switchMap(([action, players]) => from(
+    switchMap(([action, players]) => {
+      const isNewPlayer = action.type.toString() === PLAYERS_ACTIONS.PLAYER_ACTIONS.NEW_PLAYER;
+      let newPlayersList: PLAYER_MODELS.Player[];
+      if (isNewPlayer) {
+        newPlayersList = [...players, action.player];
+      } else {
+        newPlayersList = players.map(player => ({
+          ...player,
+          isCurrent: player.id === action.player.id
+        }));
+      }
+      return from(
         Promise.all([
-          this.playersService.setPlayersInStorage([...players, action.player]),
+          this.playersService.setPlayersInStorage(newPlayersList),
           this.playersService.setCurrentPlayerInStorage(action.player.id)
         ])
       ).pipe(
-        mergeMap(() => [
-          {
+        mergeMap(() => {
+          const actions = [];
+          actions.push({
             type: PLAYERS_ACTIONS.PLAYER_ACTIONS.SET_PLAYERS_LIST,
-            players: [
-              ...players,
-              action.player
-            ]
-          },
-          {
+            players: newPlayersList
+          });
+          actions.push({
             type: PLAYERS_ACTIONS.PLAYER_ACTIONS.SET_CURRENT_PLAYER,
             currentPlayer: action.player.id
-          },
-          {
-            type: APP_ACTIONS.ACTIONS.SHOW_ALERT,
-            options: {
-              showAlert: true,
-              text: this.translate.instant('player.messages.newCreated'),
-              resetOnClose: true,
-              showAccept: true,
-              AcceptText: this.translate.instant('buttons.ok'),
-              redirectOnAccept: true
-            }
+          });
+          if (isNewPlayer) {
+            actions.push({
+              type: APP_ACTIONS.ACTIONS.SHOW_ALERT,
+              options: {
+                showAlert: true,
+                text: this.translate.instant('player.messages.newCreated'),
+                resetOnClose: true,
+                showAccept: true,
+                AcceptText: this.translate.instant('buttons.ok'),
+                redirectOnAccept: true
+              }
+            })
           }
-        ]),
-        catchError(() => of(APP_ACTIONS.showToast({ message: this.translate.instant('player.errors.savingPlayer') })))
+          return actions;
+        }),
+        catchError(() => of(APP_ACTIONS.showToast({
+          message: isNewPlayer ?
+          this.translate.instant('player.errors.savingPlayer'):
+          this.translate.instant('player.errors.changeCurrent')
+        })))
       )
-    ))
+    }))
   );
 
   saveCurrentPlayer$ = createEffect(() => this.action$.pipe(
@@ -121,5 +138,34 @@ export class PlayersEffects {
         catchError(() => of(APP_ACTIONS.showToast({ message: this.translate.instant('player.errors.savingCurrentPlayer') })))
       )
     )
+  ));
+
+  removePlayer$ = createEffect(() => this.action$.pipe(
+    ofType(PLAYERS_ACTIONS.removePlayer),
+    concatLatestFrom(() => this.store.select(PLAYERS_SELECTORS.getPlayers)),
+    switchMap(([action, players]) => {
+      const newPlayersList = players?.filter(player => player.id !== action.player.id);
+      return from(this.playersService.setPlayersInStorage([...newPlayersList]))
+        .pipe(
+          mergeMap(() => [
+            {
+              type: PLAYERS_ACTIONS.PLAYER_ACTIONS.SET_PLAYERS_LIST,
+              players: [...newPlayersList]
+            },
+            {
+              type: APP_ACTIONS.ACTIONS.SHOW_ALERT,
+              options: {
+                showAlert: true,
+                text: this.translate.instant('player.messages.playerRemoved', { name: action.player.name }),
+                resetOnClose: true,
+                showAccept: true,
+                AcceptText: this.translate.instant('buttons.ok'),
+                redirectOnAccept: true
+              }
+            }
+          ]),
+          catchError(() => of(APP_ACTIONS.showToast({ message: this.translate.instant('player.errors.savingPlayer') })))
+        )
+    })
   ));
 }

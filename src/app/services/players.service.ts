@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { APP_CURRENT_PLAYER_KEY, APP_PLAYERS_KEY } from '../models/app/app.constants';
-import { Player } from '../models/player/player.model';
+import { Player } from '../models/player/player.models';
 import { StorageService } from './storage.service';
 
 @Injectable({

@@ -5,6 +5,9 @@
     "ok": "OK",
     "yes": "Yes"
   },
+  "common": {
+    "options": "Options"
+  },  
   "game": {
     "confirmStopGame": "Do you want to stop the game?.<br>core: {{score}}",
     "game": "Game",
@@ -38,24 +41,35 @@
     "currentPlayer": "Current player: {{name}}",
     "currentPlayerNoName": "Current player",
     "errors": {
+      "changeCurrent": "Error changing to current player",
       "userExists": "Player {{player}} already exists",
       "savingPlayer": "Error saving the new player",
-      "savingCurrentPlayer": "Error saving current player"
+      "savingCurrentPlayer": "Error saving current player",
+      "removingPlayer": "Error removing the player"
     },
     "formFields": {
       "name": "Name"
     },
     "messages": {
-      "newCreated": "New player created"
+      "newCreated": "New player created",
+      "playerRemoved": "Player {{name}} removed",
+      "confirmRemovePlayer": "Remove player {{name}}?"
     },
     "newPlayer": "New player",
+    "options": {
+      "removePlayer": "Remove player",
+      "setCurrent": "Set as current player"
+    },    
     "otherPlayers": "Other players",
     "players": "Players",
     "select": "Select"
   },
   "scores": {
     "latest": "Latest {{scores}} scores",
-    "scores": "Scores"
+    "scores": "Scores",
+    "errors": {
+      "removingScores": "Error removing the scores"
+    }
   },
   "settings": {
     "settings": "Settings"

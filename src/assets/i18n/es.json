@@ -5,6 +5,9 @@
     "ok": "OK",
     "yes": "Si"
   },
+  "common": {
+    "options": "Opciones"
+  },
   "game": {
     "confirmStopGame": "¿Quieres detener la partida?",
     "game": "Juego",
@@ -38,24 +41,35 @@
     "currentPlayer": "Jugador actual: {{name}}",
     "currentPlayerNoName": "Jugador actual",
     "errors": {
+      "changeCurrent": "Error al cambiar a jugador actual",
       "userExists": "El jugador {{player}} ya existe",
       "savingPlayer": "Error guardando el nuevo jugador",
-      "savingCurrentPlayer": "Error guardando el jugador actual"
+      "savingCurrentPlayer": "Error guardando el jugador actual",
+      "removingPlayer": "Error eliminando el jugador"
     },
     "formFields": {
       "name": "Nombre"
     },
     "messages": {
-      "newCreated": "Creado nuevo jugador"
+      "newCreated": "Creado nuevo jugador",
+      "playerRemoved": "Jugador {{name}} eliminado",
+      "confirmRemovePlayer": "¿Eliminar el jugador {{name}}?"
     },
     "newPlayer": "Nuevo jugador",
+    "options": {
+      "removePlayer": "Eliminar jugador",
+      "setCurrent": "Cambiar a jugador actual"
+    },
     "otherPlayers": "Otros jugadores",
     "players": "Jugadores",
     "select": "Seleccionar"
   },
   "scores": {
     "latest": "Ultimos {{scores}} puntuaciones",
-    "scores": "Puntuaciones"
+    "scores": "Puntuaciones",
+    "errors": {
+      "removingScores": "Error eliminando las puntuaciones"
+    }
   },
   "settings": {
     "settings": "Configuración"

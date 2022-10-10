@@ -5,7 +5,6 @@ import { TranslateService } from "@ngx-translate/core";
 import { StorageService } from "./storage.service";
 import { AppState } from "../store/app/app.state";
 import * as APP_CONSTANTS from "../models/app/app.constants";
-import * as APP_MODELS from "../models/app/app.models";
 import * as APP_ACTIONS from "../store/app/app.actions";
 
 @Injectable({
@@ -54,7 +53,7 @@ export class LanguageService {
     });
   }
 
-  setLanguageInStore(language: string, type: APP_MODELS.languageTypeInfo): void {
+  setLanguageInStore(language: string, type: APP_CONSTANTS.languageTypeInfo): void {
     this.store.dispatch(APP_ACTIONS.setLanguage({
       infoType: type,
       value: language

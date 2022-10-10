@@ -97,7 +97,7 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
     this.subscriptions.push(
       this.store
         .select(GAME_SELECTORS.getContinueGame)
-        .subscribe((value: boolean) => setTimeout(() =>this.canContinueGame(value), 1000))
+        .subscribe((value: boolean) => setTimeout(() =>this.canContinueGame(value), 500))
     );
 
     this.subscriptions.push(
@@ -142,7 +142,7 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
       setTimeout(() => {
         this.colorPlaying = data.colorCodePlaying;
         this.audio.src = data.soundPath;
-      }, data.index > 0 ? 500 : 1000);
+      }, data.index > 0 ? 250 : 500);
     }
   }
 
