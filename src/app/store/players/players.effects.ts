@@ -160,7 +160,7 @@ export class PlayersEffects {
                 resetOnClose: true,
                 showAccept: true,
                 AcceptText: this.translate.instant('buttons.ok'),
-                redirectOnAccept: true
+                redirectOnAccept: false
               }
             }
           ]),

@@ -84,6 +84,18 @@ export class ScoresEffects {
                 type: PLAYERS_ACTIONS.PLAYER_ACTIONS.REMOVE_PLAYER,
                 player: action.player
               });
+            } else {
+              actions.push({
+                type: APP_ACTIONS.ACTIONS.SHOW_ALERT,
+                options: {
+                  showAlert: true,
+                  text: this.translate.instant('scores.messages.scoresRemoved'),
+                  resetOnClose: true,
+                  showAccept: true,
+                  AcceptText: this.translate.instant('buttons.ok'),
+                  redirectOnAccept: false
+                }
+              });
             }
             return actions;
           }),

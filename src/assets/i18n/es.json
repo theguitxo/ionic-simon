@@ -58,6 +58,7 @@
     "newPlayer": "Nuevo jugador",
     "options": {
       "removePlayer": "Eliminar jugador",
+      "removePlayerScores": "Eliminar puntuaciones",
       "setCurrent": "Cambiar a jugador actual"
     },
     "otherPlayers": "Otros jugadores",
@@ -66,6 +67,9 @@
   },
   "scores": {
     "latest": "Ultimos {{scores}} puntuaciones",
+    "messages": {
+      "scoresRemoved": "Puntuaciones eliminadas"
+    },
     "scores": "Puntuaciones",
     "errors": {
       "removingScores": "Error eliminando las puntuaciones"

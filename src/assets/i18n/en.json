@@ -58,6 +58,7 @@
     "newPlayer": "New player",
     "options": {
       "removePlayer": "Remove player",
+      "removePlayerScores": "Remove scores",
       "setCurrent": "Set as current player"
     },    
     "otherPlayers": "Other players",
@@ -66,6 +67,9 @@
   },
   "scores": {
     "latest": "Latest {{scores}} scores",
+    "messages": {
+      "scoresRemoved": "Scores removed"
+    },
     "scores": "Scores",
     "errors": {
       "removingScores": "Error removing the scores"

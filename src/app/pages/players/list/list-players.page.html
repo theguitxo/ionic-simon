@@ -15,24 +15,18 @@
   <ion-list>
     <ion-item *ngFor="let player of playersList$ | async">
       <ion-label>{{ player.name }}</ion-label>
-      <ion-button
-        slot="end"
-        (click)="openOptionsMenu(player)">Open</ion-button>
-      <!-- <ion-label
-        *ngIf="player?.isCurrent"
-        color="secondary"
-        slot="end">
-        {{ 'player.current' | translate }}
-      </ion-label>
-      <ion-button
-        *ngIf="!player?.isCurrent"
-        slot="end"
-        fill="outline"
-        size="small"
-        shape="round"
-        (click)="setCurrentPlayer(player.id)">
-        {{ 'player.select' | translate }}
-      </ion-button> -->
+      <ng-container slot="end">
+        <ion-chip
+          class="current-pill"
+          *ngIf="player?.isCurrent"
+          [outline]="true"
+          color="primary">{{ 'player.current' | translate }}
+        </ion-chip>
+        <ion-button
+          fill="clear"
+          (click)="openOptionsMenu(player)">{{ 'common.options' | translate }}
+        </ion-button>
+      </ng-container>
     </ion-item>
   </ion-list>
 </ion-content>

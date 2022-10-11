@@ -12,7 +12,8 @@ import { AppActionSheetButton } from "src/app/models/app/app.models";
 
 @Component({
   selector: 'app-list-players',
-  templateUrl: './list-players.page.html'
+  templateUrl: './list-players.page.html',
+  styleUrls: ['./list-players.page.scss']
 })
 export class ListPlayersPage implements OnInit {
   playersList$: Observable<PLAYER_MODEL.PlayerList[]>;
@@ -60,6 +61,16 @@ export class ListPlayersPage implements OnInit {
         ]
       });
     }
+
+    buttons.push({
+      text: this.translate.instant('player.options.removePlayerScores'),
+      actions: [
+        SCORES_ACTIONS.removeScores({
+          player,
+          removePlayer: false
+        })
+      ]
+    });
 
     this.store.dispatch(APP_ACTIONS.showActionSheet({
       options: {

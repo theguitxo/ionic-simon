@@ -142,14 +142,14 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     const alert = await this.alertController.create({
       message: data.text,
-      buttons
+      buttons,
+      backdropDismiss: false
     });
 
     await alert.present();
   }
 
   private async showAlertSheet(options: APP_MODELS.AppActionSheetOptions): Promise<void> {
-    console.log(options);
     const actionSheet = await this.actionSheetCtrl.create({
       header: options.header,
       subHeader: options.subHeader,
