@@ -31,6 +31,8 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
 
   audio: HTMLAudioElement = new Audio();
 
+  gameMessage: Observable<string>;
+
   constructor(
     private readonly store: Store<AppState>,
     private readonly translate: TranslateService
@@ -87,6 +89,7 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
 
   private setSubscriptions(): void {
     this.gameStarted = this.store.select(GAME_SELECTORS.getGameStarted);
+    this.gameMessage = this.store.select(GAME_SELECTORS.getGameMessage);
 
     this.subscriptions.push(
       this.store

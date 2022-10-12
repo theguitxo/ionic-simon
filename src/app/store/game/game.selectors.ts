@@ -66,3 +66,8 @@ export const getAudioColorCodePlayerCheck = createSelector(
   getColorCodePlayerCheck,
   (state: GameState, colorCode: COLOR_CODES | null): string => state?.colorAudios?.get(colorCode)
 );
+
+export const getGameMessage = createSelector(
+  gameState,
+  (state: GameState): string => state?.gameMessage
+);

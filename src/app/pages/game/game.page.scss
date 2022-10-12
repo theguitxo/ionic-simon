@@ -34,10 +34,12 @@ $size-center: 9rem;
 
   &__messages {
     flex: 1 1 auto;
+    min-height: 2.75rem;
   }
 
   &__score {
     flex: 1 1 auto;
+    min-height: 2.75rem;
   }
 
   &__blue {

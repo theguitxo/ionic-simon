@@ -51,9 +51,11 @@
       "name": "Name"
     },
     "messages": {
+      "confirmRemovePlayer": "Remove player {{name}}?",
       "newCreated": "New player created",
       "playerRemoved": "Player {{name}} removed",
-      "confirmRemovePlayer": "Remove player {{name}}?"
+      "playingSequence": "Playing sequence",
+      "repeatSequence": "Repeat the sequence"
     },
     "newPlayer": "New player",
     "options": {

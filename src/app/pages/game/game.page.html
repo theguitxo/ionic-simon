@@ -59,10 +59,12 @@
       </ion-grid>
     </div>
     <div class="game__messages">
-      messages
+      {{ (gameMessage | async | translate) || '&nbsp;' }}
     </div>
-    <div class="game__score" *ngIf="gameStarted | async">
-      {{ 'game.score' | translate }}: {{ score }}
+    <div class="game__score">
+      <ng-container  *ngIf="gameStarted | async">
+        {{ 'game.score' | translate }}: {{ score }}
+      </ng-container>
     </div>
   </div>
 </ion-content>

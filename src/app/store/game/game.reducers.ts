@@ -68,16 +68,19 @@ function _startStopPlayingSequence(state: GameState, value: boolean): GameState 
   return {
     ...state,
     playingSequence: value,
-    indexPlayingSequence: 0
+    indexPlayingSequence: 0,
+    gameMessage: value ? 'player.messages.playingSequence' : ''
   };
 }
 
 function _nextPlayingSequence(state: GameState): GameState {
   const newIndex = state?.indexPlayingSequence + 1;
+  const stillItemsInSequence = state?.gameSequence[newIndex] !== undefined;
   return {
     ...state,
     indexPlayingSequence: state?.gameSequence[newIndex] ? newIndex : -1,
-    playingSequence: state?.gameSequence[newIndex] !== undefined
+    playingSequence: stillItemsInSequence,
+    gameMessage: (stillItemsInSequence && state.gameStarted) ? state.gameMessage : 'player.messages.repeatSequence'
   }
 }
 
@@ -107,6 +110,7 @@ function _checkPlayerAction(state: GameState): GameState {
     playerSequence: sequenceChecked ? [] : playerSequenceCheck,
     playerCodeCheck: null,
     buttonsBlocked: false,
-    sequenceChecked
+    sequenceChecked,
+    gameMessage: sequenceChecked ? '' : state.gameMessage
   };
 }
