@@ -36,7 +36,7 @@ export const getScore = createSelector(
 
 export const getContinueGame = createSelector(
   gameState,
-  (state: GameState): boolean => (state?.sequenceChecked && !state?.gameOver)
+  (state: GameState): boolean => (state?.sequenceChecked && !state?.gameOver && !state.gamePaused)
 );
 
 export const getColorCodePlayInSequence = createSelector (
@@ -70,4 +70,9 @@ export const getAudioColorCodePlayerCheck = createSelector(
 export const getGameMessage = createSelector(
   gameState,
   (state: GameState): string => state?.gameMessage
+);
+
+export const getDisableStopGameButton = createSelector(
+  gameState,
+  (state: GameState): boolean => (!state?.gameStarted || state?.buttonsBlocked || state?.sequenceChecked || state?.playingSequence)
 );

@@ -14,6 +14,7 @@ export interface GameState {
   score: number;
   sequenceChecked: boolean;
   gameMessage: string;
+  gamePaused: boolean;
 }
 
 export const gameInitialState: GameState = {
@@ -33,5 +34,6 @@ export const gameInitialState: GameState = {
   playingSequence: false,
   score: 0,
   sequenceChecked: false,
-  gameMessage: ''
+  gameMessage: '',
+  gamePaused: false
 };

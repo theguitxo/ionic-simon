@@ -49,7 +49,7 @@
               color="primary"
               expand="full"
               shape="round"
-              [disabled]="!(gameStarted | async) || playingSequence"
+              [disabled]="disableStopGameButton | async"
               (click)="stopGame()">
               <ion-icon slot="start" name="stop-outline"></ion-icon>
               <ng-container slot="end">{{ 'game.stop' | translate}}</ng-container>

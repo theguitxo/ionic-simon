@@ -10,7 +10,9 @@ export enum GAME_ACTIONS {
   NEXT_PLAYING_SEQUENCE = '[GAME ACTIONS] Next playing sequence',
   NEW_IN_SEQUENCE = '[GAME ACTIONS] New in sequence',
   START_PLAYER_ACTION = '[GAME ACTIONS] Start player action',
-  CHECK_PLAYER_ACTION = '[GAME ACTIONS] Check player action'
+  CHECK_PLAYER_ACTION = '[GAME ACTIONS] Check player action',
+  PAUSE_GAME = '[GAME ACTIONS] Pause game',
+  RESUME_GAME = '[GAME ACTONS] Resume game'
 }
 
 export const initGame = createAction (
@@ -50,4 +52,12 @@ export const startPlayerAction = createAction (
 
 export const checkPlayerAction = createAction (
   GAME_ACTIONS.CHECK_PLAYER_ACTION
+);
+
+export const pauseGame = createAction (
+  GAME_ACTIONS.PAUSE_GAME
+);
+
+export const resumeGame = createAction (
+  GAME_ACTIONS.RESUME_GAME
 );

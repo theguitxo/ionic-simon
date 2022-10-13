@@ -24,14 +24,14 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
 
   subscriptions: Subscription[] = [];
 
-  gameStarted: Observable<boolean>;
-  playingSequence: boolean;
   score: number;
   colorPlaying: GAME_MODEL.COLOR_CODES;
 
   audio: HTMLAudioElement = new Audio();
 
+  gameStarted: Observable<boolean>;
   gameMessage: Observable<string>;
+  disableStopGameButton: Observable<boolean>;
 
   constructor(
     private readonly store: Store<AppState>,
@@ -54,6 +54,7 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
   }
 
   stopGame(): void {
+    this.store.dispatch(GAME_ACTIONS.pauseGame());
     this.store.dispatch(APP_ACTIONS.showAlert({
       options: {
         showAlert: true,
@@ -63,9 +64,13 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
         AcceptText: this.translate.instant('buttons.yes'),
         CancelText: this.translate.instant('buttons.no'),
         additionalAcceptActions: [
+          GAME_ACTIONS.resumeGame(),
           SCORE_ACTIONS.newScore({ score: this.score }),
           GAME_ACTIONS.resetGameData(),
           GAME_ACTIONS.stopGame()
+        ],
+        additionalCancelActions: [
+          GAME_ACTIONS.resumeGame()
         ],
         redirectOnAccept: true,
         redirectOnCancel: false
@@ -90,12 +95,7 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
   private setSubscriptions(): void {
     this.gameStarted = this.store.select(GAME_SELECTORS.getGameStarted);
     this.gameMessage = this.store.select(GAME_SELECTORS.getGameMessage);
-
-    this.subscriptions.push(
-      this.store
-        .select(GAME_SELECTORS.getPlayingSequence)
-        .subscribe((value: boolean) => this.playingSequence = value)
-    );
+    this.disableStopGameButton = this.store.select(GAME_SELECTORS.getDisableStopGameButton);
 
     this.subscriptions.push(
       this.store
@@ -160,12 +160,17 @@ export class GamePage implements ViewDidEnter, ViewDidLeave {
   }
 
   private audioEnded(): void {
-    if (this.playingSequence) {
-      this.store.dispatch(GAME_ACTIONS.nextPlayingSequence());
-    } else {
-      this.store.dispatch(GAME_ACTIONS.checkPlayerAction());
-    }
-    this.colorPlaying = null;
+    this.store
+    .select(GAME_SELECTORS.getPlayingSequence)
+    .pipe(take(1))
+    .subscribe((value: boolean) => {
+      if (value) {
+        this.store.dispatch(GAME_ACTIONS.nextPlayingSequence());
+      } else {
+        this.store.dispatch(GAME_ACTIONS.checkPlayerAction());
+      }
+      this.colorPlaying = null;
+    });
   }
 
   private addAndPlaySequence(): void {

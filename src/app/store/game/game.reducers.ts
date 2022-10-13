@@ -15,7 +15,9 @@ const _gameReducer = createReducer (
   on(ACTIONS.stopPlayingSequence, (state: GameState) => ({..._startStopPlayingSequence(state, false)})),
   on(ACTIONS.nextPlayingSequence, (state: GameState) => ({..._nextPlayingSequence(state)})),
   on(ACTIONS.startPlayerAction, (state: GameState, {colorCode}) => ({..._startPlayerAction(state, colorCode)})),
-  on(ACTIONS.checkPlayerAction, (state: GameState) => ({..._checkPlayerAction(state)}))
+  on(ACTIONS.checkPlayerAction, (state: GameState) => ({..._checkPlayerAction(state)})),
+  on(ACTIONS.pauseGame, (state: GameState) => ({..._pauseGame(state)})),
+  on(ACTIONS.resumeGame, (state: GameState) => ({..._resumeGame(state)}))
 );
 
 export function gameReducer(state: GameState | undefined, action: Action): GameState {
@@ -69,7 +71,8 @@ function _startStopPlayingSequence(state: GameState, value: boolean): GameState 
     ...state,
     playingSequence: value,
     indexPlayingSequence: 0,
-    gameMessage: value ? 'player.messages.playingSequence' : ''
+    gameMessage: value ? 'player.messages.playingSequence' : '',
+    sequenceChecked: false
   };
 }
 
@@ -112,5 +115,19 @@ function _checkPlayerAction(state: GameState): GameState {
     buttonsBlocked: false,
     sequenceChecked,
     gameMessage: sequenceChecked ? '' : state.gameMessage
+  };
+}
+
+function _pauseGame(state: GameState): GameState {
+  return {
+    ...state,
+    gamePaused: true
+  };
+}
+
+function _resumeGame(state: GameState): GameState {
+  return {
+    ...state,
+    gamePaused: false
   };
 }
