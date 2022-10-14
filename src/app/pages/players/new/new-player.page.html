@@ -1,5 +1,5 @@
 <ion-content class="ion-padding">
-  <form [formGroup]="newPlayerForm" action="#" method="post" (ngSubmit)="createNewPlayer()" novalidate>
+  <form [formGroup]="newPlayerForm" (ngSubmit)="createNewPlayer()" novalidate>
     <ion-item>
       <ion-label position="fixed">{{ 'player.formFields.name' | translate }}</ion-label>
       <ion-input formControlName="name" [inputmode]="'text'" [clearInput]="true"></ion-input>

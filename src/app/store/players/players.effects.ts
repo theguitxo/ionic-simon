@@ -71,7 +71,7 @@ export class PlayersEffects {
     ofType(PLAYERS_ACTIONS.saveNewPlayer, PLAYERS_ACTIONS.changeCurrentPlayer),
     concatLatestFrom(() => this.store.select(PLAYERS_SELECTORS.getPlayers)),
     switchMap(([action, players]) => {
-      const isNewPlayer = action.type.toString() === PLAYERS_ACTIONS.PLAYER_ACTIONS.NEW_PLAYER;
+      const isNewPlayer = action.type === PLAYERS_ACTIONS.PLAYER_ACTIONS.SAVE_NEW_PLAYER;
       let newPlayersList: PLAYER_MODELS.Player[];
       if (isNewPlayer) {
         newPlayersList = [...players, action.player];

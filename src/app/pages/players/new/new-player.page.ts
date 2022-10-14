@@ -25,7 +25,6 @@ export class NewPlayerPage implements OnInit {
   }
 
   createNewPlayer(): void {
-    console.log('create new player');
     this.store.dispatch(APP_ACTIONS.newPlayer({ player: {
       id: uuidv4(),
       name: this.newPlayerForm.controls.name.value
