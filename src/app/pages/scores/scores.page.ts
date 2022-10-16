@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { Store } from "@ngrx/store";
-import { Observable } from "rxjs";
-import { AppState } from "../../store/app/app.state";
-import * as SCORES_MDOEL from "../../models/scores/scores.models";
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppState } from '../../store/app/app.state';
+import * as SCORES_MODEL from '../../models/scores/scores.models';
 import * as SCORES_SELECTORS from '../../store/scores/scores.selectors';
 
 @Component({
@@ -10,9 +10,8 @@ import * as SCORES_SELECTORS from '../../store/scores/scores.selectors';
   templateUrl: './scores.page.html'
 })
 export class ScoresPage implements OnInit {
-  scoresList: Observable<SCORES_MDOEL.ScoresListItem[]>;
-  currentPlayerScore: Observable<SCORES_MDOEL.ScoresListItem>;
-
+  currentPlayerScore: Observable<SCORES_MODEL.ScoresListItem>;
+  otherPlayersScores: Observable<SCORES_MODEL.ScoresListItem[]>;
   currentPlayerHasScores: Observable<boolean>;
   otherPlayersHaveScores: Observable<boolean>;
 
@@ -25,8 +24,9 @@ export class ScoresPage implements OnInit {
   }
 
   private initSubscriptions(): void {
-    this.scoresList = this.store.select(SCORES_SELECTORS.getScoresList);
     this.currentPlayerHasScores = this.store.select(SCORES_SELECTORS.getCurrentPlayerHasScores);
     this.otherPlayersHaveScores = this.store.select(SCORES_SELECTORS.getOtherPlayersHaveScores);
+    this.currentPlayerScore = this.store.select(SCORES_SELECTORS.getScoresCurrentPlayer);
+    this.otherPlayersScores = this.store.select(SCORES_SELECTORS.getScoresOtherPlayers);
   }
 }

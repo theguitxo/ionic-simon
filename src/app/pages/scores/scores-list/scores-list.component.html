@@ -1,0 +1,26 @@
+<ion-item>{{ playerTypeTitle }}</ion-item>
+<ion-accordion-group>
+  <ion-accordion
+    *ngFor="let scoreItem of scoresList"
+    [value]="scoreItem.player">
+    <ion-item slot="header" color="primary">
+      <ion-label slot="start">{{ scoreItem.playerName }}</ion-label>
+      <ion-label slot="end">{{ scoreItem.totalScore }}</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">
+      <ion-item>
+        <ng-container *ngIf="scoreItem.onlyOneScore; else moreScores">
+          {{ 'scores.last' | translate }}
+        </ng-container>
+        <ng-template #moreScores>
+          {{ 'scores.latest' | translate: { scores: scoreItem.totalScores } }}
+        </ng-template>
+      </ion-item>
+      <ion-item
+        *ngFor="let score of scoreItem.scoresList">
+        <ion-label>{{ score.dateFormatted }}</ion-label>
+        <ion-label slot="end">{{ score.score }}</ion-label>
+      </ion-item>
+    </div>
+  </ion-accordion>
+</ion-accordion-group>

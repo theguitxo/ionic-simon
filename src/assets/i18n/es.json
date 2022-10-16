@@ -68,6 +68,7 @@
     "select": "Seleccionar"
   },
   "scores": {
+    "last": "Última puntuación",
     "latest": "Ultimos {{scores}} puntuaciones",
     "messages": {
       "scoresRemoved": "Puntuaciones eliminadas"

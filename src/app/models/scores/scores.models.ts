@@ -16,4 +16,6 @@ export interface ScoresListItem {
   playerName: string;
   totalScore: number;
   scoresList: ScoreRecord[];
+  onlyOneScore: boolean;
+  totalScores: number;
 }

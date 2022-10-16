@@ -6,6 +6,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { ComponentsModule } from "../../components/components.module";
 import { ScoresPageRoutingModule } from "./scores-routing.module";
 import { ScoresPage } from "./scores.page";
+import { ScoresListComponent } from './scores-list/scores-list.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ScoresPage } from "./scores.page";
     ComponentsModule
   ],
   declarations: [
-    ScoresPage
+    ScoresPage,
+    ScoresListComponent
   ]
 })
 export class ScoresPageModule {}
