@@ -19,6 +19,18 @@
   "help": {
     "button": "Ayuda",
     "howToPlay": {
+      "slide_1": {
+        "title": "El juego",
+        "text": "Este es el clásico juego de Simon. Debe repetir las secuencias de colores que se muestran. Por cada secuencia que repitas recibes un punto. El juego termina cuando te equivocas al repetir la secuencia."
+      },
+      "slide_2": {
+        "title": "Iniciar el juego",
+        "text": "En la página de inicio, puede presionar el botón <b>Jugar</b> y se mostrará el círculo de botones. En esta pantalla hay otro botón <b>Jugar</b>. Presiónalo y el juego comenzará. El juego mostrará la primera secuencia, y cuando termine, esperará a que la repita."
+      },
+      "slide_3": {
+        "title": "Parar el juego",
+        "text": "En tu turno de juego puedes parar el juego pulsando el botón <b>Parar</b>. La puntuación obtenida se almacenará y el juego se detendrá."
+      },
       "title": "Como jugar"
     },
     "about": {

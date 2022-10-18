@@ -2,26 +2,32 @@
 <swiper [config]="swiperOptions">
   <ng-template swiperSlide>
     <div>
-      <h2>Slide 1</h2>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum risus ultrices magna posuere cursus. Nullam nec magna elementum, feugiat purus pulvinar, porta lacus. Cras egestas consectetur massa, vel molestie tellus tincidunt eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non enim volutpat, fringilla lacus ac, facilisis risus. Integer id commodo libero, gravida eleifend felis. Phasellus ac purus sed ipsum mollis egestas vitae id neque. Vivamus placerat porttitor sagittis.
-      </div>
+      <h2>{{ 'help.howToPlay.slide_1.title' | translate }}</h2>
+      <img src="/assets/images/how_play/slide_1.svg">
+      <div [innerHtml]="'help.howToPlay.slide_1.text' | translate"></div>
+      <div class="end-line end-line--first">&nbsp;</div>
+      <div class="end-line end-line--second">&nbsp;</div>
+      <div class="end-line end-line--third">&nbsp;</div>
     </div>
   </ng-template>
   <ng-template swiperSlide>
     <div>
-      <h2>Slide 2</h2>
-      <div>
-        Morbi erat diam, placerat in ex venenatis, ornare venenatis lacus. Nulla ac nisi lacinia, cursus neque non, ornare velit. Nunc vitae metus vitae elit venenatis rhoncus eu id ligula. Nulla lobortis, nunc sed blandit suscipit, nibh lectus molestie diam, nec sagittis mi nisl quis tellus. Duis facilisis, tellus non iaculis finibus, eros dui faucibus turpis, vel mollis nibh risus vel dui. Ut ac varius leo. Mauris ullamcorper ullamcorper ipsum, dictum volutpat arcu. Integer molestie pharetra sem. Etiam sed aliquam mi, eu mattis eros. Pellentesque ex neque, fermentum non diam et, auctor euismod mauris. Etiam tincidunt enim ligula, vel maximus ligula tincidunt ac.
-      </div>
+      <h2>{{ 'help.howToPlay.slide_2.title' | translate }}</h2>
+      <img src="/assets/images/how_play/slide_2.svg">
+      <div [innerHtml]="'help.howToPlay.slide_2.text' | translate"></div>
+      <div class="end-line end-line--first">&nbsp;</div>
+      <div class="end-line end-line--second">&nbsp;</div>
+      <div class="end-line end-line--third">&nbsp;</div>
     </div>
   </ng-template>
   <ng-template swiperSlide>
     <div>
-      <h2>Slide 3</h2>
-      <div>
-        Sed eu tempor libero. Mauris elit risus, suscipit ut tincidunt ac, consequat a massa. Proin volutpat, tellus sit amet finibus laoreet, diam risus pellentesque neque, sed scelerisque nisi erat sed sem. Vivamus sodales in nisl non dictum. Donec eu rutrum justo. Integer ultrices nulla vitae mi dignissim tincidunt. Sed rhoncus, elit non sagittis dignissim, nunc elit condimentum dui, at condimentum purus ex varius mi. Etiam vitae fringilla purus. Suspendisse eu ligula sagittis, elementum tellus in, luctus arcu. Proin nibh dui, porttitor eget rutrum aliquam, vulputate placerat ipsum. Suspendisse nec sem purus. Proin viverra tincidunt lectus at consequat. In sit amet luctus ex. Nullam laoreet, nisl nec sollicitudin condimentum, quam orci feugiat ipsum, ut pellentesque velit mauris at tellus. Nunc tempor, mauris placerat convallis condimentum, urna sem sollicitudin turpis, in aliquam arcu massa ultricies lacus.
-      </div>
+      <h2>{{ 'help.howToPlay.slide_3.title' | translate }}</h2>
+      <img src="/assets/images/how_play/slide_3.svg">
+      <div [innerHtml]="'help.howToPlay.slide_3.text' | translate"></div>
+      <div class="end-line end-line--first">&nbsp;</div>
+      <div class="end-line end-line--second">&nbsp;</div>
+      <div class="end-line end-line--third">&nbsp;</div>
     </div>
   </ng-template>
 </swiper>

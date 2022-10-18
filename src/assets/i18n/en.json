@@ -19,6 +19,18 @@
   "help": {
     "button": "Help",
     "howToPlay": {
+      "slide_1": {
+        "title": "The game",
+        "text": "This is the classic game of Simon. You must repeat the color sequences that are shown. For each sequence that you repeat you receives one point. The games finishes when you makes a mistake repeting the sequence."
+      },
+      "slide_2": {
+        "title": "Start the game",
+        "text": "In home page, you can push on <b>Play</b> button and the buttons circle will be shown. In this screen there are another <b>Play</b> button. Press it and the game will be start. The game will be show the first sequence and, when it is finished, it will wait for your repeat it."
+      },
+      "slide_3": {
+        "title": "Stop the game",
+        "text": "In your play turn you can stop the game pressing the <b>Stop</b> button. The score getted will be stored and the  game stopped."
+      },
       "title": "How to play"
     },
     "about": {

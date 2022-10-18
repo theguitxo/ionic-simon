@@ -1,0 +1,19 @@
+.end-line {
+  margin: .25rem auto;
+  font-size: .15rem;
+  background: black;
+  border-radius: 0.15rem;
+
+  &--first {
+    margin-top: 2rem;
+    transform: scaleX(.65);
+  }
+
+  &--second {
+    transform: scaleX(.5);
+  }
+
+  &--third {
+    transform: scaleX(.35);
+  }
+}
