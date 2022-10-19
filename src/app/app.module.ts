@@ -23,6 +23,7 @@ import { ScoresEffects } from './store/scores/scores.effects';
 import { gameReducer } from './store/game/game.reducers';
 import { appReducer } from './store/app/app.reducer';
 import { AppEffects } from './store/app/app.effects';
+import { RouteResolver } from './routes';
 
 import '@angular/common/locales/global/es';
 import '@angular/common/locales/global/en';
@@ -74,7 +75,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       useClass: IonicRouteStrategy
     },
     StorageService,
-    LanguageService
+    LanguageService,
+    RouteResolver
   ],
   bootstrap: [AppComponent],
 })

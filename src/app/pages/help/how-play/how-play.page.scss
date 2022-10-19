@@ -1,8 +1,8 @@
 .end-line {
   margin: .25rem auto;
-  font-size: .15rem;
+  font-size: .125rem;
   background: black;
-  border-radius: 0.15rem;
+  border-radius: 0.125rem;
 
   &--first {
     margin-top: 2rem;
@@ -15,5 +15,22 @@
 
   &--third {
     transform: scaleX(.35);
+  }
+}
+
+.image {
+  &__wrapper {
+    width: 25%;
+    margin: 2rem auto;
+  }
+}
+
+.text {
+  &__wrapper {
+    width: 75%;
+    margin: 0 auto;
+    text-align: justify;
+    line-height: 1.75;
+    font-size: 1rem;
   }
 }
