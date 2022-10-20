@@ -1,10 +1,10 @@
 <ion-content>
 <swiper [config]="swiperOptions">
-  <ng-template *ngFor="let slide of slides" swiperSlide>
+  <ng-template *ngFor="let slide of slides; let i = index" swiperSlide>
     <div>
       <h2>{{ slide.title }}</h2>
       <div class="image__wrapper">
-        <img [src]="slide.imagePath">
+        <img [src]="slide.imagePath" [alt]="'slide' + i">
       </div>
       <div class="text__wrapper" [innerHtml]="slide.text"></div>
       <div class="end-line end-line--first">&nbsp;</div>
@@ -12,39 +12,5 @@
       <div class="end-line end-line--third">&nbsp;</div>
     </div>
   </ng-template>
-  <!-- <ng-template swiperSlide>
-    <div>
-      <h2>{{ 'help.howToPlay.slide_1.title' | translate }}</h2>
-      <div class="image__wrapper">
-        <img src="/assets/images/how_play/slide_1.svg">
-      </div>
-      <div class="text__wrapper" [innerHtml]="'help.howToPlay.slide_1.text' | translate"></div>
-      <div class="end-line end-line--first">&nbsp;</div>
-      <div class="end-line end-line--second">&nbsp;</div>
-      <div class="end-line end-line--third">&nbsp;</div>
-    </div>
-  </ng-template>
-  <ng-template swiperSlide>
-    <div>
-      <div class="image__wrapper">
-        <h2>{{ 'help.howToPlay.slide_2.title' | translate }}</h2>
-      </div>
-      <img src="/assets/images/how_play/slide_2.svg">
-      <div class="text__wrapper" [innerHtml]="'help.howToPlay.slide_2.text' | translate"></div>
-      <div class="end-line end-line--first">&nbsp;</div>
-      <div class="end-line end-line--second">&nbsp;</div>
-      <div class="end-line end-line--third">&nbsp;</div>
-    </div>
-  </ng-template>
-  <ng-template swiperSlide>
-    <div>
-      <h2>{{ 'help.howToPlay.slide_3.title' | translate }}</h2>
-      <img src="/assets/images/how_play/slide_3.svg">
-      <div class="text__wrapper" [innerHtml]="'help.howToPlay.slide_3.text' | translate"></div>
-      <div class="end-line end-line--first">&nbsp;</div>
-      <div class="end-line end-line--second">&nbsp;</div>
-      <div class="end-line end-line--third">&nbsp;</div>
-    </div>
-  </ng-template> -->
 </swiper>
 </ion-content>
