@@ -55,7 +55,10 @@ function _resetGameData(state: GameState): GameState {
 }
 
 function _newInSequence(state: GameState): GameState {
-  const index = Math.floor(Math.random() * colorCodes.length);
+  let number = new Uint16Array(1);
+  window.crypto.getRandomValues(number);
+  const randomNumber = parseFloat(`0.${number[0]}`);
+  const index = Math.floor(randomNumber * colorCodes.length);
   const newValue = <COLOR_CODES>colorCodes[index];
   return {
     ...state,
