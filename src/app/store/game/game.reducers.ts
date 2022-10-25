@@ -65,7 +65,8 @@ function _newInSequence(state: GameState): GameState {
     gameSequence: [
       ...state.gameSequence,
       newValue
-    ]
+    ],
+    playerSequence: []
   }
 }
 
@@ -113,7 +114,7 @@ function _checkPlayerAction(state: GameState): GameState {
     ...state,
     score: state.score + Number(sequenceChecked && isOk),
     gameOver: !isOk,
-    playerSequence: sequenceChecked ? [] : playerSequenceCheck,
+    playerSequence: playerSequenceCheck,
     playerCodeCheck: null,
     buttonsBlocked: false,
     sequenceChecked,

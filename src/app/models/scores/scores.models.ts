@@ -18,4 +18,5 @@ export interface ScoresListItem {
   scoresList: ScoreRecord[];
   onlyOneScore: boolean;
   totalScores: number;
+  playerAvatarPath?: string;
 }

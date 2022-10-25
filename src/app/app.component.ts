@@ -7,9 +7,11 @@ import { StorageService } from './services/storage.service';
 import { Router } from '@angular/router';
 import { AppState } from './store/app/app.state';
 import * as APP_MODELS from './models/app/app.models';
+import * as APP_CONSTANTS from './models/app/app.constants';
 import * as APP_ACTIONS from './store/app/app.actions';
 import * as APP_SELECTORS from './store/app/app.selectors';
 import * as PLAYERS_ACTIONS from './store/players/players.actions';
+import * as PLAYERS_SELECTORS from './store/players/players.selectors';
 import * as SCORES_ACTIONS from './store/scores/scores.actions';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -42,6 +44,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private initSubscriptions(): void {
     this.subscriptions.add(
+      this.store.select(PLAYERS_SELECTORS.getAvatarsListReady).subscribe((value: boolean) => {
+        if (value) {
+          this.store.dispatch(APP_ACTIONS.initItemReady({
+            key: APP_CONSTANTS.APP_PLAYERS_AVATARS_LIST
+          }));
+        }
+      })
+    );
+
+    this.subscriptions.add(
       this.store.select(APP_SELECTORS.getToastOptions).subscribe((data: APP_MODELS.AppToastOptions) => {
         if (data.showToast) {
           this.showToast(data.toastMessage, data.toastDuration);
@@ -69,6 +81,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.storageService.storageReady$.subscribe((ready: boolean) => {
         if (ready) {
           this.store.dispatch(APP_ACTIONS.initLanguages());
+          this.store.dispatch(PLAYERS_ACTIONS.createAvatarsList());
           this.store.dispatch(PLAYERS_ACTIONS.getPlayersStorage());
           this.store.dispatch(SCORES_ACTIONS.getScoresStorage());
         }

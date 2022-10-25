@@ -4,7 +4,15 @@
     *ngFor="let scoreItem of scoresList"
     [value]="scoreItem.player">
     <ion-item slot="header" color="primary">
-      <ion-label slot="start">{{ scoreItem.playerName }}</ion-label>
+      <ion-label
+        slot="start"
+        class="avatar__wrapper">
+        <img
+          [alt]="'avatar-' + scoreItem.player"
+          [src]="scoreItem.playerAvatarPath"
+          class="avatar__item" />
+        {{ scoreItem.playerName }}
+      </ion-label>
       <ion-label slot="end">{{ scoreItem.totalScore }}</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">

@@ -1,9 +1,25 @@
 <ion-content class="ion-padding">
   <form [formGroup]="newPlayerForm" (ngSubmit)="createNewPlayer()" novalidate>
-    <ion-item>
-      <ion-label position="fixed">{{ 'player.formFields.name' | translate }}</ion-label>
-      <ion-input formControlName="name" [inputmode]="'text'" [clearInput]="true"></ion-input>
-    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-label position="fixed">{{ 'player.formFields.name' | translate }}</ion-label>
+        <ion-input formControlName="name" [inputmode]="'text'" [clearInput]="true"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>Avatar</div>
+        <div class="avatar__wrapper">
+          <div
+            *ngFor="let avatar of avatarFiles; let i = index"
+            class="avatar__item"
+            [class.avatar__item--selected]="avatarSelected === i+1"
+            (click)="selectAvatar(i + 1)">
+            <img [src]="avatar" [alt]="'avatar_' + (i+1)">
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
     <ion-row>
       <ion-col>
         <ion-button type="submit" color="primary" expand="block" [disabled]="newPlayerForm.invalid">

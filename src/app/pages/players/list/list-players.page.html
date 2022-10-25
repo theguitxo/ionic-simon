@@ -14,6 +14,9 @@
   </ion-grid>
   <ion-list>
     <ion-item *ngFor="let player of playersList$ | async">
+      <ion-avatar slot="start">
+        <img [alt]="'avatar-' + player.name" [src]="player.avatarPath" />
+      </ion-avatar>
       <ion-label>{{ player.name }}</ion-label>
       <ng-container slot="end">
         <ion-chip

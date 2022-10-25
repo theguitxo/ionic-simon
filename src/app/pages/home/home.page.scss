@@ -1,8 +1,6 @@
-
-
 .container {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr;
   height: 100%;
 }
 
@@ -19,11 +17,47 @@
   }
 
   &__item {
-    margin: 1rem 0;
+    margin: .5rem 0;
+  }
+}
+
+.header {
+  &__wrapper {
+    margin: .5rem 0;
   }
 }
 
 .footer {
   display: flex;
   justify-content: space-around;
+}
+
+.current-player {
+  &__wrapper {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: .5rem 0;
+  }
+
+  &__name {
+    padding: .5rem 0;
+    font-family: 'Ubuntu';
+    font-size: 1rem;
+    letter-spacing: .05rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+    color: chocolate;
+  }
+
+  &__avatar {
+    background-color: chocolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem;
+    border-radius: 50%;
+  }
 }

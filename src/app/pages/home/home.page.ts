@@ -13,8 +13,10 @@ import * as SCORES_SELECTORS from '../../store/scores/scores.selectors';
 export class HomePage implements OnInit {
   hasCurrentPlayer: Observable<boolean>;
   currentPlayer: Observable<string>;
+  currentPlayerAvatar: Observable<string>;
   hasPlayers: Observable<boolean>;
   hasScores: Observable<boolean>;
+  
 
   constructor(
     private readonly store: Store<AppState>
@@ -27,6 +29,7 @@ export class HomePage implements OnInit {
   private initSubscriptions(): void {
     this.hasCurrentPlayer = this.store.select(PLAYERS_SELECTORS.getHasCurrentPlayer);
     this.currentPlayer = this.store.select(PLAYERS_SELECTORS.getCurrentPlayerName);
+    this.currentPlayerAvatar = this.store.select(PLAYERS_SELECTORS.getCurrentPlayerAvatar);
     this.hasPlayers = this.store.select(PLAYERS_SELECTORS.getHasPlayers);
     this.hasScores = this.store.select(SCORES_SELECTORS.getHasScores);
   }

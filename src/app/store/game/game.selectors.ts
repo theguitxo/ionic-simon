@@ -11,7 +11,13 @@ export const getGameStarted = createSelector(
 
 export const getButtonsEnabled = createSelector(
   gameState,
-  (state: GameState): boolean => (state?.gameStarted && !state?.playingSequence && !state?.buttonsBlocked)
+  (state: GameState): boolean => (
+    state?.gameStarted &&
+    state?.playerSequence?.length !== state?.gameSequence?.length &&
+    !state?.playingSequence &&
+    !state?.buttonsBlocked &&
+    !state?.sequenceChecked
+  )
 );
 
 export const getPlayingSequence = createSelector(

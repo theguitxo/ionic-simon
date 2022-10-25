@@ -8,5 +8,6 @@ export const AVAILABLE_LANGUAGES = ['es', 'en'];
 
 export const APP_PLAYERS_KEY = 'players';
 export const APP_CURRENT_PLAYER_KEY = 'current_player';
+export const APP_PLAYERS_AVATARS_LIST = 'players_avatars_list';
 
 export const APP_SCORES_KEY = 'scores';

@@ -1,12 +1,17 @@
 <ion-content class="ion-padding">
   <div class="container">
-    <div class="header">
+    <div class="header__wrapper">
       <img src="assets/game.logo.svg" alt="game logo">
     </div>
-    <div class="buttons__wrapper">
-      <div *ngIf="hasCurrentPlayer | async">
+    <div  class="current-player__wrapper" *ngIf="hasCurrentPlayer | async">
+      <div class="current-player__avatar">
+        <img [src]="currentPlayerAvatar | async" alt="Current player avatar">
+      </div>
+      <div class="current-player__name">
         {{ 'player.currentPlayer' | translate: { name: currentPlayer | async } }}
       </div>
+    </div>
+    <div class="buttons__wrapper">
       <div>
         <ion-button
           *ngIf="hasCurrentPlayer | async"
@@ -15,7 +20,7 @@
           class="buttons__item"
           expand="full"
           shape="round"
-          size="large">
+          size="default">
           <ion-icon slot="start" name="game-controller-outline"></ion-icon>
           <ng-container slot="end">{{ 'game.play' | translate }}</ng-container>
         </ion-button>
@@ -28,7 +33,7 @@
           class="buttons__item"
           expand="full"
           shape="round"
-          size="large">
+          size="default">
           <ion-icon slot="start" name="person-add-outline"></ion-icon>
           <ng-container slot="end">{{ 'player.newPlayer' | translate }}</ng-container>
         </ion-button>
@@ -41,7 +46,7 @@
           class="buttons__item"
           expand="full"
           shape="round"
-          size="large">
+          size="default">
           <ion-icon slot="start" name="people-outline"></ion-icon>
           <ng-container slot="end">{{ 'player.players' | translate }}</ng-container>
         </ion-button>
@@ -54,7 +59,7 @@
           class="buttons__item"
           expand="full"
           shape="round"
-          size="large">
+          size="default">
           <ion-icon slot="start" name="medal-outline"></ion-icon>
           <ng-container slot="end">{{ 'scores.scores' | translate }}</ng-container>
         </ion-button>
@@ -66,7 +71,7 @@
           class="buttons__item"
           expand="block"
           shape="round"
-          size="large">
+          size="default">
           <ion-icon slot="start" name="settings-outline"></ion-icon>
           <ng-container slot="end">{{ 'settings.settings' | translate }}</ng-container>
         </ion-button>
@@ -78,7 +83,7 @@
           class="buttons__item"
           expand="block"
           shape="round"
-          size="large">
+          size="default">
           <ion-icon slot="start" name="help-circle-outline"></ion-icon>
           <ng-container slot="end">{{ 'help.button' | translate }}</ng-container>
         </ion-button>

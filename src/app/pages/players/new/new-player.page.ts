@@ -12,6 +12,8 @@ import * as APP_ACTIONS from "../../../store/players/players.actions";
 })
 export class NewPlayerPage implements OnInit {
   newPlayerForm!: FormGroup;
+  avatarFiles: string[];
+  avatarSelected: number;
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -22,12 +24,24 @@ export class NewPlayerPage implements OnInit {
     this.newPlayerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]]
     });
+
+    this.avatarFiles = new Array(16).fill('').map((_i, index) => {
+      const fileNumber = `0${index + 1}`.slice(-2);
+      return `/assets/avatar/avatar_${fileNumber}.svg`;
+    });
+
+    this.avatarSelected = 1;
+  }
+
+  selectAvatar(index: number): void {
+    this.avatarSelected = index;
   }
 
   createNewPlayer(): void {
     this.store.dispatch(APP_ACTIONS.newPlayer({ player: {
       id: uuidv4(),
-      name: this.newPlayerForm.controls.name.value
+      name: this.newPlayerForm.controls.name.value,
+      avatar: this.avatarSelected
     }}));
   }
 }

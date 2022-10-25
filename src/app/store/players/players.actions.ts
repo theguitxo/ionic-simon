@@ -3,6 +3,7 @@ import * as PLAYER_MODELS from "../../models/player/player.models";
 
 export enum PLAYER_ACTIONS {
   GET_PLAYERS_STORAGE = '[PLAYER ACTIONS] Get players storage',
+  CREATE_AVATARS_LIST = '[PLAYER ACTIONS] Create avatars list',
   NEW_PLAYER = '[PLAYER ACTIONS] New player',
   SAVE_NEW_PLAYER = '[PLAYER ACTIONS] Save new player',
   SET_PLAYERS_LIST = '[PLAYER ACTIONS] Set players list',
@@ -17,6 +18,13 @@ export enum PLAYER_ACTIONS {
  */
 export const getPlayersStorage = createAction (
   PLAYER_ACTIONS.GET_PLAYERS_STORAGE
+);
+
+/**
+ * Create the list of avatars for the players
+ */
+export const createAvatarsList = createAction (
+  PLAYER_ACTIONS.CREATE_AVATARS_LIST
 );
 
 /**

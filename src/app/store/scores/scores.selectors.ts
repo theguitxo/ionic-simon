@@ -53,8 +53,13 @@ export const getScoresCurrentPlayer = createSelector (
   PLAYERS_SELECTORS.getCurrentPlayerId,
   PLAYERS_SELECTORS.getCurrentPlayerName,
   APP_SELECTORS.getUserLanguage,
-  (scores: SCORES_MODELS.ScoreRecord[], currentPlayerId: string, currentPlayerName: string, userLanguage: string): SCORES_MODELS.ScoresListItem =>
-    getScoreListItem(scores, currentPlayerId, currentPlayerName, userLanguage, SCORES_CONSTANTS.SCORES_LIST_MAX_ITEMS)
+  PLAYERS_SELECTORS.getPlayers, (
+    scores: SCORES_MODELS.ScoreRecord[],
+    currentPlayerId: string,
+    currentPlayerName: string,
+    userLanguage: string,
+    players: PLAYER_MODELS.PlayerList[]): SCORES_MODELS.ScoresListItem =>
+    getScoreListItem(players, scores, currentPlayerId, currentPlayerName, userLanguage, SCORES_CONSTANTS.SCORES_LIST_MAX_ITEMS)
 );
 
 export const getScoresOtherPlayers = createSelector (
@@ -71,19 +76,27 @@ function getScoreListSorted(scores: SCORES_MODELS.ScoreRecord[], players: PLAYER
   const filterIds = !!currentPlayerId;
   const scorePlayersIds = Array.from(new Set(scores.map(i => i.player)))?.filter(id => filterIds ? id !== currentPlayerId : id);
   return scorePlayersIds?.map(id => 
-    getScoreListItem(scores, id, players.find(p => p.id === id)?.name, userLanguage, maxItems)
+    getScoreListItem(players, scores, id, players.find(p => p.id === id)?.name, userLanguage, maxItems)
   )?.sort((a: SCORES_MODELS.ScoresListItem, b: SCORES_MODELS.ScoresListItem) => a.totalScore > b.totalScore ? -1 : 1);
 }
 
-function getScoreListItem(scores: SCORES_MODELS.ScoreRecord[], playerId: string, playerName: string, userLanguage: string, scoresNumItems: number): SCORES_MODELS.ScoresListItem {
+function getScoreListItem(
+  players: PLAYER_MODELS.PlayerList[],
+  scores: SCORES_MODELS.ScoreRecord[],
+  playerId: string,
+  playerName: string,
+  userLanguage: string,
+  scoresNumItems: number): SCORES_MODELS.ScoresListItem {
   const scoresList = getPlayerLastScores(scores, playerId, userLanguage, scoresNumItems);
+  const playerAvatarPath = players?.find(item => item.id === playerId)?.avatarPath;
   return {
     player: playerId,
     playerName: playerName,
     scoresList,
     totalScore: getPlayerTotalScore(scores, playerId),
     onlyOneScore: scoresList?.length === 1,
-    totalScores: scoresList?.length
+    totalScores: scoresList?.length,
+    playerAvatarPath
   };
 }
 

@@ -13,7 +13,8 @@ export enum ACTIONS {
   INIT_ITEM_READY = '[APP] Init item ready',
   SET_REDIRECT_TO = '[APP] Set redirect to',
   SHOW_ACTION_SHEET = '[APP] Show action sheet',
-  RESET_ACTION_SHEET = '[APP] Reset action sheet'
+  RESET_ACTION_SHEET = '[APP] Reset action sheet',
+  AVATARS_LIST_OK = '[APP] Avatars list ok'
 }
 
 export const showToast = createAction (
@@ -81,4 +82,8 @@ export const showActionSheet = createAction (
 
 export const resetActionSheet = createAction (
   ACTIONS.RESET_ACTION_SHEET
+);
+
+export const avatarsListOk = createAction (
+  ACTIONS.AVATARS_LIST_OK
 );

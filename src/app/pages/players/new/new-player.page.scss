@@ -1,3 +1,35 @@
-ion-item {
-  --background: transparent;
+ion-col {
+  margin-bottom: 1rem;
+}
+
+ion-input {
+  border-bottom: solid 1px #000;
+}
+
+.avatar {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem;
+  }
+
+  &__item {
+    width: 20%;
+    margin: .5rem auto;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: solid .25rem transparent;
+
+    &--selected {
+      border-color: #3880ff;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
 }

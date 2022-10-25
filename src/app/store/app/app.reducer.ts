@@ -14,7 +14,8 @@ const _appReducer = createReducer (
   on(ACTIONS.initItemReady, (state: AppState, { key }) => ({..._initItemReady(state, key)})),
   on(ACTIONS.setRedirectTo, (state: AppState, { route }) => ({..._setRedirectTo(state, route)})),
   on(ACTIONS.showActionSheet, (state: AppState, { options }) => ({..._showActionSheet(state, options)})),
-  on(ACTIONS.resetActionSheet, (state: AppState) => ({..._resetActionSheet(state)}))
+  on(ACTIONS.resetActionSheet, (state: AppState) => ({..._resetActionSheet(state)})),
+  on(ACTIONS.avatarsListOk, (state: AppState) => ({..._initItemReady(state, APP_CONSTANTS.APP_PLAYERS_AVATARS_LIST)}))
 );
 
 export function appReducer(state: AppState | undefined, action: Action): AppState {

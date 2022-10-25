@@ -1,8 +1,18 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { Player, PlayerList } from "../../models/player/player.models";
+import * as PLAYER_MODELS from "../../models/player/player.models";
 import { PlayersState } from "./players.state";
 
 export const playersState = createFeatureSelector<PlayersState>('players');
+
+export const getAvatarsList = createSelector (
+  playersState,
+  (state: PlayersState): PLAYER_MODELS.AvatarListItem[] => state?.avatarsList
+);
+
+export const getAvatarsListReady = createSelector (
+  getAvatarsList,
+  (list: PLAYER_MODELS.AvatarListItem[]): boolean => list?.length > 0
+);
 
 export const getHasCurrentPlayer = createSelector(
   playersState,
@@ -11,7 +21,7 @@ export const getHasCurrentPlayer = createSelector(
 
 export const getCurrentPlayer = createSelector(
   playersState,
-  (state: PlayersState): Player => {
+  (state: PlayersState): PLAYER_MODELS.Player => {
     const current = state?.players?.find(item => item.id === state?.currentPlayer);
     return current;
   }
@@ -19,12 +29,18 @@ export const getCurrentPlayer = createSelector(
 
 export const getCurrentPlayerName = createSelector(
   getCurrentPlayer,
-  (player: Player): string => player?.name
+  (player: PLAYER_MODELS.Player): string => player?.name
 );
 
 export const getCurrentPlayerId = createSelector(
   getCurrentPlayer,
-  (player: Player): string => player?.id
+  (player: PLAYER_MODELS.Player): string => player?.id
+);
+
+export const getCurrentPlayerAvatar = createSelector(
+  playersState,
+  getCurrentPlayer,
+  (state: PlayersState, current: PLAYER_MODELS.Player): string => state?.avatarsList?.find(item => item.id === current.avatar)?.path
 );
 
 export const getHasPlayers = createSelector(
@@ -39,10 +55,11 @@ export const getPlayersNames = createSelector(
 
 export const getPlayers = createSelector(
   playersState,
-  (state: PlayersState): PlayerList[] => (
+  (state: PlayersState): PLAYER_MODELS.PlayerList[] => (
     state?.players?.map(item => ({
       ...item,
-      isCurrent: item.id === state?.currentPlayer
+      isCurrent: item.id === state?.currentPlayer,
+      avatarPath: state?.avatarsList?.find(avatar => avatar.id === item.avatar)?.path
     }))
   )
 );

@@ -1,0 +1,11 @@
+.avatar {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    width: 2rem;
+    margin-right: .5rem;
+  }
+}

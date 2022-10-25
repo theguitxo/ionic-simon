@@ -20,7 +20,8 @@ export const initialState: AppState = {
   itemsReady: new Map()
     .set(APP_CONSTANTS.APP_LANGUAGE_KEY, false)
     .set(APP_CONSTANTS.APP_PLAYERS_KEY, false)
-    .set(APP_CONSTANTS.APP_SCORES_KEY, false),
+    .set(APP_CONSTANTS.APP_SCORES_KEY, false)
+    .set(APP_CONSTANTS.APP_PLAYERS_AVATARS_LIST, false),
   alertOptions: {
     showAlert: false,
     text: '',

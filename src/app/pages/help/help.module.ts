@@ -9,6 +9,7 @@ import { AboutPage } from './about/about.page';
 import { HowPlayPage } from './how-play/how-play.page';
 import { ComponentsModule } from '../../components/components.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
 @NgModule({
   imports: [
@@ -24,6 +25,9 @@ import { TranslateModule } from '@ngx-translate/core';
     HelpPage,
     AboutPage,
     HowPlayPage
+  ],
+  providers: [
+    InAppBrowser
   ]
 })
 export class HelpPageModule {}
