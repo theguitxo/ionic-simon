@@ -1,0 +1,2964 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Simon para Ionic</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Simon para Ionic</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Miscelánea</li>
+  <li>Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#_appReducer" title="src/app/store/app/app.reducer.ts" ><b>_appReducer</b>&nbsp;&nbsp;&nbsp;(src/.../app.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#_gameReducer" title="src/app/store/game/game.reducers.ts" ><b>_gameReducer</b>&nbsp;&nbsp;&nbsp;(src/.../game.reducers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#_playersRecuder" title="src/app/store/players/players.reducer.ts" ><b>_playersRecuder</b>&nbsp;&nbsp;&nbsp;(src/.../players.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#_scoresReducer" title="src/app/store/scores/scores.reducer.ts" ><b>_scoresReducer</b>&nbsp;&nbsp;&nbsp;(src/.../scores.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#APP_CURRENT_PLAYER_KEY" title="src/app/models/app/app.constants.ts" ><b>APP_CURRENT_PLAYER_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../app.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#APP_LANGUAGE_KEY" title="src/app/models/app/app.constants.ts" ><b>APP_LANGUAGE_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../app.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#APP_PLAYERS_AVATARS_LIST" title="src/app/models/app/app.constants.ts" ><b>APP_PLAYERS_AVATARS_LIST</b>&nbsp;&nbsp;&nbsp;(src/.../app.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#APP_PLAYERS_KEY" title="src/app/models/app/app.constants.ts" ><b>APP_PLAYERS_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../app.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#APP_SCORES_KEY" title="src/app/models/app/app.constants.ts" ><b>APP_SCORES_KEY</b>&nbsp;&nbsp;&nbsp;(src/.../app.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#appState" title="src/app/store/app/app.selectors.ts" ><b>appState</b>&nbsp;&nbsp;&nbsp;(src/.../app.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AVAILABLE_LANGUAGES" title="src/app/models/app/app.constants.ts" ><b>AVAILABLE_LANGUAGES</b>&nbsp;&nbsp;&nbsp;(src/.../app.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#avatarsListOk" title="src/app/store/app/app.actions.ts" ><b>avatarsListOk</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#changeCurrentPlayer" title="src/app/store/players/players.actions.ts" ><b>changeCurrentPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#checkPlayerAction" title="src/app/store/game/game.actions.ts" ><b>checkPlayerAction</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#colorCodes" title="src/app/store/game/game.reducers.ts" ><b>colorCodes</b>&nbsp;&nbsp;&nbsp;(src/.../game.reducers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#createAvatarsList" title="src/app/store/players/players.actions.ts" ><b>createAvatarsList</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DEFAULT_APP_LANGUAGE" title="src/app/models/app/app.constants.ts" ><b>DEFAULT_APP_LANGUAGE</b>&nbsp;&nbsp;&nbsp;(src/.../app.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DEFAULT_TOAST_DURATION" title="src/app/models/app/app.constants.ts" ><b>DEFAULT_TOAST_DURATION</b>&nbsp;&nbsp;&nbsp;(src/.../app.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.prod.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#gameInitialState" title="src/app/store/game/game.state.ts" ><b>gameInitialState</b>&nbsp;&nbsp;&nbsp;(src/.../game.state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#gameState" title="src/app/store/game/game.selectors.ts" ><b>gameState</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getActionSheetOptions" title="src/app/store/app/app.selectors.ts" ><b>getActionSheetOptions</b>&nbsp;&nbsp;&nbsp;(src/.../app.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getAlertOptions" title="src/app/store/app/app.selectors.ts" ><b>getAlertOptions</b>&nbsp;&nbsp;&nbsp;(src/.../app.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getAudioColorCodePlayerCheck" title="src/app/store/game/game.selectors.ts" ><b>getAudioColorCodePlayerCheck</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getAvatarsList" title="src/app/store/players/players.selectors.ts" ><b>getAvatarsList</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getAvatarsListReady" title="src/app/store/players/players.selectors.ts" ><b>getAvatarsListReady</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getButtonsEnabled" title="src/app/store/game/game.selectors.ts" ><b>getButtonsEnabled</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getColorCodePlayerCheck" title="src/app/store/game/game.selectors.ts" ><b>getColorCodePlayerCheck</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getColorCodePlayInSequence" title="src/app/store/game/game.selectors.ts" ><b>getColorCodePlayInSequence</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getContinueGame" title="src/app/store/game/game.selectors.ts" ><b>getContinueGame</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getCurrentPlayer" title="src/app/store/players/players.selectors.ts" ><b>getCurrentPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getCurrentPlayerAvatar" title="src/app/store/players/players.selectors.ts" ><b>getCurrentPlayerAvatar</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getCurrentPlayerHasScores" title="src/app/store/scores/scores.selectors.ts" ><b>getCurrentPlayerHasScores</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getCurrentPlayerId" title="src/app/store/players/players.selectors.ts" ><b>getCurrentPlayerId</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getCurrentPlayerName" title="src/app/store/players/players.selectors.ts" ><b>getCurrentPlayerName</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getDisableStopGameButton" title="src/app/store/game/game.selectors.ts" ><b>getDisableStopGameButton</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getGameMessage" title="src/app/store/game/game.selectors.ts" ><b>getGameMessage</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getGameOver" title="src/app/store/game/game.selectors.ts" ><b>getGameOver</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getGameSequence" title="src/app/store/game/game.selectors.ts" ><b>getGameSequence</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getGameStarted" title="src/app/store/game/game.selectors.ts" ><b>getGameStarted</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getHasCurrentPlayer" title="src/app/store/players/players.selectors.ts" ><b>getHasCurrentPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getHasPlayers" title="src/app/store/players/players.selectors.ts" ><b>getHasPlayers</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getHasScores" title="src/app/store/scores/scores.selectors.ts" ><b>getHasScores</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getItemsAreReady" title="src/app/store/app/app.selectors.ts" ><b>getItemsAreReady</b>&nbsp;&nbsp;&nbsp;(src/.../app.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getLanguages" title="src/app/store/app/app.selectors.ts" ><b>getLanguages</b>&nbsp;&nbsp;&nbsp;(src/.../app.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getNewScoreInfo" title="src/app/store/scores/scores.selectors.ts" ><b>getNewScoreInfo</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getOtherPlayersHaveScores" title="src/app/store/scores/scores.selectors.ts" ><b>getOtherPlayersHaveScores</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getPlayers" title="src/app/store/players/players.selectors.ts" ><b>getPlayers</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getPlayersNames" title="src/app/store/players/players.selectors.ts" ><b>getPlayersNames</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getPlayersStorage" title="src/app/store/players/players.actions.ts" ><b>getPlayersStorage</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getPlayingInSequence" title="src/app/store/game/game.selectors.ts" ><b>getPlayingInSequence</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getPlayingSequence" title="src/app/store/game/game.selectors.ts" ><b>getPlayingSequence</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getRedirectTo" title="src/app/store/app/app.selectors.ts" ><b>getRedirectTo</b>&nbsp;&nbsp;&nbsp;(src/.../app.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getScore" title="src/app/store/game/game.selectors.ts" ><b>getScore</b>&nbsp;&nbsp;&nbsp;(src/.../game.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getScores" title="src/app/store/scores/scores.selectors.ts" ><b>getScores</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getScoresCurrentPlayer" title="src/app/store/scores/scores.selectors.ts" ><b>getScoresCurrentPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getScoresList" title="src/app/store/scores/scores.selectors.ts" ><b>getScoresList</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getScoresOtherPlayers" title="src/app/store/scores/scores.selectors.ts" ><b>getScoresOtherPlayers</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getScoresStorage" title="src/app/store/scores/scores.actions.ts" ><b>getScoresStorage</b>&nbsp;&nbsp;&nbsp;(src/.../scores.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getToastOptions" title="src/app/store/app/app.selectors.ts" ><b>getToastOptions</b>&nbsp;&nbsp;&nbsp;(src/.../app.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getUserLanguage" title="src/app/store/app/app.selectors.ts" ><b>getUserLanguage</b>&nbsp;&nbsp;&nbsp;(src/.../app.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initGame" title="src/app/store/game/game.actions.ts" ><b>initGame</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/store/app/app.state.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../app.state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initItemReady" title="src/app/store/app/app.actions.ts" ><b>initItemReady</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initLanguages" title="src/app/store/app/app.actions.ts" ><b>initLanguages</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#newInSequence" title="src/app/store/game/game.actions.ts" ><b>newInSequence</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#newPlayer" title="src/app/store/players/players.actions.ts" ><b>newPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#newScore" title="src/app/store/scores/scores.actions.ts" ><b>newScore</b>&nbsp;&nbsp;&nbsp;(src/.../scores.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#nextPlayingSequence" title="src/app/store/game/game.actions.ts" ><b>nextPlayingSequence</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#pauseGame" title="src/app/store/game/game.actions.ts" ><b>pauseGame</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#playersInitialState" title="src/app/store/players/players.state.ts" ><b>playersInitialState</b>&nbsp;&nbsp;&nbsp;(src/.../players.state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#playersState" title="src/app/store/players/players.selectors.ts" ><b>playersState</b>&nbsp;&nbsp;&nbsp;(src/.../players.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#removePlayer" title="src/app/store/players/players.actions.ts" ><b>removePlayer</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#removeScores" title="src/app/store/scores/scores.actions.ts" ><b>removeScores</b>&nbsp;&nbsp;&nbsp;(src/.../scores.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resetActionSheet" title="src/app/store/app/app.actions.ts" ><b>resetActionSheet</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resetAlert" title="src/app/store/app/app.actions.ts" ><b>resetAlert</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resetGameData" title="src/app/store/game/game.actions.ts" ><b>resetGameData</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resetToast" title="src/app/store/app/app.actions.ts" ><b>resetToast</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resumeGame" title="src/app/store/game/game.actions.ts" ><b>resumeGame</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#saveCurrentPlayer" title="src/app/store/players/players.actions.ts" ><b>saveCurrentPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#saveLanguageStorage" title="src/app/store/app/app.actions.ts" ><b>saveLanguageStorage</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#saveNewPlayer" title="src/app/store/players/players.actions.ts" ><b>saveNewPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SCORES_LIST_MAX_ITEMS" title="src/app/models/scores/scores.constants.ts" ><b>SCORES_LIST_MAX_ITEMS</b>&nbsp;&nbsp;&nbsp;(src/.../scores.constants.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#scoresInitialState" title="src/app/store/scores/scores.state.ts" ><b>scoresInitialState</b>&nbsp;&nbsp;&nbsp;(src/.../scores.state.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#scoresState" title="src/app/store/scores/scores.selectors.ts" ><b>scoresState</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setCurrentPlayer" title="src/app/store/players/players.actions.ts" ><b>setCurrentPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setLanguage" title="src/app/store/app/app.actions.ts" ><b>setLanguage</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setPlayersList" title="src/app/store/players/players.actions.ts" ><b>setPlayersList</b>&nbsp;&nbsp;&nbsp;(src/.../players.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setRedirectTo" title="src/app/store/app/app.actions.ts" ><b>setRedirectTo</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setScores" title="src/app/store/scores/scores.actions.ts" ><b>setScores</b>&nbsp;&nbsp;&nbsp;(src/.../scores.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#showActionSheet" title="src/app/store/app/app.actions.ts" ><b>showActionSheet</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#showAlert" title="src/app/store/app/app.actions.ts" ><b>showAlert</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#showToast" title="src/app/store/app/app.actions.ts" ><b>showToast</b>&nbsp;&nbsp;&nbsp;(src/.../app.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#startPlayerAction" title="src/app/store/game/game.actions.ts" ><b>startPlayerAction</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#startPlayingSequence" title="src/app/store/game/game.actions.ts" ><b>startPlayingSequence</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#stopGame" title="src/app/store/game/game.actions.ts" ><b>stopGame</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#stopPlayingSequence" title="src/app/store/game/game.actions.ts" ><b>stopPlayingSequence</b>&nbsp;&nbsp;&nbsp;(src/.../game.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#" title="src/app/store/router.selectors.ts" ><b></b>&nbsp;&nbsp;&nbsp;(src/.../router.selectors.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/store/app/app.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_appReducer"></a>
+                    <span class="name">
+                        <span ><b>_appReducer</b></span>
+                        <a href="#_appReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createReducer (
+  initialState,
+  on(ACTIONS.showToast, (state: AppState, { message, duration }) &#x3D;&gt; ({..._showToast(state, message, duration)})),
+  on(ACTIONS.resetToast, (state: AppState) &#x3D;&gt; ({..._resetToast(state)})),
+  on(ACTIONS.showAlert, (state: AppState, { options }) &#x3D;&gt; ({..._showAlert(state, options)})),
+  on(ACTIONS.resetAlert, (state: AppState) &#x3D;&gt; ({..._resetAlert(state)})),
+  on(ACTIONS.setLanguage, (state: AppState, { infoType, value }) &#x3D;&gt; ({..._setLanguage(state, infoType, value)})),
+  on(ACTIONS.initItemReady, (state: AppState, { key }) &#x3D;&gt; ({..._initItemReady(state, key)})),
+  on(ACTIONS.setRedirectTo, (state: AppState, { route }) &#x3D;&gt; ({..._setRedirectTo(state, route)})),
+  on(ACTIONS.showActionSheet, (state: AppState, { options }) &#x3D;&gt; ({..._showActionSheet(state, options)})),
+  on(ACTIONS.resetActionSheet, (state: AppState) &#x3D;&gt; ({..._resetActionSheet(state)})),
+  on(ACTIONS.avatarsListOk, (state: AppState) &#x3D;&gt; ({..._initItemReady(state, APP_CONSTANTS.APP_PLAYERS_AVATARS_LIST)}))
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/game/game.reducers.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_gameReducer"></a>
+                    <span class="name">
+                        <span ><b>_gameReducer</b></span>
+                        <a href="#_gameReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createReducer (
+  gameInitialState,
+  on(ACTIONS.initGame, (state: GameState) &#x3D;&gt; ({..._initGame(state)})),
+  on(ACTIONS.stopGame, (state: GameState) &#x3D;&gt; ({..._stopGame(state)})),
+  on(ACTIONS.resetGameData, (state: GameState) &#x3D;&gt; ({..._resetGameData(state)})),
+  on(ACTIONS.newInSequence, (state: GameState) &#x3D;&gt; ({..._newInSequence(state)})),
+  on(ACTIONS.startPlayingSequence, (state: GameState) &#x3D;&gt; ({..._startStopPlayingSequence(state, true)})),
+  on(ACTIONS.stopPlayingSequence, (state: GameState) &#x3D;&gt; ({..._startStopPlayingSequence(state, false)})),
+  on(ACTIONS.nextPlayingSequence, (state: GameState) &#x3D;&gt; ({..._nextPlayingSequence(state)})),
+  on(ACTIONS.startPlayerAction, (state: GameState, {colorCode}) &#x3D;&gt; ({..._startPlayerAction(state, colorCode)})),
+  on(ACTIONS.checkPlayerAction, (state: GameState) &#x3D;&gt; ({..._checkPlayerAction(state)})),
+  on(ACTIONS.pauseGame, (state: GameState) &#x3D;&gt; ({..._pauseGame(state)})),
+  on(ACTIONS.resumeGame, (state: GameState) &#x3D;&gt; ({..._resumeGame(state)}))
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="colorCodes"></a>
+                    <span class="name">
+                        <span ><b>colorCodes</b></span>
+                        <a href="#colorCodes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>Object.values(COLOR_CODES)?.filter(value &#x3D;&gt; parseInt(&lt;string&gt;value))</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/players/players.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_playersRecuder"></a>
+                    <span class="name">
+                        <span ><b>_playersRecuder</b></span>
+                        <a href="#_playersRecuder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createReducer (
+  playersInitialState,
+  on(ACTIONS.createAvatarsList, (state: PlayersState) &#x3D;&gt; ({..._createAvatarList(state)})),
+  on(ACTIONS.setPlayersList, (state: PlayersState, { players }) &#x3D;&gt; ({..._setPlayersList(state, players)})),
+  on(ACTIONS.setCurrentPlayer, (state: PlayersState, { currentPlayer }) &#x3D;&gt; ({..._setCurrentPlayer(state, currentPlayer)}))
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/scores/scores.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_scoresReducer"></a>
+                    <span class="name">
+                        <span ><b>_scoresReducer</b></span>
+                        <a href="#_scoresReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createReducer (
+  scoresInitialState,
+  on(SCORES_ACTIONS.setScores, (state: ScoreState, { scores }) &#x3D;&gt; ({ ..._setScores(state, scores)}))
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/models/app/app.constants.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="APP_CURRENT_PLAYER_KEY"></a>
+                    <span class="name">
+                        <span ><b>APP_CURRENT_PLAYER_KEY</b></span>
+                        <a href="#APP_CURRENT_PLAYER_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>&#x27;current_player&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="APP_LANGUAGE_KEY"></a>
+                    <span class="name">
+                        <span ><b>APP_LANGUAGE_KEY</b></span>
+                        <a href="#APP_LANGUAGE_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>&#x27;lang&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="APP_PLAYERS_AVATARS_LIST"></a>
+                    <span class="name">
+                        <span ><b>APP_PLAYERS_AVATARS_LIST</b></span>
+                        <a href="#APP_PLAYERS_AVATARS_LIST"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>&#x27;players_avatars_list&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="APP_PLAYERS_KEY"></a>
+                    <span class="name">
+                        <span ><b>APP_PLAYERS_KEY</b></span>
+                        <a href="#APP_PLAYERS_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>&#x27;players&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="APP_SCORES_KEY"></a>
+                    <span class="name">
+                        <span ><b>APP_SCORES_KEY</b></span>
+                        <a href="#APP_SCORES_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>&#x27;scores&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AVAILABLE_LANGUAGES"></a>
+                    <span class="name">
+                        <span ><b>AVAILABLE_LANGUAGES</b></span>
+                        <a href="#AVAILABLE_LANGUAGES"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>[&#x27;es&#x27;, &#x27;en&#x27;]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEFAULT_APP_LANGUAGE"></a>
+                    <span class="name">
+                        <span ><b>DEFAULT_APP_LANGUAGE</b></span>
+                        <a href="#DEFAULT_APP_LANGUAGE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>&#x27;es&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEFAULT_TOAST_DURATION"></a>
+                    <span class="name">
+                        <span ><b>DEFAULT_TOAST_DURATION</b></span>
+                        <a href="#DEFAULT_TOAST_DURATION"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>2000</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/app/app.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appState"></a>
+                    <span class="name">
+                        <span ><b>appState</b></span>
+                        <a href="#appState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createFeatureSelector&lt;AppState&gt;(&#x27;app&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getActionSheetOptions"></a>
+                    <span class="name">
+                        <span ><b>getActionSheetOptions</b></span>
+                        <a href="#getActionSheetOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  appState,
+  (state: AppState): APP_MODELS.AppActionSheetOptions &#x3D;&gt; state?.actionSheetOptions
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAlertOptions"></a>
+                    <span class="name">
+                        <span ><b>getAlertOptions</b></span>
+                        <a href="#getAlertOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  appState,
+  (state: AppState): APP_MODELS.AppAlertOptions &#x3D;&gt; state?.alertOptions
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getItemsAreReady"></a>
+                    <span class="name">
+                        <span ><b>getItemsAreReady</b></span>
+                        <a href="#getItemsAreReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  appState,
+  (state: AppState): boolean &#x3D;&gt; {
+    const itemsState &#x3D; Array.from(state?.itemsReady.values());
+    return itemsState?.every(item &#x3D;&gt; item);
+  }
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLanguages"></a>
+                    <span class="name">
+                        <span ><b>getLanguages</b></span>
+                        <a href="#getLanguages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  appState,
+  (state: AppState): APP_MODELS.StateLanguages &#x3D;&gt; ({
+    user: state?.userLanguage,
+    device: state?.deviceLanguage
+  })
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRedirectTo"></a>
+                    <span class="name">
+                        <span ><b>getRedirectTo</b></span>
+                        <a href="#getRedirectTo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  appState,
+  (state: AppState): string &#x3D;&gt; state?.redirectTo
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getToastOptions"></a>
+                    <span class="name">
+                        <span ><b>getToastOptions</b></span>
+                        <a href="#getToastOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  appState,
+  (state: AppState): APP_MODELS.AppToastOptions &#x3D;&gt; state?.toastOptions
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserLanguage"></a>
+                    <span class="name">
+                        <span ><b>getUserLanguage</b></span>
+                        <a href="#getUserLanguage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  appState,
+  (state: AppState): string &#x3D;&gt; state?.userLanguage
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/app/app.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="avatarsListOk"></a>
+                    <span class="name">
+                        <span ><b>avatarsListOk</b></span>
+                        <a href="#avatarsListOk"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.AVATARS_LIST_OK
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initItemReady"></a>
+                    <span class="name">
+                        <span ><b>initItemReady</b></span>
+                        <a href="#initItemReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.INIT_ITEM_READY,
+  props&lt;{
+    key: string
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initLanguages"></a>
+                    <span class="name">
+                        <span ><b>initLanguages</b></span>
+                        <a href="#initLanguages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.INIT_LANGUAGES
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetActionSheet"></a>
+                    <span class="name">
+                        <span ><b>resetActionSheet</b></span>
+                        <a href="#resetActionSheet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.RESET_ACTION_SHEET
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetAlert"></a>
+                    <span class="name">
+                        <span ><b>resetAlert</b></span>
+                        <a href="#resetAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.RESET_ALERT
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetToast"></a>
+                    <span class="name">
+                        <span ><b>resetToast</b></span>
+                        <a href="#resetToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.RESET_TOAST
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveLanguageStorage"></a>
+                    <span class="name">
+                        <span ><b>saveLanguageStorage</b></span>
+                        <a href="#saveLanguageStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.SAVE_LANGUAGE_STORAGE,
+  props&lt;{
+    language: string
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setLanguage"></a>
+                    <span class="name">
+                        <span ><b>setLanguage</b></span>
+                        <a href="#setLanguage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.SET_LANGUAGE,
+  props&lt;{
+    infoType: APP_CONSTANTS.languageTypeInfo,
+    value: string
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setRedirectTo"></a>
+                    <span class="name">
+                        <span ><b>setRedirectTo</b></span>
+                        <a href="#setRedirectTo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.SET_REDIRECT_TO,
+  props&lt;{
+    route: string
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showActionSheet"></a>
+                    <span class="name">
+                        <span ><b>showActionSheet</b></span>
+                        <a href="#showActionSheet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.SHOW_ACTION_SHEET,
+  props&lt;{
+    options: APP_MODELS.AppActionSheetOptions
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showAlert"></a>
+                    <span class="name">
+                        <span ><b>showAlert</b></span>
+                        <a href="#showAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.SHOW_ALERT,
+  props&lt;{
+    options: APP_MODELS.AppAlertOptions
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showToast"></a>
+                    <span class="name">
+                        <span ><b>showToast</b></span>
+                        <a href="#showToast"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  ACTIONS.SHOW_TOAST,
+  props&lt;{
+    message: string,
+    duration?: number
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/players/players.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeCurrentPlayer"></a>
+                    <span class="name">
+                        <span ><b>changeCurrentPlayer</b></span>
+                        <a href="#changeCurrentPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.CHANGE_CURRENT_PLAYER,
+  props&lt;{
+    player: PLAYER_MODELS.Player
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createAvatarsList"></a>
+                    <span class="name">
+                        <span ><b>createAvatarsList</b></span>
+                        <a href="#createAvatarsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.CREATE_AVATARS_LIST
+)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Create the list of avatars for the players</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPlayersStorage"></a>
+                    <span class="name">
+                        <span ><b>getPlayersStorage</b></span>
+                        <a href="#getPlayersStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.GET_PLAYERS_STORAGE
+)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Gets the players list from the storage (Indexed DB)</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newPlayer"></a>
+                    <span class="name">
+                        <span ><b>newPlayer</b></span>
+                        <a href="#newPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.NEW_PLAYER,
+  props&lt;{
+    player: PLAYER_MODELS.Player
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Starts the process to create a new player</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removePlayer"></a>
+                    <span class="name">
+                        <span ><b>removePlayer</b></span>
+                        <a href="#removePlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.REMOVE_PLAYER,
+  props&lt;{
+    player: PLAYER_MODELS.Player
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveCurrentPlayer"></a>
+                    <span class="name">
+                        <span ><b>saveCurrentPlayer</b></span>
+                        <a href="#saveCurrentPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.SAVE_CURRENT_PLAYER,
+  props&lt;{
+    currentPlayer: string
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveNewPlayer"></a>
+                    <span class="name">
+                        <span ><b>saveNewPlayer</b></span>
+                        <a href="#saveNewPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.SAVE_NEW_PLAYER,
+  props&lt;{
+    player: PLAYER_MODELS.Player
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setCurrentPlayer"></a>
+                    <span class="name">
+                        <span ><b>setCurrentPlayer</b></span>
+                        <a href="#setCurrentPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.SET_CURRENT_PLAYER,
+  props&lt;{
+    currentPlayer: string
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setPlayersList"></a>
+                    <span class="name">
+                        <span ><b>setPlayersList</b></span>
+                        <a href="#setPlayersList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  PLAYER_ACTIONS.SET_PLAYERS_LIST,
+  props&lt;{
+    players: PLAYER_MODELS.Player[]
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/game/game.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkPlayerAction"></a>
+                    <span class="name">
+                        <span ><b>checkPlayerAction</b></span>
+                        <a href="#checkPlayerAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.CHECK_PLAYER_ACTION
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initGame"></a>
+                    <span class="name">
+                        <span ><b>initGame</b></span>
+                        <a href="#initGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.INIT_GAME
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newInSequence"></a>
+                    <span class="name">
+                        <span ><b>newInSequence</b></span>
+                        <a href="#newInSequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.NEW_IN_SEQUENCE
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextPlayingSequence"></a>
+                    <span class="name">
+                        <span ><b>nextPlayingSequence</b></span>
+                        <a href="#nextPlayingSequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.NEXT_PLAYING_SEQUENCE
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pauseGame"></a>
+                    <span class="name">
+                        <span ><b>pauseGame</b></span>
+                        <a href="#pauseGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.PAUSE_GAME
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetGameData"></a>
+                    <span class="name">
+                        <span ><b>resetGameData</b></span>
+                        <a href="#resetGameData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction(
+  GAME_ACTIONS.RESET_GAME_DATA
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resumeGame"></a>
+                    <span class="name">
+                        <span ><b>resumeGame</b></span>
+                        <a href="#resumeGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.RESUME_GAME
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startPlayerAction"></a>
+                    <span class="name">
+                        <span ><b>startPlayerAction</b></span>
+                        <a href="#startPlayerAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.START_PLAYER_ACTION,
+  props&lt;{
+    colorCode: COLOR_CODES
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startPlayingSequence"></a>
+                    <span class="name">
+                        <span ><b>startPlayingSequence</b></span>
+                        <a href="#startPlayingSequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.START_PLAYING_SEQUENCE
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stopGame"></a>
+                    <span class="name">
+                        <span ><b>stopGame</b></span>
+                        <a href="#stopGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.STOP_GAME
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stopPlayingSequence"></a>
+                    <span class="name">
+                        <span ><b>stopPlayingSequence</b></span>
+                        <a href="#stopPlayingSequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  GAME_ACTIONS.STOP_PLAYING_SEQUENCE
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.prod.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>{
+  production: true
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>{
+  production: false
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/game/game.state.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gameInitialState"></a>
+                    <span class="name">
+                        <span ><b>gameInitialState</b></span>
+                        <a href="#gameInitialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/GameState.html" target="_self" >GameState</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>{
+  buttonsBlocked: false,
+  colorCodePlaying: null,
+  colorAudios: new Map()
+    .set(COLOR_CODES.BLUE, &#x27;./assets/audios/blue.wav&#x27;)
+    .set(COLOR_CODES.RED, &#x27;./assets/audios/red.wav&#x27;)
+    .set(COLOR_CODES.YELLOW, &#x27;./assets/audios/yellow.wav&#x27;)
+    .set(COLOR_CODES.GREEN, &#x27;./assets/audios/green.wav&#x27;),
+  gameOver: false,
+  gameStarted: false,
+  gameSequence: [],
+  indexPlayingSequence: -1,
+  playerCodeCheck: null,
+  playerSequence: [],
+  playingSequence: false,
+  score: 0,
+  sequenceChecked: false,
+  gameMessage: &#x27;&#x27;,
+  gamePaused: false
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/game/game.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gameState"></a>
+                    <span class="name">
+                        <span ><b>gameState</b></span>
+                        <a href="#gameState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createFeatureSelector&lt;GameState&gt;(&#x27;game&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAudioColorCodePlayerCheck"></a>
+                    <span class="name">
+                        <span ><b>getAudioColorCodePlayerCheck</b></span>
+                        <a href="#getAudioColorCodePlayerCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  getColorCodePlayerCheck,
+  (state: GameState, colorCode: COLOR_CODES | null): string &#x3D;&gt; state?.colorAudios?.get(colorCode)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getButtonsEnabled"></a>
+                    <span class="name">
+                        <span ><b>getButtonsEnabled</b></span>
+                        <a href="#getButtonsEnabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): boolean &#x3D;&gt; (
+    state?.gameStarted &amp;&amp;
+    state?.playerSequence?.length !&#x3D;&#x3D; state?.gameSequence?.length &amp;&amp;
+    !state?.playingSequence &amp;&amp;
+    !state?.buttonsBlocked &amp;&amp;
+    !state?.sequenceChecked
+  )
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getColorCodePlayerCheck"></a>
+                    <span class="name">
+                        <span ><b>getColorCodePlayerCheck</b></span>
+                        <a href="#getColorCodePlayerCheck"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  gameState,
+  (state: GameState): COLOR_CODES | null &#x3D;&gt; state?.playerCodeCheck
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getColorCodePlayInSequence"></a>
+                    <span class="name">
+                        <span ><b>getColorCodePlayInSequence</b></span>
+                        <a href="#getColorCodePlayInSequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  gameState,
+  (state: GameState): COLOR_CODES | null &#x3D;&gt; state?.indexPlayingSequence &lt; 0 ? null : state?.gameSequence[state?.indexPlayingSequence]
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getContinueGame"></a>
+                    <span class="name">
+                        <span ><b>getContinueGame</b></span>
+                        <a href="#getContinueGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): boolean &#x3D;&gt; (state?.sequenceChecked &amp;&amp; !state?.gameOver &amp;&amp; !state.gamePaused)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDisableStopGameButton"></a>
+                    <span class="name">
+                        <span ><b>getDisableStopGameButton</b></span>
+                        <a href="#getDisableStopGameButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): boolean &#x3D;&gt; (!state?.gameStarted || state?.buttonsBlocked || state?.sequenceChecked || state?.playingSequence)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGameMessage"></a>
+                    <span class="name">
+                        <span ><b>getGameMessage</b></span>
+                        <a href="#getGameMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): string &#x3D;&gt; state?.gameMessage
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGameOver"></a>
+                    <span class="name">
+                        <span ><b>getGameOver</b></span>
+                        <a href="#getGameOver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): boolean &#x3D;&gt; state?.gameOver
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGameSequence"></a>
+                    <span class="name">
+                        <span ><b>getGameSequence</b></span>
+                        <a href="#getGameSequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): COLOR_CODES[] &#x3D;&gt; state?.gameSequence
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGameStarted"></a>
+                    <span class="name">
+                        <span ><b>getGameStarted</b></span>
+                        <a href="#getGameStarted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): boolean &#x3D;&gt; state?.gameStarted
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPlayingInSequence"></a>
+                    <span class="name">
+                        <span ><b>getPlayingInSequence</b></span>
+                        <a href="#getPlayingInSequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  getColorCodePlayInSequence,
+  (state: GameState, colorCode: COLOR_CODES | null): CurrentColorPlay &#x3D;&gt; {
+    return {
+      index: state?.indexPlayingSequence,
+      colorCodePlaying: colorCode,
+      soundPath: state?.colorAudios?.get(colorCode)
+    }
+  }
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPlayingSequence"></a>
+                    <span class="name">
+                        <span ><b>getPlayingSequence</b></span>
+                        <a href="#getPlayingSequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): boolean &#x3D;&gt; state?.playingSequence
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getScore"></a>
+                    <span class="name">
+                        <span ><b>getScore</b></span>
+                        <a href="#getScore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  gameState,
+  (state: GameState): number &#x3D;&gt; state?.score
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/players/players.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAvatarsList"></a>
+                    <span class="name">
+                        <span ><b>getAvatarsList</b></span>
+                        <a href="#getAvatarsList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  playersState,
+  (state: PlayersState): PLAYER_MODELS.AvatarListItem[] &#x3D;&gt; state?.avatarsList
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAvatarsListReady"></a>
+                    <span class="name">
+                        <span ><b>getAvatarsListReady</b></span>
+                        <a href="#getAvatarsListReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  getAvatarsList,
+  (list: PLAYER_MODELS.AvatarListItem[]): boolean &#x3D;&gt; list?.length &gt; 0
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentPlayer"></a>
+                    <span class="name">
+                        <span ><b>getCurrentPlayer</b></span>
+                        <a href="#getCurrentPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  playersState,
+  (state: PlayersState): PLAYER_MODELS.Player &#x3D;&gt; {
+    const current &#x3D; state?.players?.find(item &#x3D;&gt; item.id &#x3D;&#x3D;&#x3D; state?.currentPlayer);
+    return current;
+  }
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentPlayerAvatar"></a>
+                    <span class="name">
+                        <span ><b>getCurrentPlayerAvatar</b></span>
+                        <a href="#getCurrentPlayerAvatar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  playersState,
+  getCurrentPlayer,
+  (state: PlayersState, current: PLAYER_MODELS.Player): string &#x3D;&gt; state?.avatarsList?.find(item &#x3D;&gt; item.id &#x3D;&#x3D;&#x3D; current.avatar)?.path
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentPlayerId"></a>
+                    <span class="name">
+                        <span ><b>getCurrentPlayerId</b></span>
+                        <a href="#getCurrentPlayerId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  getCurrentPlayer,
+  (player: PLAYER_MODELS.Player): string &#x3D;&gt; player?.id
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentPlayerName"></a>
+                    <span class="name">
+                        <span ><b>getCurrentPlayerName</b></span>
+                        <a href="#getCurrentPlayerName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  getCurrentPlayer,
+  (player: PLAYER_MODELS.Player): string &#x3D;&gt; player?.name
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHasCurrentPlayer"></a>
+                    <span class="name">
+                        <span ><b>getHasCurrentPlayer</b></span>
+                        <a href="#getHasCurrentPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  playersState,
+  (state: PlayersState): boolean &#x3D;&gt; !!(state?.currentPlayer)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHasPlayers"></a>
+                    <span class="name">
+                        <span ><b>getHasPlayers</b></span>
+                        <a href="#getHasPlayers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  playersState,
+  (state: PlayersState): boolean &#x3D;&gt; (state?.players?.length &gt; 0)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPlayers"></a>
+                    <span class="name">
+                        <span ><b>getPlayers</b></span>
+                        <a href="#getPlayers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  playersState,
+  (state: PlayersState): PLAYER_MODELS.PlayerList[] &#x3D;&gt; (
+    state?.players?.map(item &#x3D;&gt; ({
+      ...item,
+      isCurrent: item.id &#x3D;&#x3D;&#x3D; state?.currentPlayer,
+      avatarPath: state?.avatarsList?.find(avatar &#x3D;&gt; avatar.id &#x3D;&#x3D;&#x3D; item.avatar)?.path
+    }))
+  )
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPlayersNames"></a>
+                    <span class="name">
+                        <span ><b>getPlayersNames</b></span>
+                        <a href="#getPlayersNames"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  playersState,
+  (state: PlayersState): string[] &#x3D;&gt; state?.players?.map(player &#x3D;&gt; player.name)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playersState"></a>
+                    <span class="name">
+                        <span ><b>playersState</b></span>
+                        <a href="#playersState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createFeatureSelector&lt;PlayersState&gt;(&#x27;players&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/scores/scores.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCurrentPlayerHasScores"></a>
+                    <span class="name">
+                        <span ><b>getCurrentPlayerHasScores</b></span>
+                        <a href="#getCurrentPlayerHasScores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  getScores,
+  PLAYERS_SELECTORS.getCurrentPlayerId,
+  (scores: SCORES_MODELS.ScoreRecord[], currentPlayerId: string): boolean &#x3D;&gt; scores?.filter(i &#x3D;&gt; i.player &#x3D;&#x3D;&#x3D; currentPlayerId)?.length &gt; 0
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHasScores"></a>
+                    <span class="name">
+                        <span ><b>getHasScores</b></span>
+                        <a href="#getHasScores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  scoresState,
+  (state: ScoreState): boolean &#x3D;&gt; state?.scores?.length &gt; 0
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNewScoreInfo"></a>
+                    <span class="name">
+                        <span ><b>getNewScoreInfo</b></span>
+                        <a href="#getNewScoreInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  PLAYERS_SELECTORS.getCurrentPlayerId,
+  getScores,
+  (playerId: string, scores: SCORES_MODELS.ScoreRecord[]): SCORES_MODELS.ScoresInfo &#x3D;&gt; ({
+    playerId,
+    scores
+  })
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getOtherPlayersHaveScores"></a>
+                    <span class="name">
+                        <span ><b>getOtherPlayersHaveScores</b></span>
+                        <a href="#getOtherPlayersHaveScores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  getScores,
+  PLAYERS_SELECTORS.getCurrentPlayerId,
+  (scores: SCORES_MODELS.ScoreRecord[], currentPlayerId: string): boolean &#x3D;&gt; scores?.filter(i &#x3D;&gt; i.player !&#x3D;&#x3D; currentPlayerId)?.length &gt; 0
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getScores"></a>
+                    <span class="name">
+                        <span ><b>getScores</b></span>
+                        <a href="#getScores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector(
+  scoresState,
+  (state: ScoreState): SCORES_MODELS.ScoreRecord[] &#x3D;&gt; state?.scores
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getScoresCurrentPlayer"></a>
+                    <span class="name">
+                        <span ><b>getScoresCurrentPlayer</b></span>
+                        <a href="#getScoresCurrentPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  getScores,
+  PLAYERS_SELECTORS.getCurrentPlayerId,
+  PLAYERS_SELECTORS.getCurrentPlayerName,
+  APP_SELECTORS.getUserLanguage,
+  PLAYERS_SELECTORS.getPlayers, (
+    scores: SCORES_MODELS.ScoreRecord[],
+    currentPlayerId: string,
+    currentPlayerName: string,
+    userLanguage: string,
+    players: PLAYER_MODELS.PlayerList[]): SCORES_MODELS.ScoresListItem &#x3D;&gt;
+    getScoreListItem(players, scores, currentPlayerId, currentPlayerName, userLanguage, SCORES_CONSTANTS.SCORES_LIST_MAX_ITEMS)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getScoresList"></a>
+                    <span class="name">
+                        <span ><b>getScoresList</b></span>
+                        <a href="#getScoresList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  getScores,
+  PLAYERS_SELECTORS.getPlayers,
+  APP_SELECTORS.getUserLanguage,
+  (scores: SCORES_MODELS.ScoreRecord[], players: PLAYER_MODELS.PlayerList[], userLanguage: string): SCORES_MODELS.ScoresListItem[] &#x3D;&gt; 
+    getScoreListSorted(scores, players, userLanguage, 5)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getScoresOtherPlayers"></a>
+                    <span class="name">
+                        <span ><b>getScoresOtherPlayers</b></span>
+                        <a href="#getScoresOtherPlayers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createSelector (
+  getScores,
+  PLAYERS_SELECTORS.getPlayers,
+  APP_SELECTORS.getUserLanguage,
+  PLAYERS_SELECTORS.getCurrentPlayerId,
+  (scores: SCORES_MODELS.ScoreRecord[], players: PLAYER_MODELS.PlayerList[], userLanguage: string, currentPlayerId: string): SCORES_MODELS.ScoresListItem[] &#x3D;&gt;
+    getScoreListSorted(scores, players, userLanguage, SCORES_CONSTANTS.SCORES_LIST_MAX_ITEMS, currentPlayerId)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scoresState"></a>
+                    <span class="name">
+                        <span ><b>scoresState</b></span>
+                        <a href="#scoresState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createFeatureSelector&lt;ScoreState&gt;(&#x27;scores&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/scores/scores.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getScoresStorage"></a>
+                    <span class="name">
+                        <span ><b>getScoresStorage</b></span>
+                        <a href="#getScoresStorage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  SCORES_ACTIONS.GET_SCORES_STORAGE
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newScore"></a>
+                    <span class="name">
+                        <span ><b>newScore</b></span>
+                        <a href="#newScore"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  SCORES_ACTIONS.NEW_SCORE,
+  props&lt;{
+    score: number;
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeScores"></a>
+                    <span class="name">
+                        <span ><b>removeScores</b></span>
+                        <a href="#removeScores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  SCORES_ACTIONS.REMOVE_SCORES,
+  props&lt;{
+    player: PLAYERS_MODELS.Player;
+    removePlayer: boolean;
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setScores"></a>
+                    <span class="name">
+                        <span ><b>setScores</b></span>
+                        <a href="#setScores"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>createAction (
+  SCORES_ACTIONS.SET_SCORES,
+  props&lt;{
+    scores: SCORES_MODELS.ScoreRecord[]
+  }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/app/app.state.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialState"></a>
+                    <span class="name">
+                        <span ><b>initialState</b></span>
+                        <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/AppState.html" target="_self" >AppState</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>{
+  toastOptions: {
+    showToast: false,
+    toastDuration: APP_CONSTANTS.DEFAULT_TOAST_DURATION,
+    toastMessage: &#x27;&#x27;
+  },
+  itemsReady: new Map()
+    .set(APP_CONSTANTS.APP_LANGUAGE_KEY, false)
+    .set(APP_CONSTANTS.APP_PLAYERS_KEY, false)
+    .set(APP_CONSTANTS.APP_SCORES_KEY, false)
+    .set(APP_CONSTANTS.APP_PLAYERS_AVATARS_LIST, false),
+  alertOptions: {
+    showAlert: false,
+    text: &#x27;&#x27;,
+    resetOnClose: true,
+    showAccept: false,
+    showCancel: false,
+    AcceptText: &#x27;&#x27;,
+    CancelText: &#x27;&#x27;,
+    redirectOnAccept: false,
+    redirectOnCancel: false,
+    additionalAcceptActions: [],
+    additionalCancelActions: []
+  },
+  actionSheetOptions: {},
+  redirectTo: &#x27;&#x27;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/players/players.state.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playersInitialState"></a>
+                    <span class="name">
+                        <span ><b>playersInitialState</b></span>
+                        <a href="#playersInitialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/PlayersState.html" target="_self" >PlayersState</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>{
+  players: [],
+  currentPlayer: null,
+  playerMenuOptions: [],
+  showPlayerMenu: false,
+  avatarsList: []
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/models/scores/scores.constants.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SCORES_LIST_MAX_ITEMS"></a>
+                    <span class="name">
+                        <span ><b>SCORES_LIST_MAX_ITEMS</b></span>
+                        <a href="#SCORES_LIST_MAX_ITEMS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>5</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/scores/scores.state.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="scoresInitialState"></a>
+                    <span class="name">
+                        <span ><b>scoresInitialState</b></span>
+                        <a href="#scoresInitialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/ScoreState.html" target="_self" >ScoreState</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>{
+  scores: []
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/store/router.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name=""></a>
+                    <span class="name">
+                        <span ><b></b></span>
+                        <a href="#"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>getSelectors()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> comparación de resultados "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

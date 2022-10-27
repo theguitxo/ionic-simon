@@ -1,0 +1,1807 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Simon para Ionic</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Simon para Ionic</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Componentes</li>
+  <li
+  >
+  GamePage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Fichero</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/game/game.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implementa</h3>
+    </p>
+    <p class="comment">
+                <code>ViewDidEnter</code>
+                <code>ViewDidLeave</code>
+    </p>
+
+
+<section>
+    <h3>Meta datos</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-game</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./game.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./game.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#audio" >audio</a>
+                            </li>
+                            <li>
+                                <a href="#blueCode" >blueCode</a>
+                            </li>
+                            <li>
+                                <a href="#colorPlaying" >colorPlaying</a>
+                            </li>
+                            <li>
+                                <a href="#disableStopGameButton" >disableStopGameButton</a>
+                            </li>
+                            <li>
+                                <a href="#gameMessage" >gameMessage</a>
+                            </li>
+                            <li>
+                                <a href="#gameStarted" >gameStarted</a>
+                            </li>
+                            <li>
+                                <a href="#greenCode" >greenCode</a>
+                            </li>
+                            <li>
+                                <a href="#redCode" >redCode</a>
+                            </li>
+                            <li>
+                                <a href="#score" >score</a>
+                            </li>
+                            <li>
+                                <a href="#subscriptions" >subscriptions</a>
+                            </li>
+                            <li>
+                                <a href="#yellowCode" >yellowCode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addAndPlaySequence" >addAndPlaySequence</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#audioEnded" >audioEnded</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#canContinueGame" >canContinueGame</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkGameOver" >checkGameOver</a>
+                            </li>
+                            <li>
+                                <a href="#ionViewDidEnter" >ionViewDidEnter</a>
+                            </li>
+                            <li>
+                                <a href="#ionViewDidLeave" >ionViewDidLeave</a>
+                            </li>
+                            <li>
+                                <a href="#lightPressed" >lightPressed</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#playAudio" >playAudio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#playPlayerAudio" >playPlayerAudio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#playSequenceAudio" >playSequenceAudio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setAudioEvents" >setAudioEvents</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setSubscriptions" >setSubscriptions</a>
+                            </li>
+                            <li>
+                                <a href="#startGame" >startGame</a>
+                            </li>
+                            <li>
+                                <a href="#stopGame" >stopGame</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>, translate: TranslateService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="34" class="link-to-prism">src/app/pages/game/game.page.ts:34</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addAndPlaySequence"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>addAndPlaySequence</b></span>
+                        <a href="#addAndPlaySequence"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addAndPlaySequence()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="176"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:176</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="audioEnded"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>audioEnded</b></span>
+                        <a href="#audioEnded"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>audioEnded()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="162"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:162</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="canContinueGame"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>canContinueGame</b></span>
+                        <a href="#canContinueGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>canContinueGame(canContinue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="137"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:137</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>canContinue</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkGameOver"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>checkGameOver</b></span>
+                        <a href="#checkGameOver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkGameOver(gameOver: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="181"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:181</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>gameOver</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ionViewDidEnter"></a>
+                    <span class="name">
+                        <span ><b>ionViewDidEnter</b></span>
+                        <a href="#ionViewDidEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ionViewDidEnter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="41"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ionViewDidLeave"></a>
+                    <span class="name">
+                        <span ><b>ionViewDidLeave</b></span>
+                        <a href="#ionViewDidLeave"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ionViewDidLeave()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="46"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lightPressed"></a>
+                    <span class="name">
+                        <span ><b>lightPressed</b></span>
+                        <a href="#lightPressed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>lightPressed(colorCode: <a href="../undefineds/COLOR_CODES.html" target="_self">GAME_MODEL.COLOR_CODES</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="81"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>colorCode</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#COLOR_CODES" target="_self" >GAME_MODEL.COLOR_CODES</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playAudio"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>playAudio</b></span>
+                        <a href="#playAudio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>playAudio()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="158"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:158</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playPlayerAudio"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>playPlayerAudio</b></span>
+                        <a href="#playPlayerAudio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>playPlayerAudio(audioPath: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="152"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:152</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>audioPath</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playSequenceAudio"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>playSequenceAudio</b></span>
+                        <a href="#playSequenceAudio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>playSequenceAudio(data: <a href="../interfaces/CurrentColorPlay.html" target="_self">GAME_MODEL.CurrentColorPlay</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="143"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/CurrentColorPlay.html" target="_self" >GAME_MODEL.CurrentColorPlay</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setAudioEvents"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>setAudioEvents</b></span>
+                        <a href="#setAudioEvents"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setAudioEvents()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="90"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:90</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setSubscriptions"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>setSubscriptions</b></span>
+                        <a href="#setSubscriptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setSubscriptions()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="95"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startGame"></a>
+                    <span class="name">
+                        <span ><b>startGame</b></span>
+                        <a href="#startGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startGame()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="51"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stopGame"></a>
+                    <span class="name">
+                        <span ><b>stopGame</b></span>
+                        <a href="#stopGame"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>stopGame()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="56"
+                            class="link-to-prism">src/app/pages/game/game.page.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Propiedades
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="audio"></a>
+                    <span class="name">
+                        <span ><b>audio</b></span>
+                        <a href="#audio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>HTMLAudioElement</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>new Audio()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="30" class="link-to-prism">src/app/pages/game/game.page.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="blueCode"></a>
+                    <span class="name">
+                        <span ><b>blueCode</b></span>
+                        <a href="#blueCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>GAME_MODEL.COLOR_CODES.BLUE</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">src/app/pages/game/game.page.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="colorPlaying"></a>
+                    <span class="name">
+                        <span ><b>colorPlaying</b></span>
+                        <a href="#colorPlaying"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../miscellaneous/enumerations.html#COLOR_CODES" target="_self" >GAME_MODEL.COLOR_CODES</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="28" class="link-to-prism">src/app/pages/game/game.page.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disableStopGameButton"></a>
+                    <span class="name">
+                        <span ><b>disableStopGameButton</b></span>
+                        <a href="#disableStopGameButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="34" class="link-to-prism">src/app/pages/game/game.page.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gameMessage"></a>
+                    <span class="name">
+                        <span ><b>gameMessage</b></span>
+                        <a href="#gameMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>Observable&lt;string&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="33" class="link-to-prism">src/app/pages/game/game.page.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="gameStarted"></a>
+                    <span class="name">
+                        <span ><b>gameStarted</b></span>
+                        <a href="#gameStarted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">src/app/pages/game/game.page.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="greenCode"></a>
+                    <span class="name">
+                        <span ><b>greenCode</b></span>
+                        <a href="#greenCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>GAME_MODEL.COLOR_CODES.GREEN</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">src/app/pages/game/game.page.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="redCode"></a>
+                    <span class="name">
+                        <span ><b>redCode</b></span>
+                        <a href="#redCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>GAME_MODEL.COLOR_CODES.RED</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">src/app/pages/game/game.page.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="score"></a>
+                    <span class="name">
+                        <span ><b>score</b></span>
+                        <a href="#score"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="27" class="link-to-prism">src/app/pages/game/game.page.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscriptions"></a>
+                    <span class="name">
+                        <span ><b>subscriptions</b></span>
+                        <a href="#subscriptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>Subscription[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">src/app/pages/game/game.page.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="yellowCode"></a>
+                    <span class="name">
+                        <span ><b>yellowCode</b></span>
+                        <a href="#yellowCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>GAME_MODEL.COLOR_CODES.YELLOW</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">src/app/pages/game/game.page.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &quot;@angular/core&quot;;
+import { TranslateService } from &quot;@ngx-translate/core&quot;;
+import { ViewDidEnter, ViewDidLeave } from &#x27;@ionic/angular&#x27;;
+import { Store } from &quot;@ngrx/store&quot;;
+import { Observable, Subscription } from &quot;rxjs&quot;;
+import { take } from &quot;rxjs/operators&quot;;
+import { AppState } from &quot;../../store/app/app.state&quot;;
+import * as GAME_ACTIONS from &#x27;../../store/game/game.actions&#x27;;
+import * as GAME_SELECTORS from &quot;../../store/game/game.selectors&quot;;
+import * as APP_ACTIONS from &#x27;../../store/app/app.actions&#x27;;
+import * as SCORE_ACTIONS from &#x27;../../store/scores/scores.actions&#x27;;
+import * as GAME_MODEL from &quot;../../models/game/game.model&quot;;
+
+@Component({
+  selector: &#x27;app-game&#x27;,
+  templateUrl: &#x27;./game.page.html&#x27;,
+  styleUrls: [&#x27;./game.page.scss&#x27;]
+})
+export class GamePage implements ViewDidEnter, ViewDidLeave {
+  blueCode &#x3D; GAME_MODEL.COLOR_CODES.BLUE;
+  redCode &#x3D; GAME_MODEL.COLOR_CODES.RED;
+  yellowCode &#x3D; GAME_MODEL.COLOR_CODES.YELLOW;
+  greenCode &#x3D; GAME_MODEL.COLOR_CODES.GREEN;
+
+  subscriptions: Subscription[] &#x3D; [];
+
+  score: number;
+  colorPlaying: GAME_MODEL.COLOR_CODES;
+
+  audio: HTMLAudioElement &#x3D; new Audio();
+
+  gameStarted: Observable&lt;boolean&gt;;
+  gameMessage: Observable&lt;string&gt;;
+  disableStopGameButton: Observable&lt;boolean&gt;;
+
+  constructor(
+    private readonly store: Store&lt;AppState&gt;,
+    private readonly translate: TranslateService
+  ){}
+
+  ionViewDidEnter(): void {
+    this.setSubscriptions();
+    this.setAudioEvents();
+  }
+
+  ionViewDidLeave(): void {
+    this.subscriptions.forEach(item &#x3D;&gt; item.unsubscribe());
+    this.store.dispatch(GAME_ACTIONS.resetGameData());
+  }
+
+  startGame(): void {
+    this.store.dispatch(GAME_ACTIONS.initGame());
+    this.addAndPlaySequence();
+  }
+
+  stopGame(): void {
+    this.store.dispatch(GAME_ACTIONS.pauseGame());
+    this.store.dispatch(APP_ACTIONS.showAlert({
+      options: {
+        showAlert: true,
+        text: this.translate.instant(&#x27;game.confirmStopGame&#x27;),
+        showAccept: true,
+        showCancel: true,
+        AcceptText: this.translate.instant(&#x27;buttons.yes&#x27;),
+        CancelText: this.translate.instant(&#x27;buttons.no&#x27;),
+        additionalAcceptActions: [
+          GAME_ACTIONS.resumeGame(),
+          SCORE_ACTIONS.newScore({ score: this.score }),
+          GAME_ACTIONS.resetGameData(),
+          GAME_ACTIONS.stopGame()
+        ],
+        additionalCancelActions: [
+          GAME_ACTIONS.resumeGame()
+        ],
+        redirectOnAccept: true,
+        redirectOnCancel: false
+      }
+    }))
+  }
+
+  lightPressed(colorCode: GAME_MODEL.COLOR_CODES): void {
+    this.store.select(GAME_SELECTORS.getButtonsEnabled).pipe(take(1))
+      .subscribe((value: boolean) &#x3D;&gt; {
+        if (value) {
+          this.store.dispatch(GAME_ACTIONS.startPlayerAction({ colorCode }));
+        }
+      });
+  }
+
+  private setAudioEvents() {
+    this.audio.onloadeddata &#x3D; () &#x3D;&gt; this.playAudio();
+    this.audio.onended &#x3D; () &#x3D;&gt; this.audioEnded();
+  }
+
+  private setSubscriptions(): void {
+    this.gameStarted &#x3D; this.store.select(GAME_SELECTORS.getGameStarted);
+    this.gameMessage &#x3D; this.store.select(GAME_SELECTORS.getGameMessage);
+    this.disableStopGameButton &#x3D; this.store.select(GAME_SELECTORS.getDisableStopGameButton);
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getContinueGame)
+        .subscribe((value: boolean) &#x3D;&gt; setTimeout(() &#x3D;&gt;this.canContinueGame(value), 500))
+    );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getScore)
+        .subscribe((value: number) &#x3D;&gt; this.score &#x3D; value)
+    );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getGameOver)
+        .subscribe((value: boolean) &#x3D;&gt; this.checkGameOver(value))
+    );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getPlayingInSequence)
+        .subscribe((data: GAME_MODEL.CurrentColorPlay) &#x3D;&gt; this.playSequenceAudio(data))
+    );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getColorCodePlayerCheck)
+        .subscribe((colorCode: GAME_MODEL.COLOR_CODES | null) &#x3D;&gt; this.colorPlaying &#x3D; colorCode)
+    );
+
+    this.subscriptions.push(
+      this.store
+        .select(GAME_SELECTORS.getAudioColorCodePlayerCheck)
+        .subscribe((audioPath: string) &#x3D;&gt; this.playPlayerAudio(audioPath))
+    );
+  }
+
+  private canContinueGame(canContinue: boolean): void {
+    if (canContinue) {
+      this.addAndPlaySequence();
+    }
+  }
+
+  private playSequenceAudio(data: GAME_MODEL.CurrentColorPlay): void {
+    if (data.soundPath) {
+      setTimeout(() &#x3D;&gt; {
+        this.colorPlaying &#x3D; data.colorCodePlaying;
+        this.audio.src &#x3D; data.soundPath;
+      }, data.index &gt; 0 ? 250 : 500);
+    }
+  }
+
+  private playPlayerAudio(audioPath: string): void {
+    if (audioPath) {
+      this.audio.src &#x3D; audioPath;
+    }
+  }
+
+  private playAudio(): void {
+    this.audio.play();
+  }
+
+  private audioEnded(): void {
+    this.store
+    .select(GAME_SELECTORS.getPlayingSequence)
+    .pipe(take(1))
+    .subscribe((value: boolean) &#x3D;&gt; {
+      if (value) {
+        this.store.dispatch(GAME_ACTIONS.nextPlayingSequence());
+      } else {
+        this.store.dispatch(GAME_ACTIONS.checkPlayerAction());
+      }
+      this.colorPlaying &#x3D; null;
+    });
+  }
+
+  private addAndPlaySequence(): void {
+    this.store.dispatch(GAME_ACTIONS.newInSequence());
+    this.store.dispatch(GAME_ACTIONS.startPlayingSequence());
+  }
+
+  private checkGameOver(gameOver: boolean): void {
+    if (gameOver) {
+      this.store.dispatch(APP_ACTIONS.showAlert({
+        options: {
+          showAlert: true,
+          text: this.translate.instant(&#x27;game.gameOver&#x27;, { score: this.score }),
+          showAccept: true,
+          AcceptText: this.translate.instant(&#x27;buttons.accept&#x27;),
+          additionalAcceptActions: [
+            SCORE_ACTIONS.newScore({ score: this.score }),
+            GAME_ACTIONS.resetGameData(),
+            GAME_ACTIONS.stopGame()
+          ],
+          redirectOnAccept: true
+        }
+      }))
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;app-common-header&gt;&lt;/app-common-header&gt;
+&lt;/ion-header&gt;
+&lt;ion-content class&#x3D;&quot;ion-padding&quot;&gt;
+  &lt;div class&#x3D;&quot;game__wrapper&quot;&gt;
+    &lt;div class&#x3D;&quot;game__container&quot;&gt;
+      
+      &lt;div class&#x3D;&quot;game__table&quot;&gt;
+        &lt;div class&#x3D;&quot;game__center&quot;&gt;&lt;/div&gt;
+        &lt;div
+          class&#x3D;&quot;game__blue&quot;
+          [ngClass]&#x3D;&quot;colorPlaying &#x3D;&#x3D;&#x3D; blueCode ? &#x27;game__blue--on&#x27; : &#x27;game__blue--off&#x27;&quot;
+          (click)&#x3D;&quot;lightPressed(blueCode)&quot;&gt;
+        &lt;/div&gt;
+        &lt;div
+          class&#x3D;&quot;game__red game__red--off&quot;
+          [ngClass]&#x3D;&quot;colorPlaying &#x3D;&#x3D;&#x3D; redCode ? &#x27;game__red--on&#x27; : &#x27;game__red--off&#x27;&quot;
+          (click)&#x3D;&quot;lightPressed(redCode)&quot;&gt;
+        &lt;/div&gt;
+        &lt;div
+          class&#x3D;&quot;game__yellow game__yellow--off&quot;
+          [ngClass]&#x3D;&quot;colorPlaying &#x3D;&#x3D;&#x3D; yellowCode ? &#x27;game__yellow--on&#x27; : &#x27;game__yellow--off&#x27;&quot;
+          (click)&#x3D;&quot;lightPressed(yellowCode)&quot;&gt;
+        &lt;/div&gt;
+        &lt;div
+          class&#x3D;&quot;game__green game__green--off&quot;
+          [ngClass]&#x3D;&quot;colorPlaying &#x3D;&#x3D;&#x3D; greenCode ? &#x27;game__green--on&#x27; : &#x27;game__green--off&#x27;&quot;
+          (click)&#x3D;&quot;lightPressed(greenCode)&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;game__buttons&quot;&gt;
+      &lt;ion-grid&gt;
+        &lt;ion-row&gt;
+          &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+            &lt;ion-button
+              color&#x3D;&quot;primary&quot;
+              expand&#x3D;&quot;full&quot;
+              shape&#x3D;&quot;round&quot;
+              [disabled]&#x3D;&quot;gameStarted | async&quot;
+              (click)&#x3D;&quot;startGame()&quot;&gt;
+              &lt;ion-icon slot&#x3D;&quot;start&quot; name&#x3D;&quot;play-outline&quot;&gt;&lt;/ion-icon&gt;
+              &lt;ng-container slot&#x3D;&quot;end&quot;&gt;{{ &#x27;game.play&#x27; | translate}}&lt;/ng-container&gt;
+            &lt;/ion-button&gt;
+          &lt;/ion-col&gt;
+          &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+            &lt;ion-button
+              color&#x3D;&quot;primary&quot;
+              expand&#x3D;&quot;full&quot;
+              shape&#x3D;&quot;round&quot;
+              [disabled]&#x3D;&quot;disableStopGameButton | async&quot;
+              (click)&#x3D;&quot;stopGame()&quot;&gt;
+              &lt;ion-icon slot&#x3D;&quot;start&quot; name&#x3D;&quot;stop-outline&quot;&gt;&lt;/ion-icon&gt;
+              &lt;ng-container slot&#x3D;&quot;end&quot;&gt;{{ &#x27;game.stop&#x27; | translate}}&lt;/ng-container&gt;
+            &lt;/ion-button&gt;
+          &lt;/ion-col&gt;
+        &lt;/ion-row&gt;
+      &lt;/ion-grid&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;game__messages&quot;&gt;
+      {{ (gameMessage | async | translate) || &#x27;&amp;nbsp;&#x27; }}
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;game__score&quot;&gt;
+      &lt;ng-container  *ngIf&#x3D;&quot;gameStarted | async&quot;&gt;
+        {{ &#x27;game.score&#x27; | translate }}: {{ score }}
+      &lt;/ng-container&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./game.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">$border-size: .75rem;
+$border-colors: solid $border-size #000;
+$size-center: 9rem;
+
+.game {
+  &amp;__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &amp;__container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &amp;__table {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 90vw;
+    width: 90vw;
+    border: solid ($border-size * 2) #000;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &amp;__buttons {
+    flex: 1 1 auto;
+  }
+
+  &amp;__messages {
+    flex: 1 1 auto;
+    min-height: 2.75rem;
+  }
+
+  &amp;__score {
+    flex: 1 1 auto;
+    min-height: 2.75rem;
+  }
+
+  &amp;__blue {
+    border-bottom: $border-colors;
+    border-right: $border-colors;
+
+    &amp;--off {
+      background-color: #0066ff;
+    }
+    &amp;--on {
+      background-color: #98C2FF;
+    }
+  }
+
+  &amp;__red {
+    border-bottom: $border-colors;
+    border-left: $border-colors;
+
+    &amp;--off {
+      background-color: #D90000;
+    }
+    &amp;--on {
+      background-color: #FF9292;
+      
+    }
+  }
+
+  &amp;__yellow {
+    border-top: $border-colors;
+    border-right: $border-colors;
+
+    &amp;--off {
+      background-color: #E1B500;
+    }
+    &amp;--on {
+      background-color: #FFF5CC;
+    }
+  }
+
+  &amp;__green {
+    border-top: $border-colors;
+    border-left: $border-colors;
+
+    &amp;--off {
+      background-color: #358500;
+    }
+    &amp;--on {
+      background-color: #D7FFBD;
+    }
+  }
+
+  &amp;__center {
+    background-color: black;
+    width: $size-center;
+    height: $size-center;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - ($size-center / 2));
+    left: calc(50% - ($size-center / 2));
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Leyenda</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Elemento Html</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Componente</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Elemento Html con directiva</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <app-common-header></app-common-header></ion-header><ion-content class="ion-padding">  <div class="game__wrapper">    <div class="game__container">            <div class="game__table">        <div class="game__center"></div>        <div          class="game__blue"          [ngClass]="colorPlaying === blueCode ? \'game__blue--on\' : \'game__blue--off\'"          (click)="lightPressed(blueCode)">        </div>        <div          class="game__red game__red--off"          [ngClass]="colorPlaying === redCode ? \'game__red--on\' : \'game__red--off\'"          (click)="lightPressed(redCode)">        </div>        <div          class="game__yellow game__yellow--off"          [ngClass]="colorPlaying === yellowCode ? \'game__yellow--on\' : \'game__yellow--off\'"          (click)="lightPressed(yellowCode)">        </div>        <div          class="game__green game__green--off"          [ngClass]="colorPlaying === greenCode ? \'game__green--on\' : \'game__green--off\'"          (click)="lightPressed(greenCode)">        </div>      </div>    </div>    <div class="game__buttons">      <ion-grid>        <ion-row>          <ion-col size="6">            <ion-button              color="primary"              expand="full"              shape="round"              [disabled]="gameStarted | async"              (click)="startGame()">              <ion-icon slot="start" name="play-outline"></ion-icon>              <ng-container slot="end">{{ \'game.play\' | translate}}</ng-container>            </ion-button>          </ion-col>          <ion-col size="6">            <ion-button              color="primary"              expand="full"              shape="round"              [disabled]="disableStopGameButton | async"              (click)="stopGame()">              <ion-icon slot="start" name="stop-outline"></ion-icon>              <ng-container slot="end">{{ \'game.stop\' | translate}}</ng-container>            </ion-button>          </ion-col>        </ion-row>      </ion-grid>    </div>    <div class="game__messages">      {{ (gameMessage | async | translate) || \'&nbsp;\' }}    </div>    <div class="game__score">      <ng-container  *ngIf="gameStarted | async">        {{ \'game.score\' | translate }}: {{ score }}      </ng-container>    </div>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonHeaderComponent', 'selector': 'app-common-header'},{'name': 'GamePage', 'selector': 'app-game'},{'name': 'HelpPage', 'selector': 'app-help'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'HowPlayPage', 'selector': 'app-how-play'},{'name': 'ListPlayersPage', 'selector': 'app-list-players'},{'name': 'NewPlayerPage', 'selector': 'app-new-player'},{'name': 'PlayersPage', 'selector': 'app-players'},{'name': 'ScoresListComponent', 'selector': 'app-scores-list'},{'name': 'ScoresPage', 'selector': 'app-scores'},{'name': 'SettingsPage', 'selector': 'app-settings'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'GamePage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> comparación de resultados "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GamePage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

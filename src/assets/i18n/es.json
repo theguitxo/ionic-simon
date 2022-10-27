@@ -34,7 +34,15 @@
       "title": "Como jugar"
     },
     "about": {
-      "title": "Sobre"
+      "title": "Sobre",
+      "sentences": {
+        "repository": "El código de este juego está disponible en este repositorio.",
+        "documentation": "La documentación está disponible en esta página."
+      },
+      "buttons": {
+        "repository": "Ir al repositorio de Github",
+        "documentation": "Ir a la página de documentación"
+      }
     }
   },
   "language": {

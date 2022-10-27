@@ -1,4 +1,14 @@
 <ion-content>
-  ABOUT PAGE
-  <ion-button (click)="abrir()">abrir</ion-button>
+  <ion-list>
+    <ion-item *ngFor="let link of links">
+      <ion-label class="ion-text-wrap">
+        <p>
+          {{ link.sentence }}
+        </p>
+        <p>
+          <ion-button fill="clear">{{ link.button }}</ion-button>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
