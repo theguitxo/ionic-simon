@@ -7,5 +7,5 @@ export interface SlideData {
 export interface HelpAboutLink {
   sentence: string;
   button: string;
-  link: string;
+  url: string;
 }
