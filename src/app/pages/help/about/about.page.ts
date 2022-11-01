@@ -7,6 +7,11 @@ import { AppState } from "../../../store/app/app.state";
 import * as HELP_MODELS from '../../../models/help/help.models';
 import * as APP_SELECTORS from '../../../store/app/app.selectors';
 
+/**
+ * EN: Component that shows the 'About' section in help.
+ * 
+ * ES: Componente que muestra la sección 'Acerca de' en la ayuda.
+ */
 @Component({
   selector: 'app-about',
   templateUrl: './about.page.html',
@@ -15,12 +20,25 @@ import * as APP_SELECTORS from '../../../store/app/app.selectors';
 export class AboutPage implements OnInit {
   links: HELP_MODELS.HelpAboutLink[];
 
+  /**
+   * EN: Constructor for the component
+   * 
+   * ES: Constructor para el componente
+   * @param {TranslateService} translate EN: Service provided by Angular for manage translations. / ES: Servicio proporcionado por Angular para gestionar traducciones.
+   * @param {InAppBrowser} iab EN: Controller to work with the device browser. / ES: Controlador para trabajar con el navegador del dispositivo.
+   * @param {Store<AppState>} store EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.
+   */
   constructor(
     private readonly translate: TranslateService,
     private readonly iab: InAppBrowser,
     private readonly store: Store<AppState>,
   ){}
 
+  /**
+   * EN: Angular lifecycle: gets the language of the application and sets the list of links of the page.
+   * 
+   * ES: Ciclo de vida angular: obtiene el idioma de la aplicación y establece la lista de enlaces de la página.
+   */
   ngOnInit(): void {
     this.store.select(APP_SELECTORS.getUserLanguage)
       .pipe(take(1))
@@ -40,7 +58,13 @@ export class AboutPage implements OnInit {
       });
   }
 
-  abrirUrl(url: string): void {
+  /**
+   * EN: Opens a link in the device browser.
+   * 
+   * ES: Abre un enlace en el navegador del dispositivo.
+   * @param {string} url EN: The link to open. / ES: El enlace para abrir.
+   */
+  openUrl(url: string): void {
     this.iab.create(url);
   }
 }

@@ -3,6 +3,11 @@ import { TranslateService } from "@ngx-translate/core";
 import { SwiperOptions } from "swiper";
 import * as HELP_MODELS from '../../../models/help/help.models';
 
+/**
+ * EN: Component that shows the 'How to play' section in help.
+ * 
+ * ES: Componente que muestra la sección 'Cómo jugar' en la ayuda.
+ */
 @Component({
   selector: 'app-how-play',
   templateUrl: './how-play.page.html',
