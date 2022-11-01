@@ -41,6 +41,6 @@ export class AboutPage implements OnInit {
   }
 
   abrirUrl(url: string): void {
-    const browser = this.iab.create(url);
+    this.iab.create(url);
   }
 }
