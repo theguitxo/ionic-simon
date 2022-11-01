@@ -69,6 +69,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Interface with the information for any slide in the help page.</p>
+<p>ES: Interfaz con la información de cualquier diapositiva en la página de ayuda.</p>
+
+            </p>
 
 
         <section>
@@ -143,6 +151,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Path to the image shown in the slide.</p>
+<p>ES: Ruta a la imagen que se muestra en la diapositiva.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -176,6 +191,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Text of the slide.</p>
+<p>ES: Texto de la diapositiva.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -209,6 +231,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Title for the slide.</p>
+<p>ES: Título de la diapositiva.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -217,14 +246,49 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface SlideData {
+  /**
+   * EN: Title for the slide.
+   * 
+   * ES: Título de la diapositiva.
+   */
   title: string;
+  /**
+   * EN: Path to the image shown in the slide.
+   * 
+   * ES: Ruta a la imagen que se muestra en la diapositiva.
+   */  
   imagePath: string;
+  /**
+   * EN: Text of the slide.
+   * 
+   * ES: Texto de la diapositiva.
+   */
   text: string;
 }
 
+/**
+ * EN: Interface with the information for the links for the &#x27;About&#x27; section in the help page.
+ * 
+ * ES: Interfaz con la información de los enlaces de la sección &#x27;Acerca de&#x27; en la página de ayuda.
+ */
 export interface HelpAboutLink {
+  /**
+   * EN: Sentence with the information about the link.
+   * 
+   * ES: Frase con la información sobre el enlace.
+   */
   sentence: string;
+  /**
+   * EN: Text of the button that navigates to the link.
+   * 
+   * ES: Texto del botón que navega al enlace.
+   */
   button: string;
+  /**
+   * EN: Link that it is described the previous sentence.
+   * 
+   * ES: Enlace que se describe en la frase anterior.
+   */
   url: string;
 }
 </code></pre>

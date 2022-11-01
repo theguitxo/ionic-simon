@@ -107,7 +107,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="6" class="link-to-prism">src/app/routes.ts:6</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/routes.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -182,14 +182,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="12"
-                            class="link-to-prism">src/app/routes.ts:12</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="22"
+                            class="link-to-prism">src/app/routes.ts:22</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Checks if the language is defined before navigate.</p>
+<p>ES: Comprueba si el idioma está definido antes de navegar.</p>
+</div>
 
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -208,6 +211,11 @@
 import { Routes, Resolve, Router } from &#x27;@angular/router&#x27;;
 import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
 
+/**
+ * EN: Class for execute some code before navigate to any route.
+ * 
+ * ES: Clase para ejecutar algún código antes de navegar a cualquier ruta.
+ */
 @Injectable()
 export class RouteResolver implements Resolve&lt;void&gt; {
   constructor(
@@ -215,6 +223,11 @@ export class RouteResolver implements Resolve&lt;void&gt; {
     private readonly router: Router
   ){}
 
+  /**
+   * EN: Checks if the language is defined before navigate.
+   * 
+   * ES: Comprueba si el idioma está definido antes de navegar.
+   */
   resolve(): void {
     if (this.translate.currentLang &#x3D;&#x3D;&#x3D; undefined || Object.keys(this.translate.translations).length &lt;&#x3D; 0) {
       this.router.navigate([&#x27;/&#x27;]);
@@ -222,6 +235,11 @@ export class RouteResolver implements Resolve&lt;void&gt; {
   }
 }
 
+/**
+ * EN: List of routes for the application.
+ * 
+ * ES: Lista de rutas para la aplicación.
+ */
 export const routes: Routes &#x3D; [
   {
     path: &#x27;home&#x27;,

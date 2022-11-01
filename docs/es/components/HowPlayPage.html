@@ -68,6 +68,14 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Descripción</h3>
+    </p>
+    <p class="comment">
+        <p>EN: Component that shows the &#39;How to play&#39; section in help.</p>
+<p>ES: Componente que muestra la sección &#39;Cómo jugar&#39; en la ayuda.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -177,12 +185,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/pages/help/how-play/how-play.page.ts:17</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">src/app/pages/help/how-play/how-play.page.ts:32</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>EN: Constructor for the component</p>
+<p>ES: Constructor para el componente</p>
+</div>
                             <div>
                                     <b>Parámetros :</b>
                                     <table class="params">
@@ -191,6 +202,7 @@
                                                 <td>Nombre</td>
                                                     <td>Tipo</td>
                                                 <td>Opcional</td>
+                                                    <td>Descripción</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -205,6 +217,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Service provided by Angular for manage translations. / ES: Servicio proporcionado por Angular para gestionar traducciones.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -244,14 +260,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="23"
-                            class="link-to-prism">src/app/pages/help/how-play/how-play.page.ts:23</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="49"
+                            class="link-to-prism">src/app/pages/help/how-play/how-play.page.ts:49</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Angular lifecycle: sets the objects list with the information for the slides.</p>
+<p>ES: Ciclo de vida angular: establece la lista de objetos con la información de las diapositivas.</p>
+</div>
 
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -291,10 +310,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/pages/help/how-play/how-play.page.ts:17</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="32" class="link-to-prism">src/app/pages/help/how-play/how-play.page.ts:32</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Objects list with the information of the slides.</p>
+<p>ES: Lista de objetos con la información de las diapositivas.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -325,10 +351,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/pages/help/how-play/how-play.page.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="22" class="link-to-prism">src/app/pages/help/how-play/how-play.page.ts:22</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Options for the slides viewer.</p>
+<p>ES: Opciones para el visor de diapositivas.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -343,23 +376,49 @@ import { TranslateService } from &quot;@ngx-translate/core&quot;;
 import { SwiperOptions } from &quot;swiper&quot;;
 import * as HELP_MODELS from &#x27;../../../models/help/help.models&#x27;;
 
+/**
+ * EN: Component that shows the &#x27;How to play&#x27; section in help.
+ * 
+ * ES: Componente que muestra la sección &#x27;Cómo jugar&#x27; en la ayuda.
+ */
 @Component({
   selector: &#x27;app-how-play&#x27;,
   templateUrl: &#x27;./how-play.page.html&#x27;,
   styleUrls: [&#x27;how-play.page.scss&#x27;]
 })
 export class HowPlayPage implements OnInit {
+  /**
+   * EN: Options for the slides viewer.
+   * 
+   * ES: Opciones para el visor de diapositivas.
+   */
   swiperOptions: SwiperOptions &#x3D; {
     slidesPerView: 1,
     loop: false
   }
 
+  /**
+   * EN: Objects list with the information of the slides.
+   * 
+   * ES: Lista de objetos con la información de las diapositivas.
+   */
   slides: HELP_MODELS.SlideData[] &#x3D; [];
 
+  /**
+   * EN: Constructor for the component
+   * 
+   * ES: Constructor para el componente
+   * @param translate EN: Service provided by Angular for manage translations. / ES: Servicio proporcionado por Angular para gestionar traducciones.
+   */
   constructor(
     private readonly translate: TranslateService
   ){}
 
+  /**
+   * EN: Angular lifecycle: sets the objects list with the information for the slides.
+   * 
+   * ES: Ciclo de vida angular: establece la lista de objetos con la información de las diapositivas.
+   */
   ngOnInit(): void {
     this.slides &#x3D; [
       {

@@ -60,6 +60,14 @@
 
 
 
+        <p class="comment">
+            <h3>Description</h3>
+        </p>
+        <p class="comment">
+            <p>EN: Módule to manage the routes of the application.</p>
+<p>ES: Módulo para gestionar las rutas de la aplicación.</p>
+
+        </p>
 
 
         <div class="container-fluid module">
@@ -76,6 +84,11 @@
 import { PreloadAllModules, RouterModule } from &#x27;@angular/router&#x27;;
 import { routes } from &#x27;./routes&#x27;;
 
+/**
+ * EN: Módule to manage the routes of the application.
+ * 
+ * ES: Módulo para gestionar las rutas de la aplicación.
+ */
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
