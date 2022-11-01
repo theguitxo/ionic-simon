@@ -32,6 +32,11 @@ export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+/**
+ * EN: Module for the application
+ * 
+ * ES: Módulo para la aplicación
+ */
 @NgModule({
   declarations: [AppComponent],
   imports: [

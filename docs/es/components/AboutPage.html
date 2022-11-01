@@ -149,7 +149,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#abrir" >abrir</a>
+                                <a href="#abrirUrl" >abrirUrl</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
@@ -172,12 +172,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(translate: TranslateService, iab: InAppBrowser)</code>
+<code>constructor(translate: TranslateService, iab: InAppBrowser, store: <a href="../interfaces/AppState.html" target="_self">Store&lt;AppState&gt;</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/pages/help/about/about.page.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">src/app/pages/help/about/about.page.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -218,6 +218,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/AppState.html" target="_self" >Store&lt;AppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -240,24 +252,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="abrir"></a>
+                    <a name="abrirUrl"></a>
                     <span class="name">
-                        <span ><b>abrir</b></span>
-                        <a href="#abrir"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>abrirUrl</b></span>
+                        <a href="#abrirUrl"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>abrir()</code>
+<code>abrirUrl(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="34"
-                            class="link-to-prism">src/app/pages/help/about/about.page.ts:34</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="43"
+                            class="link-to-prism">src/app/pages/help/about/about.page.ts:43</a></div>
                 </td>
             </tr>
 
@@ -266,8 +278,40 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>url</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -293,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="19"
-                            class="link-to-prism">src/app/pages/help/about/about.page.ts:19</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="24"
+                            class="link-to-prism">src/app/pages/help/about/about.page.ts:24</a></div>
                 </td>
             </tr>
 
@@ -335,7 +379,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/pages/help/about/about.page.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">src/app/pages/help/about/about.page.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -351,7 +395,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
 import { InAppBrowser } from &#x27;@awesome-cordova-plugins/in-app-browser/ngx&#x27;;
 import { TranslateService } from &quot;@ngx-translate/core&quot;;
+import { take } from &#x27;rxjs/operators&#x27;;
+import { Store } from &quot;@ngrx/store&quot;;
+import { AppState } from &quot;../../../store/app/app.state&quot;;
 import * as HELP_MODELS from &#x27;../../../models/help/help.models&#x27;;
+import * as APP_SELECTORS from &#x27;../../../store/app/app.selectors&#x27;;
 
 @Component({
   selector: &#x27;app-about&#x27;,
@@ -363,26 +411,31 @@ export class AboutPage implements OnInit {
 
   constructor(
     private readonly translate: TranslateService,
-    private readonly iab: InAppBrowser
+    private readonly iab: InAppBrowser,
+    private readonly store: Store&lt;AppState&gt;,
   ){}
 
   ngOnInit(): void {
-    this.links &#x3D; [
-      {
-        sentence: this.translate.instant(&#x27;help.about.sentences.repository&#x27;),
-        button: this.translate.instant(&#x27;help.about.buttons.repository&#x27;),
-        link: &#x27;https://github.com/theguitxo/ionic-simon&#x27;
-      },
-      {
-        sentence: this.translate.instant(&#x27;help.about.sentences.documentation&#x27;),
-        button: this.translate.instant(&#x27;help.about.buttons.documentation&#x27;),
-        link: &#x27;&#x27;
-      }
-    ]
+    this.store.select(APP_SELECTORS.getUserLanguage)
+      .pipe(take(1))
+      .subscribe((lang: string) &#x3D;&gt; {
+        this.links &#x3D; [
+          {
+            sentence: this.translate.instant(&#x27;help.about.sentences.repository&#x27;),
+            button: this.translate.instant(&#x27;help.about.buttons.repository&#x27;),
+            url: &#x27;https://github.com/theguitxo/ionic-simon&#x27;
+          },
+          {
+            sentence: this.translate.instant(&#x27;help.about.sentences.documentation&#x27;),
+            button: this.translate.instant(&#x27;help.about.buttons.documentation&#x27;),
+            url: &#x60;https://theguitxo.github.io/ionic-simon/${lang}/&#x60;
+          }
+        ]
+      });
   }
 
-  abrir(): void {
-    const browser &#x3D; this.iab.create(&#x27;https://www.guitxo.com&#x27;);
+  abrirUrl(url: string): void {
+    const browser &#x3D; this.iab.create(url);
   }
 }
 </code></pre>
@@ -397,7 +450,7 @@ export class AboutPage implements OnInit {
           {{ link.sentence }}
         &lt;/p&gt;
         &lt;p&gt;
-          &lt;ion-button fill&#x3D;&quot;clear&quot;&gt;{{ link.button }}&lt;/ion-button&gt;
+          &lt;ion-button fill&#x3D;&quot;clear&quot; (click)&#x3D;&quot;abrirUrl(link.url)&quot;&gt;{{ link.button }}&lt;/ion-button&gt;
         &lt;/p&gt;
       &lt;/ion-label&gt;
     &lt;/ion-item&gt;
@@ -440,7 +493,7 @@ export class AboutPage implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-content>  <ion-list>    <ion-item *ngFor="let link of links">      <ion-label class="ion-text-wrap">        <p>          {{ link.sentence }}        </p>        <p>          <ion-button fill="clear">{{ link.button }}</ion-button>        </p>      </ion-label>    </ion-item>  </ion-list></ion-content></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-content>  <ion-list>    <ion-item *ngFor="let link of links">      <ion-label class="ion-text-wrap">        <p>          {{ link.sentence }}        </p>        <p>          <ion-button fill="clear" (click)="abrirUrl(link.url)">{{ link.button }}</ion-button>        </p>      </ion-label>    </ion-item>  </ion-list></ion-content></div>'
     var COMPONENTS = [{'name': 'AboutPage', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonHeaderComponent', 'selector': 'app-common-header'},{'name': 'GamePage', 'selector': 'app-game'},{'name': 'HelpPage', 'selector': 'app-help'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'HowPlayPage', 'selector': 'app-how-play'},{'name': 'ListPlayersPage', 'selector': 'app-list-players'},{'name': 'NewPlayerPage', 'selector': 'app-new-player'},{'name': 'PlayersPage', 'selector': 'app-players'},{'name': 'ScoresListComponent', 'selector': 'app-scores-list'},{'name': 'ScoresPage', 'selector': 'app-scores'},{'name': 'SettingsPage', 'selector': 'app-settings'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AboutPage'};

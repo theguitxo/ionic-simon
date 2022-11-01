@@ -21,9 +21,29 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
+  /**
+   * EN: Subscription to add to it the app subscriptions.
+   * 
+   * ES: Suscripción para agregarle las suscripciones de la aplicación.
+   */
   subscriptions: Subscription = new Subscription();
+  /**
+   * 
+   */
   appIsReady$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
+  /**
+   * EN: Constructor for the component
+   * 
+   * ES: Constructor para el componente
+   * @param {Store<AppState>} store EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.
+   * @param {ToastController} toastController EN: Controller to manage messages that are shown for a short time. / ES: Controlador para gestionar los mensajes que se muestran durante un tiempo breve.
+   * @param {AlertController} alertController EN: Controller to manage messages that are shown in a pop-up. / ES: Controlador para administrar los mensajes que se muestran en una pop-up.
+   * @param {ActionSheetController} actionSheetCtrl EN: Controller to manage an options menu shown in the bottom of the screen. / ES: Controlador para administrar un menú de opciones que se muestra en la parte inferior de la pantalla.
+   * @param {StorageService} storageService EN: Service to communicate with the local storage of the device. / ES: Servicio de comunicación con el almacenamiento local del dispositivo.
+   * @param {Router} router EN: Service of Angular to manage the application routes. / ES: Servicio de Angular para gestionar las rutas de la aplicación.
+   * @param {TranslateService} translate EN: Service of Angular to manage the translations. / ES: Servicio de Angular para gestionar las traducciones.
+   */
   constructor(
     private readonly store: Store<AppState>,
     public toastController: ToastController,
@@ -34,14 +54,29 @@ export class AppComponent implements OnInit, OnDestroy {
     private readonly translate: TranslateService
   ) {}
 
+  /**
+   * EN: Angular lifecycle: inits the subscriptions needed by the application.
+   * 
+   * ES: Ciclo de vida de Angular: inicia las suscripciones que necesita la aplicación.
+   */
   ngOnInit(): void {
     this.initSubscriptions();
   }
 
+  /**
+   * EN: Angular lifecycle: remove the subscriptions of the application started in the component initialization.
+   * 
+   * ES: Ciclo de vida angular: eliminar las suscripciones de la aplicación iniciadas en la inicialización del componente.
+   */
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
 
+  /**
+   * EN: Inits all the subscriptions needed for the app.
+   * 
+   * ES: Inicia todas las suscripciones necesarias para la aplicación.
+   */
   private initSubscriptions(): void {
     this.subscriptions.add(
       this.store.select(PLAYERS_SELECTORS.getAvatarsListReady).subscribe((value: boolean) => {
@@ -108,6 +143,13 @@ export class AppComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * EN: Shows a little message on the bottom of the page.
+   * 
+   * ES: Muestra un pequeño mensaje en la parte inferior de la página.
+   * @param {string} message EN: Message to display. / ES: Mensaje para mostrar.
+   * @param {number} duration EN: Time in which the message should be displayed. / ES: Tiempo en que se debe mostrar el mensaje.
+   */
   private async showToast(message: string, duration: number): Promise<void> {
     const toast = await this.toastController.create({
       message,
@@ -117,6 +159,12 @@ export class AppComponent implements OnInit, OnDestroy {
     this.store.dispatch(APP_ACTIONS.resetToast());
   }
 
+  /**
+   * EN: Shows a pop-up with a message and one or two option buttons.
+   * 
+   * ES: Muestra un pop-up con un mensaje y un o dos botones de opciones.
+   * @param {AppAlertOptions} data EN: An object with the options to create the pop-up. / ES: Un objeto con las opciones para crear el pop-up.
+   */
   private async showAlert(data: APP_MODELS.AppAlertOptions): Promise<void> {
     const buttons: AlertButton[] = [];
     if (data.showAccept) {
@@ -162,6 +210,12 @@ export class AppComponent implements OnInit, OnDestroy {
     await alert.present();
   }
 
+  /**
+   * EN: Shows, from de the bottom of the screen, a options menu.
+   * 
+   * ES: Muestra, desde la parte inferior de la pantalla, un menú de opciones.
+   * @param {AppActionSheetOptions} options EN: An object with the properties to create the menu. / ES: Un objeto con las propiedades para crear el menú.
+   */
   private async showAlertSheet(options: APP_MODELS.AppActionSheetOptions): Promise<void> {
     const actionSheet = await this.actionSheetCtrl.create({
       header: options.header,

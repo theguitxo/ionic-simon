@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { Routes, Resolve, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
+/**
+ * EN: Class for execute some code before navigate to any route.
+ * 
+ * ES: Clase para ejecutar algún código antes de navegar a cualquier ruta.
+ */
 @Injectable()
 export class RouteResolver implements Resolve<void> {
   constructor(
@@ -9,6 +14,11 @@ export class RouteResolver implements Resolve<void> {
     private readonly router: Router
   ){}
 
+  /**
+   * EN: Checks if the language is defined before navigate.
+   * 
+   * ES: Comprueba si el idioma está definido antes de navegar.
+   */
   resolve(): void {
     if (this.translate.currentLang === undefined || Object.keys(this.translate.translations).length <= 0) {
       this.router.navigate(['/']);
@@ -16,6 +26,11 @@ export class RouteResolver implements Resolve<void> {
   }
 }
 
+/**
+ * EN: List of routes for the application.
+ * 
+ * ES: Lista de rutas para la aplicación.
+ */
 export const routes: Routes = [
   {
     path: 'home',
