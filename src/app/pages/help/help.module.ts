@@ -11,6 +11,11 @@ import { ComponentsModule } from '../../components/components.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
+/**
+ * EN: Module for the help page.
+ * 
+ * ES: Módulo para la página de ayuda.
+ */
 @NgModule({
   imports: [
     CommonModule,

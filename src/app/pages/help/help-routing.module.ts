@@ -4,6 +4,11 @@ import { AboutPage } from './about/about.page';
 import { HelpPage } from './help.page';
 import { HowPlayPage } from './how-play/how-play.page';
 
+/**
+ * EN: Routes list for the help page.
+ * 
+ * ES: Lista de rutas para la página de ayuda.
+ */
 const routes: Routes = [
   {
     path: '',
@@ -28,6 +33,11 @@ const routes: Routes = [
   }
 ];
 
+/**
+ * EN: Module for manage the routes of the help page.
+ * 
+ * ES: Módulo para gestionar las rutas de la página de ayuda.
+ */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
