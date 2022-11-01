@@ -14,17 +14,38 @@ import * as HELP_MODELS from '../../../models/help/help.models';
   styleUrls: ['how-play.page.scss']
 })
 export class HowPlayPage implements OnInit {
+  /**
+   * EN: Options for the slides viewer.
+   * 
+   * ES: Opciones para el visor de diapositivas.
+   */
   swiperOptions: SwiperOptions = {
     slidesPerView: 1,
     loop: false
   }
 
+  /**
+   * EN: Objects list with the information of the slides.
+   * 
+   * ES: Lista de objetos con la información de las diapositivas.
+   */
   slides: HELP_MODELS.SlideData[] = [];
 
+  /**
+   * EN: Constructor for the component
+   * 
+   * ES: Constructor para el componente
+   * @param translate EN: Service provided by Angular for manage translations. / ES: Servicio proporcionado por Angular para gestionar traducciones.
+   */
   constructor(
     private readonly translate: TranslateService
   ){}
 
+  /**
+   * EN: Angular lifecycle: sets the objects list with the information for the slides.
+   * 
+   * ES: Ciclo de vida angular: establece la lista de objetos con la información de las diapositivas.
+   */
   ngOnInit(): void {
     this.slides = [
       {
