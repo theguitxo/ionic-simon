@@ -9,6 +9,13 @@ import { TranslateService } from '@ngx-translate/core';
  */
 @Injectable()
 export class RouteResolver implements Resolve<void> {
+  /**
+   * EN: Constructor for the resolver.
+   * 
+   * ES: Constructor para el resolver.
+   * @param {TranslateService} translate EN: Service of Angular to manage the translations. / ES: Servicio de Angular para gestionar las traducciones.
+   * @param {Router} router EN: Service of Angular to manage the application routes. / ES: Servicio de Angular para gestionar las rutas de la aplicación.
+   */
   constructor(
     private readonly translate: TranslateService,
     private readonly router: Router
@@ -18,6 +25,8 @@ export class RouteResolver implements Resolve<void> {
    * EN: Checks if the language is defined before navigate.
    * 
    * ES: Comprueba si el idioma está definido antes de navegar.
+   * 
+   * @returns {void}
    */
   resolve(): void {
     if (this.translate.currentLang === undefined || Object.keys(this.translate.translations).length <= 0) {
