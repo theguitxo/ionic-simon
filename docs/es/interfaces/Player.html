@@ -69,6 +69,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Information about a player of the application.</p>
+<p>ES: Información sobre un jugador de la aplicación.</p>
+
+            </p>
 
 
         <section>
@@ -143,6 +151,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Identification of the avatar of the player.</p>
+<p>ES: Identificación del avatar del jugador.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -176,6 +191,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Identification of the player.</p>
+<p>ES: Identificación del jugador.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -209,6 +231,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Name of the player.</p>
+<p>ES: Nombre del jugador.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -217,18 +246,63 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Player {
+  /**
+   * EN: Identification of the player.
+   * 
+   * ES: Identificación del jugador.
+   */  
   id: string;
+  /**
+   * EN: Name of the player.
+   * 
+   * ES: Nombre del jugador.
+   */  
   name: string;
+  /**
+   * EN: Identification of the avatar of the player.
+   * 
+   * ES: Identificación del avatar del jugador.
+   */  
   avatar: number;
 }
 
+/**
+ * EN: Information about a player to show in a list.
+ * 
+ * ES: Información sobre un jugador para mostrar en una lista.
+ */
 export interface PlayerList extends Player {
+  /**
+   * EN: Indicator if the player is the current or not.
+   * 
+   * ES: Indicador si el jugador es el actual o no.
+   */
   isCurrent: boolean;
+  /**
+   * EN: Path to the file of the avatar.
+   * 
+   * ES: Ruta al archivo del avatar.
+   */
   avatarPath: string;
 }
 
+/**
+ * EN: Information about an avatar to show in a list.
+ * 
+ * ES: Información sobre un avatar para mostrar en una lista.
+ */
 export interface AvatarListItem {
+  /**
+   * EN: Identification of the avatar.
+   * 
+   * ES: Identificación del avatar.
+   */   
   id: number;
+  /**
+   * EN: Path to the file of the avatar.
+   * 
+   * ES: Ruta al archivo del avatar.
+   */  
   path: string;
 }
 </code></pre>

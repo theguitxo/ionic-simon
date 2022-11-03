@@ -96,12 +96,6 @@
                                         </a>
                                 </li>
                                 <li>
-                                        <a href="#playerMenuOptions" 
->
-                                            playerMenuOptions
-                                        </a>
-                                </li>
-                                <li>
                                         <a href="#players" 
 >
                                             players
@@ -194,39 +188,6 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="playerMenuOptions"></a>
-                                        <span class="name "><b>playerMenuOptions</b>
-                                            <a href="#playerMenuOptions">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>playerMenuOptions:         <code><a href="../miscellaneous/enumerations.html#OPTIONS_MENU" target="_self" >OPTIONS_MENU[]</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#OPTIONS_MENU" target="_self" >OPTIONS_MENU[]</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
                                         <a name="players"></a>
                                         <span class="name "><b>players</b>
                                             <a href="#players">
@@ -294,13 +255,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { OPTIONS_MENU } from &quot;src/app/models/player/player.constants&quot;;
-import * as PLAYER_MODELS from &quot;../../models/player/player.models&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import * as PLAYER_MODELS from &quot;../../models/player/player.models&quot;;
 
 export interface PlayersState {
   players: Array&lt;PLAYER_MODELS.Player&gt;;
   currentPlayer: string;
-  playerMenuOptions: OPTIONS_MENU[];
   showPlayerMenu: boolean;
   avatarsList: PLAYER_MODELS.AvatarListItem[];
 }
@@ -308,7 +267,6 @@ export interface PlayersState {
 export const playersInitialState: PlayersState &#x3D; {
   players: [],
   currentPlayer: null,
-  playerMenuOptions: [],
   showPlayerMenu: false,
   avatarsList: []
 };

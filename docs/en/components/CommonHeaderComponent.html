@@ -65,6 +65,14 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>EN: Component for the header used in all the pages.</p>
+<p>ES: Componente para el encabezado utilizado en todas las páginas.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -167,12 +175,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/common-header/common-header.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/common-header/common-header.component.ts:22</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>EN: Constructor for the component</p>
+<p>ES: Constructor para el componente</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -181,6 +192,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -195,6 +207,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -234,14 +250,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/components/common-header/common-header.component.ts:18</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/components/common-header/common-header.component.ts:39</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Angular lifecycle: sets the property to get the title of the page.</p>
+<p>ES: Ciclo de vida angular: establece la propiedad para obtener el título de la página.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -276,10 +295,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/common-header/common-header.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/common-header/common-header.component.ts:22</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Observable to get the title from the route.</p>
+<p>ES: Observable para obtener el título de la ruta.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -295,17 +321,38 @@ import { Observable } from &quot;rxjs&quot;;
 import { AppState } from &quot;../../store/app/app.state&quot;;
 import * as ROUTER_SELECTORS from &quot;../../store/router.selectors&quot;;
 
+/**
+ * EN: Component for the header used in all the pages.
+ * 
+ * ES: Componente para el encabezado utilizado en todas las páginas.
+ */
 @Component({
   selector: &#x27;app-common-header&#x27;,
   templateUrl: &#x27;./common-header.component.html&#x27;
 })
 export class CommonHeaderComponent implements OnInit {
+  /**
+   * EN: Observable to get the title from the route.
+   * 
+   * ES: Observable para obtener el título de la ruta.
+   */
   title!: Observable&lt;string&gt;;
   
+  /**
+   * EN: Constructor for the component
+   * 
+   * ES: Constructor para el componente
+   * @param {Store&lt;AppState&gt;} store EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.
+   */
   constructor(
     private readonly store: Store&lt;AppState&gt;
   ) {}
-  
+
+  /**
+   * EN: Angular lifecycle: sets the property to get the title of the page.
+   * 
+   * ES: Ciclo de vida angular: establece la propiedad para obtener el título de la página.
+   */
   ngOnInit(): void {
     this.title &#x3D; this.store.select(ROUTER_SELECTORS.selectTitle);
   }

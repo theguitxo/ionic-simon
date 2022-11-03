@@ -69,6 +69,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Information about the color that is playing.</p>
+<p>ES: Información sobre el color que está jugando.</p>
+
+            </p>
 
 
         <section>
@@ -143,6 +151,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Code color to play.</p>
+<p>ES: Código de color para reproducir</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -176,6 +191,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Index into the playing sequence.</p>
+<p>ES: Índice en la secuencia de reproducción.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -209,6 +231,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Path to the file with the sound.</p>
+<p>ES: Ruta al archivo con el sonido.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -223,9 +252,29 @@
   GREEN &#x3D; 4
 }
 
+/**
+ * EN: Information about the color that is playing.
+ * 
+ * ES: Información sobre el color que está jugando.
+ */
 export interface CurrentColorPlay {
+  /**
+   * EN: Index into the playing sequence.
+   * 
+   * ES: Índice en la secuencia de reproducción.
+   */
   index: number;
+  /**
+   * EN: Code color to play.
+   * 
+   * ES: Código de color para reproducir
+   */
   colorCodePlaying: COLOR_CODES;
+  /**
+   * EN: Path to the file with the sound.
+   * 
+   * ES: Ruta al archivo con el sonido.
+   */
   soundPath: null | string;
 }
 </code></pre>

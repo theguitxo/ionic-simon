@@ -4,6 +4,11 @@ import { IonicModule } from "@ionic/angular";
 import { TranslateModule } from "@ngx-translate/core";
 import { CommonHeaderComponent } from "./common-header/common-header.component";
 
+/**
+ * EN: Modulo for common components.
+ * 
+ * ES: Módulo para componentes comunes.
+ */
 @NgModule({
   declarations: [
     CommonHeaderComponent
