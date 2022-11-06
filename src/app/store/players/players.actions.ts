@@ -1,6 +1,11 @@
 import { createAction, props } from "@ngrx/store";
 import * as PLAYER_MODELS from "../../models/player/player.models";
 
+/**
+ * EN: Actions for the players.
+ * 
+ * ES: Acciones para los jugadores.
+ */
 export enum PLAYER_ACTIONS {
   GET_PLAYERS_STORAGE = '[PLAYER ACTIONS] Get players storage',
   CREATE_AVATARS_LIST = '[PLAYER ACTIONS] Create avatars list',
@@ -14,21 +19,27 @@ export enum PLAYER_ACTIONS {
 }
 
 /**
- * Gets the players list from the storage (Indexed DB)
+ * EN: Gets the players list from the storage (Indexed DB).
+ * 
+ * ES: Obtiene la lista de jugadores del almacenamiento (Indexed DB).
  */
 export const getPlayersStorage = createAction (
   PLAYER_ACTIONS.GET_PLAYERS_STORAGE
 );
 
 /**
- * Create the list of avatars for the players
+ * EN: Create the list of avatars for the players.
+ * 
+ * ES: Crea la lista de avatares para los jugadores.
  */
 export const createAvatarsList = createAction (
   PLAYER_ACTIONS.CREATE_AVATARS_LIST
 );
 
 /**
- * Starts the process to create a new player
+ * EN: Starts the process to create a new player.
+ * 
+ * ES: Inicia el proceso para crear un nuevo jugador.
  */
 export const newPlayer = createAction (
   PLAYER_ACTIONS.NEW_PLAYER,
@@ -37,6 +48,11 @@ export const newPlayer = createAction (
   }>()
 );
 
+/**
+ * EN: Saves a new player in the storage and in the state.
+ * 
+ * ES: Guarda un nuevo jugador en el almacenamiento y en el estado.
+ */
 export const saveNewPlayer = createAction (
   PLAYER_ACTIONS.SAVE_NEW_PLAYER,
   props<{
@@ -44,6 +60,11 @@ export const saveNewPlayer = createAction (
   }>()
 );
 
+/**
+ * EN: Sets the players list in the state.
+ * 
+ * ES: Establece la lista de jugadores en el estado.
+ */
 export const setPlayersList = createAction (
   PLAYER_ACTIONS.SET_PLAYERS_LIST,
   props<{
@@ -51,6 +72,11 @@ export const setPlayersList = createAction (
   }>()
 );
 
+/**
+ * EN: Sets the current player in the state.
+ * 
+ * ES: Establece el jugador actual en el estado.
+ */
 export const setCurrentPlayer = createAction (
   PLAYER_ACTIONS.SET_CURRENT_PLAYER,
   props<{
@@ -58,6 +84,11 @@ export const setCurrentPlayer = createAction (
   }>()
 );
 
+/**
+ * EN: Saves the current player in the storage.
+ * 
+ * ES: Guarda el reproductor actual en el almacenamiento.
+ */
 export const saveCurrentPlayer = createAction (
   PLAYER_ACTIONS.SAVE_CURRENT_PLAYER,
   props<{
@@ -65,6 +96,11 @@ export const saveCurrentPlayer = createAction (
   }>()
 );
 
+/**
+ * EN: Removes a players from the storage.
+ * 
+ * ES: Elimina a los jugadores del almacenamiento.
+ */
 export const removePlayer = createAction (
   PLAYER_ACTIONS.REMOVE_PLAYER,
   props<{
@@ -72,6 +108,11 @@ export const removePlayer = createAction (
   }>()
 );
 
+/**
+ * EN: Changes the current player in the storage.
+ * 
+ * ES: Cambia el jugador actual en el almacenamiento.
+ */
 export const changeCurrentPlayer = createAction (
   PLAYER_ACTIONS.CHANGE_CURRENT_PLAYER,
   props<{

@@ -113,6 +113,9 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>EN: Constructor for the resolver.</p>
+<p>ES: Constructor para el resolver.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -121,6 +124,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -135,6 +139,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Service of Angular to manage the translations. / ES: Servicio de Angular para gestionar las traducciones.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -147,6 +155,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Service of Angular to manage the application routes. / ES: Servicio de Angular para gestionar las rutas de la aplicación.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -182,8 +194,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/routes.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/routes.ts:31</a></div>
                 </td>
             </tr>
 
@@ -194,9 +206,14 @@
 <p>ES: Comprueba si el idioma está definido antes de navegar.</p>
 </div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -218,6 +235,13 @@ import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
  */
 @Injectable()
 export class RouteResolver implements Resolve&lt;void&gt; {
+  /**
+   * EN: Constructor for the resolver.
+   * 
+   * ES: Constructor para el resolver.
+   * @param {TranslateService} translate EN: Service of Angular to manage the translations. / ES: Servicio de Angular para gestionar las traducciones.
+   * @param {Router} router EN: Service of Angular to manage the application routes. / ES: Servicio de Angular para gestionar las rutas de la aplicación.
+   */
   constructor(
     private readonly translate: TranslateService,
     private readonly router: Router
@@ -227,6 +251,8 @@ export class RouteResolver implements Resolve&lt;void&gt; {
    * EN: Checks if the language is defined before navigate.
    * 
    * ES: Comprueba si el idioma está definido antes de navegar.
+   * 
+   * @returns {void}
    */
   resolve(): void {
     if (this.translate.currentLang &#x3D;&#x3D;&#x3D; undefined || Object.keys(this.translate.translations).length &lt;&#x3D; 0) {

@@ -69,6 +69,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Interface for the state of the player.</p>
+<p>ES: Interfaz para el estado del jugador.</p>
+
+            </p>
 
 
         <section>
@@ -99,12 +107,6 @@
                                         <a href="#players" 
 >
                                             players
-                                        </a>
-                                </li>
-                                <li>
-                                        <a href="#showPlayerMenu" 
->
-                                            showPlayerMenu
                                         </a>
                                 </li>
                             </ul>
@@ -149,6 +151,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Avatars list for the players configuration.</p>
+<p>ES: Lista de avatares para la configuración de los jugadores.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -182,6 +191,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Identification of the current player.</p>
+<p>ES: Identificación del jugador actual.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -215,39 +231,13 @@
 
 
 
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="showPlayerMenu"></a>
-                                        <span class="name "><b>showPlayerMenu</b>
-                                            <a href="#showPlayerMenu">
-                                                <span class="icon ion-ios-link"></span>
-                                            </a>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>showPlayerMenu:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-
-
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Players list of the application.</p>
+<p>ES: Lista de jugadores de la aplicación.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -257,17 +247,40 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import * as PLAYER_MODELS from &quot;../../models/player/player.models&quot;;
 
+/**
+ * EN: Interface for the state of the player.
+ * 
+ * ES: Interfaz para el estado del jugador.
+ */
 export interface PlayersState {
+  /**
+   * EN: Players list of the application.
+   * 
+   * ES: Lista de jugadores de la aplicación.
+   */
   players: Array&lt;PLAYER_MODELS.Player&gt;;
+  /**
+   * EN: Identification of the current player.
+   * 
+   * ES: Identificación del jugador actual.
+   */
   currentPlayer: string;
-  showPlayerMenu: boolean;
+  /**
+   * EN: Avatars list for the players configuration.
+   * 
+   * ES: Lista de avatares para la configuración de los jugadores.
+   */
   avatarsList: PLAYER_MODELS.AvatarListItem[];
 }
 
+/**
+ * EN: Initial values for the player state.
+ * 
+ * ES: Valores iniciales para el estado del jugador.
+ */
 export const playersInitialState: PlayersState &#x3D; {
   players: [],
   currentPlayer: null,
-  showPlayerMenu: false,
   avatarsList: []
 };
 </code></pre>

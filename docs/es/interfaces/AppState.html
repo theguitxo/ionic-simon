@@ -69,6 +69,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Interface for the state of the application.</p>
+<p>ES: Interfaz para el estado de la aplicación.</p>
+
+            </p>
 
 
         <section>
@@ -169,6 +177,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Options for show a menu in page bottom.</p>
+<p>ES: Opciones para mostrar un menú en la parte inferior de la página.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -202,6 +217,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Options for show a message in a pop-up.</p>
+<p>ES: Opciones para mostrar un mensaje en un pop-up.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -240,6 +262,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Language of the device.</p>
+<p>ES: Idioma del dispositivo.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -273,6 +302,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Map for control if some items are ready for init the application.</p>
+<p>ES: Mapa para controlar si algunos elementos están listos para iniciar la aplicación.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -306,6 +342,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Route to redirect in some application actions.</p>
+<p>ES: Ruta a redirigir en algunas acciones de la aplicación.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -339,6 +382,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Options to show a short message in page bottom.</p>
+<p>ES: Opciones para mostrar un mensaje corto en la parte inferior de la página.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -377,6 +427,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: Language chosen by the player.</p>
+<p>ES: Idioma elegido por el jugador.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -387,16 +444,61 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import * as APP_CONSTANTS from &quot;../../models/app/app.constants&quot;;
 import * as APP_MODELS from &quot;../../models/app/app.models&quot;;
 
+/**
+ * EN: Interface for the state of the application.
+ * 
+ * ES: Interfaz para el estado de la aplicación.
+ */
 export interface AppState {
+  /**
+   * EN: Language of the device.
+   * 
+   * ES: Idioma del dispositivo.
+   */
   deviceLanguage?: string;
+  /**
+   * EN: Language chosen by the player.
+   * 
+   * ES: Idioma elegido por el jugador.
+   */  
   userLanguage?: string;
+  /**
+   * EN: Options to show a short message in page bottom.
+   * 
+   * ES: Opciones para mostrar un mensaje corto en la parte inferior de la página.
+   */  
   toastOptions: APP_MODELS.AppToastOptions;
+  /**
+   * EN: Map for control if some items are ready for init the application.
+   * 
+   * ES: Mapa para controlar si algunos elementos están listos para iniciar la aplicación.
+   */  
   itemsReady: Map&lt;string, boolean&gt;;
+  /**
+   * EN: Options for show a message in a pop-up.
+   * 
+   * ES: Opciones para mostrar un mensaje en un pop-up.
+   */  
   alertOptions: APP_MODELS.AppAlertOptions;
+  /**
+   * EN: Options for show a menu in page bottom.
+   * 
+   * ES: Opciones para mostrar un menú en la parte inferior de la página.
+   */  
   actionSheetOptions: APP_MODELS.AppActionSheetOptions;
+  /**
+   * EN: Route to redirect in some application actions.
+   * 
+   * ES: Ruta a redirigir en algunas acciones de la aplicación.
+   */  
   redirectTo: string;
 }
 
+/**
+ * EN: Initial values for the application state.
+ * 
+ * ES: Valores iniciales para el estado de la aplicación.
+ */
 export const initialState: AppState &#x3D; {
   toastOptions: {
     showToast: false,
