@@ -3,6 +3,11 @@ import { gameInitialState, GameState } from "./game.state";
 import * as ACTIONS from './game.actions';
 import { COLOR_CODES } from "../../models/game/game.model";
 
+/**
+ * EN: Creates the reducer for the game actions.
+ * 
+ * ES: Crea el reductor para las acciones del juego.
+ */
 const colorCodes = Object.values(COLOR_CODES)?.filter(value => parseInt(<string>value));
 
 const _gameReducer = createReducer (
@@ -20,10 +25,25 @@ const _gameReducer = createReducer (
   on(ACTIONS.resumeGame, (state: GameState) => ({..._resumeGame(state)}))
 );
 
+/**
+ * EN: Reducer for the game actions.
+ * 
+ * ES: Reducer de las acciones del juego.
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @param {Action} action EN: Action to apply over the reducer. / ES:Acción a aplicar sobre el reducer. 
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 export function gameReducer(state: GameState | undefined, action: Action): GameState {
   return _gameReducer(state, action);
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _initGame(state: GameState): GameState {
   return {
     ...state,
@@ -32,6 +52,13 @@ function _initGame(state: GameState): GameState {
   };
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @returns {AppState} EN: State of the game./ ES: State del juego. 
+ */
 function _stopGame(state: GameState): GameState {
   return {
     ...state,
@@ -41,6 +68,13 @@ function _stopGame(state: GameState): GameState {
   };
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _resetGameData(state: GameState): GameState {
   return {
     ...state,
@@ -54,6 +88,13 @@ function _resetGameData(state: GameState): GameState {
   };
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _newInSequence(state: GameState): GameState {
   let number = new Uint16Array(1);
   window.crypto.getRandomValues(number);
@@ -70,6 +111,14 @@ function _newInSequence(state: GameState): GameState {
   }
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @param {boolean} value EN: The value that indicates if must start or stop play the sequence. / ES: El valor que indica si se debe iniciar o detener la reproducción de la secuencia.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _startStopPlayingSequence(state: GameState, value: boolean): GameState {
   return {
     ...state,
@@ -80,6 +129,13 @@ function _startStopPlayingSequence(state: GameState, value: boolean): GameState 
   };
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _nextPlayingSequence(state: GameState): GameState {
   const newIndex = state?.indexPlayingSequence + 1;
   const stillItemsInSequence = state?.gameSequence[newIndex] !== undefined;
@@ -91,6 +147,14 @@ function _nextPlayingSequence(state: GameState): GameState {
   }
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @param {COLOR_CODES} colorCode EN: Code of the color pressed by the player to check if is correct. / ES: Código del color pulsado por el jugador para comprobar si es correcto.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _startPlayerAction(state: GameState, colorCode: COLOR_CODES): GameState {
   return {
     ...state,
@@ -100,6 +164,13 @@ function _startPlayerAction(state: GameState, colorCode: COLOR_CODES): GameState
   };
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _checkPlayerAction(state: GameState): GameState {
   const gameSequence = state?.gameSequence;
   const playerSequenceCheck = [
@@ -122,6 +193,13 @@ function _checkPlayerAction(state: GameState): GameState {
   };
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _pauseGame(state: GameState): GameState {
   return {
     ...state,
@@ -129,6 +207,13 @@ function _pauseGame(state: GameState): GameState {
   };
 }
 
+/**
+ * EN:
+ * 
+ * ES:
+ * @param {AppState} state EN: State of the game./ ES: State del juego.
+ * @returns {AppState} EN: State of the game./ ES: State del juego.
+ */
 function _resumeGame(state: GameState): GameState {
   return {
     ...state,
