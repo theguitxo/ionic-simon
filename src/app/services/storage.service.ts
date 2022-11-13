@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Storage } from "@ionic/storage-angular";
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
 /**
  * EN: Service to manage the information of the local storage.
