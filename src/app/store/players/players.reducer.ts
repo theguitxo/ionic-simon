@@ -6,7 +6,7 @@ import * as PLAYER_MODELS from '../../models/player/player.models';
 /**
  * EN: Creates the reducer for the player actions.
  * 
- * ES: Crea el reductor para las acciones del jugador.
+ * ES: Crea el reducer para las acciones del jugador.
  */
 const _playersRecuder = createReducer (
   playersInitialState,

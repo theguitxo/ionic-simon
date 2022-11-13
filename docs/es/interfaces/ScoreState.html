@@ -69,6 +69,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Interface for the state of the score of the game.</p>
+<p>ES: Interfaz para el estado de la puntuación del juego.</p>
+
+            </p>
 
 
         <section>
@@ -131,6 +139,13 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>EN: List of games scores.</p>
+<p>ES: Lista de puntuaciones de los juegos.</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -140,11 +155,25 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ScoreRecord } from &quot;../../models/scores/scores.models&quot;;
 
-
+/**
+ * EN: Interface for the state of the score of the game.
+ * 
+ * ES: Interfaz para el estado de la puntuación del juego.
+ */
 export interface ScoreState {
+  /**
+   * EN: List of games scores.
+   * 
+   * ES: Lista de puntuaciones de los juegos.
+   */
   scores: ScoreRecord[];
 }
 
+/**
+ * EN: Initial values for the game scores state.
+ * 
+ * ES: Los valores iniciales para el estado de las puntuaciones del juego.
+ */
 export const scoresInitialState: ScoreState &#x3D; {
   scores: []
 };

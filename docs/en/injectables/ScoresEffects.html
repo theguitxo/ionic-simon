@@ -62,6 +62,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Effects for the actions of the scores of the game.</p>
+<p>ES: Efectos para las acciones de las puntuaciones del juego.</p>
+
+            </p>
 
 
 
@@ -110,12 +118,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/store/scores/scores.effects.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/store/scores/scores.effects.ts:23</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>EN: Constructor for the class.</p>
+<p>ES: Constructor de la clase.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -124,6 +135,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -138,6 +150,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Class provided by NgRx to access to the actions. / ES: Clase proporcionada por NgRx para acceder a las acciones.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>store</td>
@@ -150,6 +166,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>scoresService</td>
@@ -162,6 +182,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Service for manage the games scores information on the storage. / ES: Servicio para gestionar la información de las puntuaciones de los juegos en el almacenamiento.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>translate</td>
@@ -174,6 +198,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Service of Angular to manage the translations. / ES: Servicio de Angular para gestionar las traducciones.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -223,10 +251,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/store/scores/scores.effects.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/store/scores/scores.effects.ts:46</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Gets the scores list from the local storage.</p>
+<p>ES: Obtiene la lista de puntuaciones del almacenamiento local.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -271,10 +306,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/store/scores/scores.effects.ts:44</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/store/scores/scores.effects.ts:68</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN; Saves a new score in the local storage and put it into the state.</p>
+<p>ES: Guarda una nueva puntuación en el almacenamiento local y la pone en el estado.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -336,10 +378,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/store/scores/scores.effects.ts:69</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/store/scores/scores.effects.ts:98</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Removes scores and a player (according a value of the action).</p>
+<p>ES: Elimina puntuaciones y un jugador (según un valor de la acción).</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -365,9 +414,23 @@ import * as SCORES_SELECTORS from &#x27;./scores.selectors&#x27;;
 import * as SCORES_MODELS from &#x27;../../models/scores/scores.models&#x27;;
 import * as PLAYERS_ACTIONS from &#x27;../../store/players/players.actions&#x27;;
 
+/**
+ * EN: Effects for the actions of the scores of the game.
+ * 
+ * ES: Efectos para las acciones de las puntuaciones del juego.
+ */
 @Injectable()
 export class ScoresEffects {
 
+  /**
+   * EN: Constructor for the class.
+   * 
+   * ES: Constructor de la clase.
+   * @param {Actions} action$ EN: Class provided by NgRx to access to the actions. / ES: Clase proporcionada por NgRx para acceder a las acciones.
+   * @param {Store&lt;AppState&gt;}store EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.
+   * @param {ScoresService} scoresService EN: Service for manage the games scores information on the storage. / ES: Servicio para gestionar la información de las puntuaciones de los juegos en el almacenamiento.
+   * @param {TranslateService} translate EN: Service of Angular to manage the translations. / ES: Servicio de Angular para gestionar las traducciones. 
+   */
   constructor(
     private readonly action$: Actions,
     private readonly store: Store&lt;AppState&gt;,
@@ -375,6 +438,11 @@ export class ScoresEffects {
     private readonly translate: TranslateService
   ) {}
 
+  /**
+   * EN: Gets the scores list from the local storage.
+   * 
+   * ES: Obtiene la lista de puntuaciones del almacenamiento local.
+   */
   getScoresStorage$ &#x3D; createEffect(() &#x3D;&gt; this.action$.pipe(
     ofType(SCORES_ACTIONS.getScoresStorage),
     switchMap(() &#x3D;&gt; from(this.scoresService.getScoresFromStorage())
@@ -392,6 +460,11 @@ export class ScoresEffects {
     ))
   ));
 
+  /**
+   * EN; Saves a new score in the local storage and put it into the state.
+   * 
+   * ES: Guarda una nueva puntuación en el almacenamiento local y la pone en el estado.
+   */
   newScore$ &#x3D; createEffect(() &#x3D;&gt; this.action$.pipe(
     ofType(SCORES_ACTIONS.newScore),
     concatLatestFrom(() &#x3D;&gt; this.store.select(SCORES_SELECTORS.getNewScoreInfo)),
@@ -417,6 +490,11 @@ export class ScoresEffects {
     })
   ));
 
+  /**
+   * EN: Removes scores and a player (according a value of the action).
+   * 
+   * ES: Elimina puntuaciones y un jugador (según un valor de la acción).
+   */
   removeScores$ &#x3D; createEffect(() &#x3D;&gt; this.action$.pipe(
     ofType(SCORES_ACTIONS.removeScores),
     concatLatestFrom(() &#x3D;&gt; this.store.select(SCORES_SELECTORS.getScores)),

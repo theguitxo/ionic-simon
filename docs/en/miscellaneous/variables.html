@@ -232,9 +232,6 @@
                             <a href="#getScoresCurrentPlayer" title="src/app/store/scores/scores.selectors.ts" ><b>getScoresCurrentPlayer</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
                         </li>
                         <li>
-                            <a href="#getScoresList" title="src/app/store/scores/scores.selectors.ts" ><b>getScoresList</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
-                        </li>
-                        <li>
                             <a href="#getScoresOtherPlayers" title="src/app/store/scores/scores.selectors.ts" ><b>getScoresOtherPlayers</b>&nbsp;&nbsp;&nbsp;(src/.../scores.selectors.ts)</a>
                         </li>
                         <li>
@@ -438,6 +435,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Creates the reducer for the game actions.</p>
+<p>ES: Crea el reducer para las acciones del juego.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -460,8 +464,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>EN: Creates the reducer for the game actions.</p>
-<p>ES: Crea el reductor para las acciones del juego.</p>
+                    <div class="io-description"><p>EN: List of color codes.</p>
+<p>ES: Lista de códigos de color.</p>
 </div>
                 </td>
             </tr>
@@ -496,7 +500,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-description"><p>EN: Creates the reducer for the player actions.</p>
-<p>ES: Crea el reductor para las acciones del jugador.</p>
+<p>ES: Crea el reducer para las acciones del jugador.</p>
 </div>
                 </td>
             </tr>
@@ -526,6 +530,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Creates the reducer for the games scores.</p>
+<p>ES: Crea el reducer para las puntuaciones de los juegos.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2941,6 +2952,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Returns if there are scores for the current player.</p>
+<p>ES: Devuelve si hay puntuaciones para el jugador actual.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2964,6 +2982,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Returns if there are scores stored.</p>
+<p>ES: Devuelve si hay puntuaciones almacenadas.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -2991,6 +3016,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Returns the list of score to use when a new game score is saved.</p>
+<p>ES: Devuelve la lista de puntajes para usar cuando se guarda un nuevo puntaje de juego.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3015,6 +3047,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Returns if there are scores for players that aren&#39;t the current player.</p>
+<p>ES: Devuelve si hay puntuaciones de jugadores que no son el jugador actual.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3038,6 +3077,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Returns the list of stored scores.</p>
+<p>ES: Devuelve la lista de puntuaciones almacenadas.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3070,32 +3116,13 @@
                     </td>
                 </tr>
 
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="getScoresList"></a>
-                    <span class="name">
-                        <span ><b>getScoresList</b></span>
-                        <a href="#getScoresList"><span class="icon ion-ios-link"></span></a>
-                    </span>
+                    <div class="io-description"><p>EN: Returns the scores list for the current player.</p>
+<p>ES: Devuelve la lista de puntuaciones del jugador actual.</p>
+</div>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>createSelector (
-  getScores,
-  PLAYERS_SELECTORS.getPlayers,
-  APP_SELECTORS.getUserLanguage,
-  (scores: SCORES_MODELS.ScoreRecord[], players: PLAYER_MODELS.PlayerList[], userLanguage: string): SCORES_MODELS.ScoresListItem[] &#x3D;&gt; 
-    getScoreListSorted(scores, players, userLanguage, 5)
-)</code>
-                    </td>
-                </tr>
-
 
         </tbody>
     </table>
@@ -3123,6 +3150,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Returns the scores list for players that aren&#39;t the current player.</p>
+<p>ES: Devuelve la lista de puntuaciones de los jugadores que no son el jugador actual.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3143,6 +3177,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Selector for the state of the game scores.</p>
+<p>ES: Selector para el estado de las puntuaciones del juego.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3168,6 +3209,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Gets the scores from the local storage.</p>
+<p>ES: Obtiene las puntuaciones del almacenamiento local.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3193,6 +3241,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Saves a new game score.</p>
+<p>ES: Guarda una nueva puntuación del juego.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3219,6 +3274,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Removes the scores for a player.</p>
+<p>ES: Elimina las puntuaciones de un jugador.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3244,6 +3306,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Sets the scores into the state.</p>
+<p>ES: Establece las puntuaciones en el estado.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3413,6 +3482,13 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Initial values for the game scores state.</p>
+<p>ES: Los valores iniciales para el estado de las puntuaciones del juego.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -3436,6 +3512,31 @@
                     </td>
                 </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Selectors for the routing of the application.</p>
+<p>selectCurrentRoute: select the current route</p>
+<p>selectFragment: select the current route fragment</p>
+<p>selectQueryParams: select the current route query params</p>
+<p>selectQueryParam: factory function to select a query param</p>
+<p>selectRouteParams: select the current route params</p>
+<p>selectRouteParam: factory function to select a route param</p>
+<p>selectRouteData: select the current route data</p>
+<p>selectUrl: select the current url</p>
+<p>selectTitle: Select the title if available</p>
+<p>ES: Selectores para el enrutamiento de la aplicación.</p>
+<p>selectCurrentRoute: selector para la ruta actual</p>
+<p>selectFragment: selector para los fragmentos de la ruta</p>
+<p>selectQueryParams: selector para los query params de la ruta</p>
+<p>selectQueryParam: selector para obtener un query param de la ruta</p>
+<p>selectRouteParams: selector para los parámetros de la ruta</p>
+<p>selectRouteParam: selector para un parámetro de la ruta</p>
+<p>selectRouteData: selector para los datos la ruta</p>
+<p>selectUrl: selector para la url actual</p>
+<p>selectTitle: selector para el titulo de la ruta, si está disponible</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>

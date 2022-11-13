@@ -4,7 +4,7 @@ import { COLOR_CODES } from "src/app/models/game/game.model";
 /**
  * EN: Actions for the game.
  * 
- * ES: Acciones para el juego
+ * ES: Acciones para el juego.
  */
 export enum GAME_ACTIONS {
   INIT_GAME = '[GAME ACTIONS] Init game',

@@ -14,9 +14,23 @@ import * as SCORES_SELECTORS from './scores.selectors';
 import * as SCORES_MODELS from '../../models/scores/scores.models';
 import * as PLAYERS_ACTIONS from '../../store/players/players.actions';
 
+/**
+ * EN: Effects for the actions of the scores of the game.
+ * 
+ * ES: Efectos para las acciones de las puntuaciones del juego.
+ */
 @Injectable()
 export class ScoresEffects {
 
+  /**
+   * EN: Constructor for the class.
+   * 
+   * ES: Constructor de la clase.
+   * @param {Actions} action$ EN: Class provided by NgRx to access to the actions. / ES: Clase proporcionada por NgRx para acceder a las acciones.
+   * @param {Store<AppState>}store EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.
+   * @param {ScoresService} scoresService EN: Service for manage the games scores information on the storage. / ES: Servicio para gestionar la información de las puntuaciones de los juegos en el almacenamiento.
+   * @param {TranslateService} translate EN: Service of Angular to manage the translations. / ES: Servicio de Angular para gestionar las traducciones. 
+   */
   constructor(
     private readonly action$: Actions,
     private readonly store: Store<AppState>,
@@ -24,6 +38,11 @@ export class ScoresEffects {
     private readonly translate: TranslateService
   ) {}
 
+  /**
+   * EN: Gets the scores list from the local storage.
+   * 
+   * ES: Obtiene la lista de puntuaciones del almacenamiento local.
+   */
   getScoresStorage$ = createEffect(() => this.action$.pipe(
     ofType(SCORES_ACTIONS.getScoresStorage),
     switchMap(() => from(this.scoresService.getScoresFromStorage())
@@ -41,6 +60,11 @@ export class ScoresEffects {
     ))
   ));
 
+  /**
+   * EN; Saves a new score in the local storage and put it into the state.
+   * 
+   * ES: Guarda una nueva puntuación en el almacenamiento local y la pone en el estado.
+   */
   newScore$ = createEffect(() => this.action$.pipe(
     ofType(SCORES_ACTIONS.newScore),
     concatLatestFrom(() => this.store.select(SCORES_SELECTORS.getNewScoreInfo)),
@@ -66,6 +90,11 @@ export class ScoresEffects {
     })
   ));
 
+  /**
+   * EN: Removes scores and a player (according a value of the action).
+   * 
+   * ES: Elimina puntuaciones y un jugador (según un valor de la acción).
+   */
   removeScores$ = createEffect(() => this.action$.pipe(
     ofType(SCORES_ACTIONS.removeScores),
     concatLatestFrom(() => this.store.select(SCORES_SELECTORS.getScores)),

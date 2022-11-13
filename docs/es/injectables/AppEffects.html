@@ -62,6 +62,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Effects for the app actions.</p>
+<p>ES: Efectos para las acciones de la aplicación.</p>
+
+            </p>
 
 
 
@@ -107,7 +115,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/store/app/app.effects.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/store/app/app.effects.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -121,6 +129,7 @@
                                                 <td>Nombre</td>
                                                     <td>Tipo</td>
                                                 <td>Opcional</td>
+                                                    <td>Descripción</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -135,6 +144,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Class provided by NgRx to access to the actions. / ES: Clase proporcionada por NgRx para acceder a las acciones.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>languageService</td>
@@ -147,6 +160,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Service to manage the language information in the local storage. / ES: Servicio para gestionar la información de idiomas en el almacenamiento local.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>store</td>
@@ -159,6 +176,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -217,10 +238,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">src/app/store/app/app.effects.ts:19</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="36" class="link-to-prism">src/app/store/app/app.effects.ts:36</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Gets the device language and the it that is stored in the local storage (if its available) and introduce it into the state.</p>
+<p>ES: Obtiene el idioma del dispositivo y el que está almacenado en el almacenamiento local (si está disponible) y lo introduce en el estado.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -252,10 +280,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="45" class="link-to-prism">src/app/store/app/app.effects.ts:45</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="67" class="link-to-prism">src/app/store/app/app.effects.ts:67</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Saves a language into the local storage.</p>
+<p>ES: Guarda un idioma en el almacenamiento local.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -275,14 +310,31 @@ import { AppState } from &quot;./app.state&quot;;
 import * as APP_CONSTANTS from &quot;../../models/app/app.constants&quot;;
 import * as APP_ACTIONS from &#x27;./app.actions&#x27;;
 
+/**
+ * EN: Effects for the app actions.
+ * 
+ * ES: Efectos para las acciones de la aplicación.
+ */
 @Injectable()
 export class AppEffects {
+
+  /**
+   * 
+   * @param {Actions} action$ EN: Class provided by NgRx to access to the actions. / ES: Clase proporcionada por NgRx para acceder a las acciones. 
+   * @param {LanguageService} languageService EN: Service to manage the language information in the local storage. / ES: Servicio para gestionar la información de idiomas en el almacenamiento local.
+   * @param {Store&lt;AppState&gt;} store EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación. 
+   */
   constructor (
     private readonly action$: Actions,
     private readonly languageService: LanguageService,
     private readonly store: Store&lt;AppState&gt;
   ) {}
 
+  /**
+   * EN: Gets the device language and the it that is stored in the local storage (if its available) and introduce it into the state.
+   * 
+   * ES: Obtiene el idioma del dispositivo y el que está almacenado en el almacenamiento local (si está disponible) y lo introduce en el estado.
+   */
   initLanguages$ &#x3D; createEffect(() &#x3D;&gt; this.action$.pipe(
     ofType(APP_ACTIONS.initLanguages),
     switchMap(() &#x3D;&gt; from(
@@ -309,6 +361,11 @@ export class AppEffects {
     { dispatch: false}
   )
 
+  /**
+   * EN: Saves a language into the local storage.
+   * 
+   * ES: Guarda un idioma en el almacenamiento local.
+   */
   saveLanguageStorage$ &#x3D; createEffect(() &#x3D;&gt; this.action$.pipe(
     ofType(APP_ACTIONS.saveLanguageStorage),
     switchMap(action &#x3D;&gt; from(this.languageService.setLanguageInStorage(action.language))
