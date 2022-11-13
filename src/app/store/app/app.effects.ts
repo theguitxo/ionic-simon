@@ -17,7 +17,9 @@ import * as APP_ACTIONS from './app.actions';
 export class AppEffects {
 
   /**
+   * EN: Constructor for the class.
    * 
+   * ES: Constructor de la clase.
    * @param {Actions} action$ EN: Class provided by NgRx to access to the actions. / ES: Clase proporcionada por NgRx para acceder a las acciones. 
    * @param {LanguageService} languageService EN: Service to manage the language information in the local storage. / ES: Servicio para gestionar la información de idiomas en el almacenamiento local.
    * @param {Store<AppState>} store EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación. 

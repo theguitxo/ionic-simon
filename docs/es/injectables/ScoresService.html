@@ -62,6 +62,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Service to manage the games scores information in the local storage.</p>
+<p>ES: Servicio para gestionar la información de las puntuaciones de los juegos en el almacenamiento local.</p>
+
+            </p>
 
 
 
@@ -107,12 +115,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="9" class="link-to-prism">src/app/services/scores.service.ts:9</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">src/app/services/scores.service.ts:14</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>EN: Constructor for the service.</p>
+<p>ES: Constructor para el servicio.</p>
+</div>
                             <div>
                                     <b>Parámetros :</b>
                                     <table class="params">
@@ -121,6 +132,7 @@
                                                 <td>Nombre</td>
                                                     <td>Tipo</td>
                                                 <td>Opcional</td>
+                                                    <td>Descripción</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -135,6 +147,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Service to manage the local storage. / ES: Servicio para gestionar el almacenamiento local.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -170,17 +186,26 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="15"
-                            class="link-to-prism">src/app/services/scores.service.ts:15</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="32"
+                            class="link-to-prism">src/app/services/scores.service.ts:32</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Gets the games scores from the local storage.</p>
+<p>ES: Obtiene las puntuaciones de los juegos del almacenamiento local.</p>
+</div>
 
+                    <div>
+                    </div>
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="../interfaces/ScoreRecord.html" target="_self" >Promise&lt;ScoreRecord[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>EN: List of games scores. / ES: Lista de puntajes de juegos.</p>
 
                     </div>
                 </td>
@@ -207,14 +232,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="27"
-                            class="link-to-prism">src/app/services/scores.service.ts:27</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="51"
+                            class="link-to-prism">src/app/services/scores.service.ts:51</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Saves the scores into the local storage.</p>
+<p>ES: Guarda las puntuaciones en el almacenamiento local.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parámetros :</b>
@@ -225,6 +253,7 @@
                                     <td>Nombre</td>
                                     <td>Tipo</td>
                                     <td>Opcional</td>
+                                    <td>Descripción</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -239,6 +268,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>EN: List of games scores. / ES: Lista de puntajes de juegos.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -267,15 +300,32 @@ import { APP_SCORES_KEY } from &quot;../models/app/app.constants&quot;;
 import { ScoreRecord } from &quot;../models/scores/scores.models&quot;;
 import { StorageService } from &quot;./storage.service&quot;;
 
+/**
+ * EN: Service to manage the games scores information in the local storage.
+ * 
+ * ES: Servicio para gestionar la información de las puntuaciones de los juegos en el almacenamiento local.
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class ScoresService {
 
+  /**
+   * EN: Constructor for the service.
+   * 
+   * ES: Constructor para el servicio.
+   * @param {StorageService} storageService EN: Service to manage the local storage. / ES: Servicio para gestionar el almacenamiento local. 
+   */
   constructor(
     private readonly storageService: StorageService
   ) {}
 
+  /**
+   * EN: Gets the games scores from the local storage.
+   * 
+   * ES: Obtiene las puntuaciones de los juegos del almacenamiento local.
+   * @returns {Promise&lt;StoreRecord[]&gt;} EN: List of games scores. / ES: Lista de puntajes de juegos.
+   */
   getScoresFromStorage(): Promise&lt;ScoreRecord[]&gt; {
     return new Promise((resolve) &#x3D;&gt; {
       this.storageService.get(APP_SCORES_KEY)
@@ -288,6 +338,13 @@ export class ScoresService {
     });
   }
 
+  /**
+   * EN: Saves the scores into the local storage.
+   * 
+   * ES: Guarda las puntuaciones en el almacenamiento local.
+   * @param {StoreRecord[]} scores EN: List of games scores. / ES: Lista de puntajes de juegos.
+   * @returns {Promise&lt;void&gt;}
+   */
   setNewScore(scores: ScoreRecord[]): Promise&lt;void&gt; {
     return new Promise((resolve, reject) &#x3D;&gt; {
       this.storageService.set(APP_SCORES_KEY, scores)

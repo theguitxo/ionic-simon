@@ -2,6 +2,11 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+/**
+ * EN: Properties of the application environment in development mode.
+ * 
+ * ES: Propiedades del entorno de la aplicación en modo desarrollo.
+ */
 export const environment = {
   production: false
 };

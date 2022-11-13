@@ -62,6 +62,14 @@
         </p>
 
 
+            <p class="comment">
+                <h3>Descripción</h3>
+            </p>
+            <p class="comment">
+                <p>EN: Service to manage the information of the local storage.</p>
+<p>ES: Servicio para gestionar la información del almacenamiento local.</p>
+
+            </p>
 
 
 
@@ -83,10 +91,6 @@
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#get$" >get$</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
                                 <a href="#storageReady$" >storageReady$</a>
                             </li>
                         </ul>
@@ -105,11 +109,6 @@
                                     <span class="modifier">Public</span>
                                     <span class="modifier">Async</span>
                                 <a href="#get" >get</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                    <span class="modifier">Async</span>
-                                <a href="#getObservable" >getObservable</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
@@ -143,12 +142,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/services/storage.service.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">src/app/services/storage.service.ts:25</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>EN: Constructor for the service.</p>
+<p>ES: Constructor para el servicio.</p>
+</div>
                             <div>
                                     <b>Parámetros :</b>
                                     <table class="params">
@@ -209,14 +211,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="31"
-                            class="link-to-prism">src/app/services/storage.service.ts:31</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="69"
+                            class="link-to-prism">src/app/services/storage.service.ts:69</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Gets a value from the local storage.</p>
+<p>ES: Obtiene un valor del almacenamiento local.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parámetros :</b>
@@ -227,6 +232,7 @@
                                     <td>Nombre</td>
                                     <td>Tipo</td>
                                     <td>Opcional</td>
+                                    <td>Descripción</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -241,6 +247,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>EN: Key which he must gets their value. / ES: Clave de la que debe obtener su valor.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -252,79 +262,8 @@
 
                     </div>
                     <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getObservable"></a>
-                    <span class="name">
-                        <span class="modifier">Public</span>
-                        <span class="modifier">Async</span>
-                        <span ><b>getObservable</b></span>
-                        <a href="#getObservable"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getObservable(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
+                        <p>EN: Value getting from the storage. / ES: Valor obtenido del almacenamiento.</p>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="35"
-                            class="link-to-prism">src/app/services/storage.service.ts:35</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parámetros :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Nombre</td>
-                                    <td>Tipo</td>
-                                    <td>Opcional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>key</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -352,14 +291,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="20"
-                            class="link-to-prism">src/app/services/storage.service.ts:20</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="44"
+                            class="link-to-prism">src/app/services/storage.service.ts:44</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Inits the local storage and sends a signal when it is ready.</p>
+<p>ES: Inicializa el almacenamiento local y envía una señal cuando está listo.</p>
+</div>
 
                     <div class="io-description">
                         <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -392,14 +334,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="27"
-                            class="link-to-prism">src/app/services/storage.service.ts:27</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="58"
+                            class="link-to-prism">src/app/services/storage.service.ts:58</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Sets a value into the local storage.</p>
+<p>ES: Establece un valor en el almacenamiento local.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parámetros :</b>
@@ -410,6 +355,7 @@
                                     <td>Nombre</td>
                                     <td>Tipo</td>
                                     <td>Opcional</td>
+                                    <td>Descripción</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -424,6 +370,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>EN: Key where it must save the value. / ES: Clave donde debe guardar el valor.</p>
+
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>value</td>
@@ -436,6 +386,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>EN: Value to save. / ES: Valor a ahorrar.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -484,42 +438,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="9" class="link-to-prism">src/app/services/storage.service.ts:9</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">src/app/services/storage.service.ts:19</a></div>
                         </td>
                     </tr>
 
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="get$"></a>
-                    <span class="name">
-                            <span class="modifier">Public</span>
-                        <span ><b>get$</b></span>
-                        <a href="#get$"><span class="icon ion-ios-link"></span></a>
-                    </span>
+                    <div class="io-description"><p>EN: Reference to the local storage.</p>
+<p>ES: Referencia al almacenamiento local.</p>
+</div>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Tipo : </i>    <code>Subject&lt;any&gt;</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Valor por defecto : </i><code>new Subject()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/services/storage.service.ts:12</a></div>
-                        </td>
-                    </tr>
-
 
         </tbody>
     </table>
@@ -548,10 +477,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/storage.service.ts:11</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">src/app/services/storage.service.ts:25</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: To control is local storage is ready.</p>
+<p>ES: Para controlar si el almacenamiento local está listo.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -565,21 +501,45 @@
 import { Storage } from &quot;@ionic/storage-angular&quot;;
 import { BehaviorSubject, Subject } from &quot;rxjs&quot;;
 
+/**
+ * EN: Service to manage the information of the local storage.
+ * 
+ * ES: Servicio para gestionar la información del almacenamiento local.
+ */
 @Injectable({
   providedIn: &quot;root&quot;
 })
 export class StorageService {
+  /**
+   * EN: Reference to the local storage.
+   * 
+   * ES: Referencia al almacenamiento local.
+   */
   private _storage: Storage | null &#x3D; null;
-
+  /**
+   * EN: To control is local storage is ready.
+   * 
+   * ES: Para controlar si el almacenamiento local está listo.
+   */
   public storageReady$: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject(false);
-  public get$: Subject&lt;any&gt; &#x3D; new Subject();
 
+  /**
+   * EN: Constructor for the service.
+   * 
+   * ES: Constructor para el servicio.
+   * @param {StorageService} storageService EN: Service to manage the local storage. / ES: Servicio para gestionar el almacenamiento local. 
+   */
   constructor(
     private readonly storage: Storage
   ) {
     this.init();
   }
 
+  /**
+   * EN: Inits the local storage and sends a signal when it is ready.
+   * 
+   * ES: Inicializa el almacenamiento local y envía una señal cuando está listo.
+   */
   async init() {
     const storage &#x3D; await this.storage.create();
     this._storage &#x3D; storage;
@@ -587,17 +547,26 @@ export class StorageService {
     this.storageReady$.complete();
   }
 
+  /**
+   * EN: Sets a value into the local storage.
+   * 
+   * ES: Establece un valor en el almacenamiento local.
+   * @param {string} key EN: Key where it must save the value. / ES: Clave donde debe guardar el valor.
+   * @param {any} value EN: Value to save. / ES: Valor a ahorrar.
+   */
   public async set(key: string, value: any) {
     await this._storage?.set(key, value);
   }
 
+  /**
+   * EN: Gets a value from the local storage.
+   * 
+   * ES: Obtiene un valor del almacenamiento local.
+   * @param {string} key EN: Key which he must gets their value. / ES: Clave de la que debe obtener su valor.
+   * @returns {Promise&lt;any&gt;} EN: Value getting from the storage. / ES: Valor obtenido del almacenamiento.
+   */
   public async get(key: string): Promise&lt;any&gt; {
     return this._storage?.get(key);
-  }
-
-  public async getObservable(key: string) {
-    const value &#x3D; await this._storage?.get(key);
-    this.get$.next(value);
   }
 }</code></pre>
     </div>

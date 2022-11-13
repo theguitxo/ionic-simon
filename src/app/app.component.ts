@@ -15,6 +15,11 @@ import * as PLAYERS_SELECTORS from './store/players/players.selectors';
 import * as SCORES_ACTIONS from './store/scores/scores.actions';
 import { TranslateService } from '@ngx-translate/core';
 
+/**
+ * EN: Main component of the application.
+ * 
+ * ES: Componente principal de la aplicación.
+ */
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -28,7 +33,9 @@ export class AppComponent implements OnInit, OnDestroy {
    */
   subscriptions: Subscription = new Subscription();
   /**
+   * EN: Informs when the application is ready.
    * 
+   * ES: Informa cuando la aplicación está lista.
    */
   appIsReady$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 

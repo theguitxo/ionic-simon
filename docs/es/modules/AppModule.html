@@ -257,11 +257,18 @@ import { ScoresEffects } from &#x27;./store/scores/scores.effects&#x27;;
 import { gameReducer } from &#x27;./store/game/game.reducers&#x27;;
 import { appReducer } from &#x27;./store/app/app.reducer&#x27;;
 import { AppEffects } from &#x27;./store/app/app.effects&#x27;;
-import { RouteResolver } from &#x27;./routes&#x27;;
+import { RouteResolver } from &#x27;./app.guards&#x27;;
 
 import &#x27;@angular/common/locales/global/es&#x27;;
 import &#x27;@angular/common/locales/global/en&#x27;;
 
+/**
+ * EN: Method to manage the load of translation resources.
+ * 
+ * ES: Método para gestionar la carga de recursos de traducción.
+ * @param {HttpClient} http EN: Client provided by Angular to manage HTTP requests. / ES: Cliente provisto por Angular para administrar solicitudes HTTP.
+ * @returns {TranslateHttpLoader} EN: Translations loaded for a language. / ES: Traducciones cargadas para un idioma.
+ */
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, &#x27;./assets/i18n/&#x27;, &#x27;.json&#x27;);
 }

@@ -18,6 +18,11 @@ import * as APP_SELECTORS from '../../../store/app/app.selectors';
   styleUrls: ['./about.page.scss']
 })
 export class AboutPage implements OnInit {
+  /**
+   * EN: Links list.
+   * 
+   * ES: Lista de enlaces.
+   */
   links: HELP_MODELS.HelpAboutLink[];
 
   /**

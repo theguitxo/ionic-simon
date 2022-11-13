@@ -65,6 +65,14 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>EN: Component for the page of settings.</p>
+<p>ES: Componente para la página de configuración.</p>
+
+    </p>
 
 
     <p class="comment">
@@ -188,12 +196,15 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/pages/settings/settings.page.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/pages/settings/settings.page.ts:38</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>EN: Constructor for the class.</p>
+<p>ES: Constructor de la clase.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -202,6 +213,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -216,6 +228,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.</p>
+
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>languageService</td>
@@ -228,6 +244,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <p>EN: Service to manage the language information in the local storage. / ES: Servicio para gestionar la información de idiomas en el almacenamiento local.</p>
+
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -260,21 +280,24 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>changeLanguage(val)</code>
+<code>changeLanguage(language: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/pages/settings/settings.page.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/pages/settings/settings.page.ts:76</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Changes the language.</p>
+<p>ES: Cambia el idioma.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -283,18 +306,27 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>val</td>
+                                    <td>language</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
 
                                     <td>
                                         No
                                     </td>
 
 
+                                    <td>
+                                        <p>EN: EN: Code of the language to use in the application. / ES: Código del idioma a utilizar en la aplicación.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -332,14 +364,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/pages/settings/settings.page.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/pages/settings/settings.page.ts:66</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Unsubscribes the subscriptions of the component.</p>
+<p>ES: Da de baja las suscripciones del componente.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -369,14 +404,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/pages/settings/settings.page.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/pages/settings/settings.page.ts:57</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Inits the subscriptions.</p>
+<p>ES: Inicia las suscripciones.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -408,14 +446,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="48"
-                            class="link-to-prism">src/app/pages/settings/settings.page.ts:48</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/pages/settings/settings.page.ts:102</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Sets the language information in the translate service, local storage and state.</p>
+<p>ES: Sets the language information in the translate service, local storage and state.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -426,6 +467,7 @@
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
+                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -440,6 +482,10 @@
                                     </td>
 
 
+                                    <td>
+                                        <p>EN: Information about the application language to store. / ES: Información sobre el idioma de la aplicación a almacenar.</p>
+
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -479,14 +525,17 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/pages/settings/settings.page.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/pages/settings/settings.page.ts:91</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>EN: Sets the subscriptions needed by the component.</p>
+<p>ES: Establece las suscripciones que necesita el componente.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -521,10 +570,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/pages/settings/settings.page.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/pages/settings/settings.page.ts:38</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Language code of the device.</p>
+<p>ES: Código de idioma del dispositivo.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -552,10 +608,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/pages/settings/settings.page.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/pages/settings/settings.page.ts:32</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: List of languages availables for the configuration.</p>
+<p>ES: Lista de idiomas disponibles para la configuración.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -583,10 +646,17 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/pages/settings/settings.page.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/pages/settings/settings.page.ts:26</a></div>
                         </td>
                     </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Subscriptions list of the component.</p>
+<p>ES: Lista de suscripciones del componente.</p>
+</div>
+                </td>
+            </tr>
 
         </tbody>
     </table>
@@ -606,43 +676,97 @@ import { take } from &quot;rxjs/operators&quot;;
 import { Subscription } from &quot;rxjs&quot;;
 import { LanguageService } from &quot;../../services/language.service&quot;;
 
+/**
+ * EN: Component for the page of settings.
+ * 
+ * ES: Componente para la página de configuración.
+ */
 @Component({
   selector: &#x27;app-settings&#x27;,
   templateUrl: &#x27;./settings.page.html&#x27;
 })
 export class SettingsPage implements OnInit, OnDestroy {
+  /**
+   * EN: Subscriptions list of the component.
+   * 
+   * ES: Lista de suscripciones del componente.
+   */
   subscriptions: Subscription &#x3D; new Subscription();
+  /**
+   * EN: List of languages availables for the configuration.
+   * 
+   * ES: Lista de idiomas disponibles para la configuración.
+   */
   languagesInfo: ConfigLanguageItem[] &#x3D; [];
+  /**
+   * EN: Language code of the device.
+   * 
+   * ES: Código de idioma del dispositivo.
+   */
   deviceLanguage: string;
 
+  /**
+   * EN: Constructor for the class.
+   * 
+   * ES: Constructor de la clase.
+   * @param {Store&lt;AppState&gt;} store EN: Reference to the store (NgRx) of the app. / ES: Referencia a la store (NgRx) de la aplicación.
+   * @param  {LanguageService} languageService EN: Service to manage the language information in the local storage. / ES: Servicio para gestionar la información de idiomas en el almacenamiento local.
+   */
   constructor(
     private readonly store: Store&lt;AppState&gt;,
     private readonly languageService: LanguageService
   ) {}
 
+  /**
+   * EN: Inits the subscriptions.
+   * 
+   * ES: Inicia las suscripciones.
+   */
   ngOnInit(): void {
     this.setSubscriptions();
   }
 
+  /**
+   * EN: Unsubscribes the subscriptions of the component.
+   * 
+   * ES: Da de baja las suscripciones del componente.
+   */
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
 
-  changeLanguage(val): void {
-    this.languageService.setLanguageInStorage(val)
+  /**
+   * EN: Changes the language.
+   * 
+   * ES: Cambia el idioma.
+   * @param {string} language EN: EN: Code of the language to use in the application. / ES: Código del idioma a utilizar en la aplicación.
+   */
+  changeLanguage(language: string): void {
+    this.languageService.setLanguageInStorage(language)
       .then(() &#x3D;&gt; {
         this.setLanguagesInfo({
           device: this.deviceLanguage,
-          user: val
+          user: language
         });
       });
   }
 
+  /**
+   * EN: Sets the subscriptions needed by the component.
+   * 
+   * ES: Establece las suscripciones que necesita el componente.
+   */
   private setSubscriptions(): void {
     this.store.select(getLanguages).pipe(take(1))
       .subscribe((data: StateLanguages) &#x3D;&gt; this.setLanguagesInfo(data));
   }
 
+  /**
+   * EN: Sets the language information in the translate service, local storage and state.
+   * 
+   * ES: Sets the language information in the translate service, local storage and state.
+   * @param {StateLanguages} data EN: Information about the application language to store. / ES: Información sobre el idioma de la aplicación a almacenar.
+   */
   private setLanguagesInfo(data: StateLanguages): void {
     this.deviceLanguage &#x3D; data.device;
     this.languageService.setLanguageInTranslate(data.user);

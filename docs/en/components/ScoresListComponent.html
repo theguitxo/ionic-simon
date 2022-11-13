@@ -68,6 +68,14 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>EN: Component to list the scores of a player.</p>
+<p>ES: Componente para listar las puntuaciones de un jugador.</p>
+
+    </p>
 
 
 
@@ -165,9 +173,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/pages/scores/scores-list/scores-list.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/scores/scores-list/scores-list.component.ts:20</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>EN: Title that shows if is the current player or not.</p>
+<p>ES: Título que muestra si es el jugador actual o no.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
         <table class="table table-sm table-bordered">
@@ -186,9 +201,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/pages/scores/scores-list/scores-list.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/pages/scores/scores-list/scores-list.component.ts:26</a></div>
                             </td>
                         </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>EN: Scores list to show.</p>
+<p>ES: Lista de puntuaciones para mostrar.</p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -204,13 +226,28 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
 import * as SCORES_MODEL from &quot;../../../models/scores/scores.models&quot;;
 
+/**
+ * EN: Component to list the scores of a player.
+ * 
+ * ES: Componente para listar las puntuaciones de un jugador.
+ */
 @Component({
   selector: &#x27;app-scores-list&#x27;,
   templateUrl: &#x27;./scores-list.component.html&#x27;,
   styleUrls: [&#x27;./scores-list.component.scss&#x27;]
 })
 export class ScoresListComponent {
+  /**
+   * EN: Title that shows if is the current player or not.
+   * 
+   * ES: Título que muestra si es el jugador actual o no.
+   */
   @Input() playerTypeTitle: string;
+  /**
+   * EN: Scores list to show.
+   * 
+   * ES: Lista de puntuaciones para mostrar.
+   */
   @Input() scoresList: SCORES_MODEL.ScoresListItem[];
 }
 </code></pre>
