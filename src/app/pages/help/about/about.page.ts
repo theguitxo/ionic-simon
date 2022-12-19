@@ -58,6 +58,16 @@ export class AboutPage implements OnInit {
             sentence: this.translate.instant('help.about.sentences.documentation'),
             button: this.translate.instant('help.about.buttons.documentation'),
             url: `https://theguitxo.github.io/ionic-simon/${lang}/`
+          },
+          {
+            sentence: this.translate.instant('help.about.sentences.avatarList'),
+            button: this.translate.instant('help.about.buttons.avatarList'),
+            url: 'https://www.svgrepo.com/collection/flat-profile-avatar/'
+          },
+          {
+            sentence: this.translate.instant('help.about.sentences.avatarAuthor'),
+            button: this.translate.instant('help.about.buttons.avatarAuthor'),
+            url: 'https://dribbble.com/ceriastd/about'
           }
         ]
       });

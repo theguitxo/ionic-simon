@@ -37,11 +37,15 @@
       "title": "About",
       "sentences": {
         "repository": "The code of this game is available on this repository.",
-        "documentation": "The documentation is available in this page."
+        "documentation": "The documentation is available in this page.",
+        "avatarList": "Collection of avatars available at www.svgrepo.com.",
+        "avatarAuthor": "Avatars designed by Naufal Thufail."
       },
       "buttons": {
         "repository": "Go to the Github repository",
-        "documentation": "Go to the documentation page"
+        "documentation": "Go to the documentation page",
+        "avatarList": "Visit",
+        "avatarAuthor": "Show profile"
       }
     }
   },
