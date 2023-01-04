@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AppComponent } from './app.component';
 import { StorageService } from './services/storage.service';
 import { of } from 'rxjs';
@@ -10,6 +10,7 @@ import { getAvatarsListReady } from './store/players/players.selectors';
 import { getItemsAreReady } from './store/app/app.selectors';
 import { TranslateServiceStub } from '../test/shared';
 import { IonicModule } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 class MockStorageService {
   get storageReady$() {
@@ -28,7 +29,10 @@ describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
 
     TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot()],
+      imports: [
+        IonicModule.forRoot(),
+        HttpClientTestingModule
+      ],
       declarations: [
         AppComponent
       ],
@@ -41,6 +45,10 @@ describe('AppComponent', () => {
         {
           provide: TranslateService,
           useClass: TranslateServiceStub
+        },
+        {
+          provide: ActivatedRoute,
+          useValue: {}
         }
       ],
       schemas: [

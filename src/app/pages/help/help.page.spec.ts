@@ -4,6 +4,8 @@ import { HelpPage } from './help.page';
 import { TranslateService } from '@ngx-translate/core';
 import { MockTranslatePipe, TranslateServiceStub } from '../../../test/shared';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute } from '@angular/router';
 
 describe('HelpPage', () => {
   let component: HelpPage;
@@ -15,11 +17,18 @@ describe('HelpPage', () => {
         HelpPage,
         MockTranslatePipe
       ],
-      imports: [IonicModule.forRoot()],
+      imports: [
+        IonicModule.forRoot(),
+        HttpClientTestingModule
+      ],
       providers: [
         {
           provide: TranslateService,
           useClass: TranslateServiceStub
+        },
+        {
+          provide: ActivatedRoute,
+          useValue: {}
         }
       ],
       schemas: [
