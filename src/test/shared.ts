@@ -17,7 +17,19 @@ export class TranslateServiceStub{
 export class MockTranslatePipe implements PipeTransform {
   public name: string = "translate";
 
-  public transform(query: string, ...args: any[]): any {
+  public transform(query: string, ..._args: any[]): any {
       return query;
+  }
+}
+
+@Pipe({
+  name: 'date',
+  pure: false
+})
+export class MockDatePipe implements PipeTransform {
+  public name: string = 'date';
+
+  public transform(_value: any, ..._args: any[]) {
+    return '';
   }
 }

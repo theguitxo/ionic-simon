@@ -1,4 +1,4 @@
-import { initGame, newInSequence, nextPlayingSequence, pauseGame, resetGameData, resumeGame, startPlayerAction, startPlayingSequence, stopGame, stopPlayingSequence } from './game.actions';
+import { checkPlayerAction, initGame, newInSequence, nextPlayingSequence, pauseGame, resetGameData, resumeGame, startPlayerAction, startPlayingSequence, stopGame, stopPlayingSequence } from './game.actions';
 import { gameReducer } from './game.reducers';
 import { GameState, gameInitialState } from "./game.state";
 import { COLOR_CODES } from "../../models/game/game.model";
@@ -7,7 +7,7 @@ const colorCodes = Object.values(COLOR_CODES)?.filter(value => parseInt(<string>
 
 let mockGameInitialState: GameState;
 
-fdescribe('GameReducer', () => {
+describe('GameReducer', () => {
   beforeEach(() => {
     mockGameInitialState = gameInitialState;
   });
@@ -168,6 +168,33 @@ fdescribe('GameReducer', () => {
     expect(state).not.toBe(mockGameInitialState);
   });
 
+  it('should return the state on check player action', () => {
+    const newState: GameState = {
+      ...mockGameInitialState,
+      gameSequence: [1, 2, 3, 4],
+      playerSequence: [1, 2, 3, 4],
+      score: 3,
+      gameOver: false,
+      playerCodeCheck: null,
+      buttonsBlocked: false,
+      sequenceChecked: true,
+      gameMessage: ''
+    };
+
+    const initState: GameState = {
+      ...mockGameInitialState,
+      gameSequence: [1, 2, 3, 4],
+      playerSequence: [1, 2, 3],
+      playerCodeCheck: 4,
+      score: 2
+    };
+
+    const action = checkPlayerAction();
+    const state = gameReducer(initState, action);
+
+    expect(state).toEqual(newState);
+    expect(state).not.toBe(initState);
+  });
 
   it('should return the state on pause game', () => {
     const newState: GameState = {
