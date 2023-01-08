@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from "@ngrx/store";
 import { playersInitialState, PlayersState } from "./players.state";
-import * as ACTIONS from "./players.actions";
+import * as PLAYER_ACTIONS from "./players.actions";
 import * as PLAYER_MODELS from '../../models/player/player.models';
 
 /**
@@ -10,9 +10,9 @@ import * as PLAYER_MODELS from '../../models/player/player.models';
  */
 const _playersRecuder = createReducer (
   playersInitialState,
-  on(ACTIONS.createAvatarsList, (state: PlayersState) => ({..._createAvatarList(state)})),
-  on(ACTIONS.setPlayersList, (state: PlayersState, { players }) => ({..._setPlayersList(state, players)})),
-  on(ACTIONS.setCurrentPlayer, (state: PlayersState, { currentPlayer }) => ({..._setCurrentPlayer(state, currentPlayer)}))
+  on(PLAYER_ACTIONS.createAvatarsList, (state: PlayersState) => ({..._createAvatarList(state)})),
+  on(PLAYER_ACTIONS.setPlayersList, (state: PlayersState, { players }) => ({..._setPlayersList(state, players)})),
+  on(PLAYER_ACTIONS.setCurrentPlayer, (state: PlayersState, { currentPlayer }) => ({..._setCurrentPlayer(state, currentPlayer)}))
 );
 
 /**
