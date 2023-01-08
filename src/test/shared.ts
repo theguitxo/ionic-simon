@@ -11,6 +11,12 @@ export class TranslateServiceStub{
 	}
 }
 
+export class MockStorageService {
+  get storageReady$() {
+    return of(true);
+  }
+};
+
 @Pipe({
   name: "translate"
 })

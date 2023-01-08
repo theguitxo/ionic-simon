@@ -166,6 +166,10 @@
                                 <a href="#createNewPlayer" >createNewPlayer</a>
                             </li>
                             <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#generateUUID" >generateUUID</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
                             </li>
                             <li>
@@ -299,6 +303,54 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateUUID"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>generateUUID</b></span>
+                        <a href="#generateUUID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateUUID()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/pages/players/new/new-player.page.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>EN: Returns a UUID value</p>
+<p>ES: Retorna un valor UUID</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>EN: string with the UUID for the new player / cadena con el UUID para el neuvo jugador</p>
 
                     </div>
                 </td>
@@ -617,10 +669,20 @@ export class NewPlayerPage implements OnInit {
    */
   createNewPlayer(): void {
     this.store.dispatch(APP_ACTIONS.newPlayer({ player: {
-      id: uuidv4(),
+      id: this.generateUUID(),
       name: this.newPlayerForm.controls.name.value,
       avatar: this.avatarSelected
     }}));
+  }
+
+  /**
+   * EN: Returns a UUID value
+   * 
+   * ES: Retorna un valor UUID
+   * @returns EN: string with the UUID for the new player / cadena con el UUID para el neuvo jugador
+   */
+  private generateUUID(): string {
+    return uuidv4();
   }
 }
 </code></pre>

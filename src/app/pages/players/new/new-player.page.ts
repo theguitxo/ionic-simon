@@ -82,9 +82,19 @@ export class NewPlayerPage implements OnInit {
    */
   createNewPlayer(): void {
     this.store.dispatch(APP_ACTIONS.newPlayer({ player: {
-      id: uuidv4(),
+      id: this.generateUUID(),
       name: this.newPlayerForm.controls.name.value,
       avatar: this.avatarSelected
     }}));
+  }
+
+  /**
+   * EN: Returns a UUID value
+   * 
+   * ES: Retorna un valor UUID
+   * @returns EN: string with the UUID for the new player / cadena con el UUID para el neuvo jugador
+   */
+  private generateUUID(): string {
+    return uuidv4();
   }
 }

@@ -4,19 +4,12 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AppComponent } from './app.component';
 import { StorageService } from './services/storage.service';
-import { of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { getAvatarsListReady } from './store/players/players.selectors';
 import { getItemsAreReady } from './store/app/app.selectors';
-import { TranslateServiceStub } from '../test/shared';
+import { MockStorageService, TranslateServiceStub } from '../test/shared';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
-
-class MockStorageService {
-  get storageReady$() {
-    return of(true);
-  }
-};
 
 describe('AppComponent', () => {
 
