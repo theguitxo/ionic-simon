@@ -7,7 +7,7 @@ import { StorageService } from './services/storage.service';
 import { TranslateService } from '@ngx-translate/core';
 import { getAvatarsListReady } from './store/players/players.selectors';
 import { getItemsAreReady } from './store/app/app.selectors';
-import { MockStorageService, TranslateServiceStub } from '../test/shared';
+import { StorageServiceMock, TranslateServiceStub } from '../test/shared';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
 
@@ -33,7 +33,7 @@ describe('AppComponent', () => {
         provideMockStore({ initialState }),
         {
           provide: StorageService,
-          useClass: MockStorageService
+          useClass: StorageServiceMock
         },
         {
           provide: TranslateService,

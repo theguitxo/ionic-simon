@@ -6,13 +6,11 @@ import { NewPlayerPage } from './new-player.page';
 import { FormBuilder } from '@angular/forms';
 import { MockTranslatePipe } from 'src/test/shared';
 import { newPlayer } from 'src/app/store/players/players.actions';
-import { v4 as uuidv4 } from 'uuid';
 
 describe('NewPlayerPage', () => {
   let component: NewPlayerPage;
   let fixture: ComponentFixture<NewPlayerPage>;
   let store: MockStore;
-  let formBuilder: FormBuilder;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -37,7 +35,6 @@ describe('NewPlayerPage', () => {
   beforeEach(() => {
     store = TestBed.inject(MockStore);
     fixture = TestBed.createComponent(NewPlayerPage);
-    formBuilder = TestBed.inject(FormBuilder);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

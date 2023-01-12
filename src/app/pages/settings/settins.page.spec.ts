@@ -4,7 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { SettingsPage } from './settings.page';
 import { StorageService } from '../../services/storage.service';
-import { MockStorageService, MockTranslatePipe, TranslateServiceStub } from '../../../test/shared';
+import { StorageServiceMock, MockTranslatePipe, TranslateServiceStub } from '../../../test/shared';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
@@ -44,7 +44,7 @@ describe('SettingsPage', () => {
         },
         {
           provide: StorageService,
-          useClass: MockStorageService
+          useClass: StorageServiceMock
         },
         {
           provide: TranslateService,
