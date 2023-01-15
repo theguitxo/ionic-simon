@@ -1,40 +1,18 @@
 import { PlayersState, playersInitialState } from "./players.state";
 import * as PLAYERS_SELECTORS from './players.selectors';
 import { AvatarListItem, Player, PlayerList } from "../../models/player/player.models";
+import {
+  ID_AVATAR_1, ID_AVATAR_2,
+  ID_PLAYER_A, ID_PLAYER_B,
+  MOCK_AVATAR_LIST, MOCK_PLAYERS_LIST,
+  NAME_PLAYER_A, NAME_PLAYER_B,
+  PATH_AVATAR_1, PATH_AVATAR_2
+} from "../../../test/shared";
 
 describe('PlayersSelectors', () => {
   const mockInitialState: PlayersState = playersInitialState;
 
-  const ID_AVATAR_1 = 1;
-  const PATH_AVATAR_1 = 'path avatar 1';
-  const ID_AVATAR_2 = 2;
-  const PATH_AVATAR_2 = 'path avatar 1';
-  const ID_PLAYER_A = 'a';
-  const NAME_PLAYER_A = 'A';
-  const ID_PLAYER_B = 'b';
-  const NAME_PLAYER_B = 'B';
-  const MOCK_AVATAR_LIST: AvatarListItem[] = [
-    {
-      id: ID_AVATAR_1,
-      path: PATH_AVATAR_1
-    },
-    {
-      id: ID_AVATAR_2,
-      path: PATH_AVATAR_2
-    }
-  ];
-  const MOCK_PLAYERS_LIST: Player[] = [
-    {
-      id: ID_PLAYER_A,
-      avatar: ID_AVATAR_1,
-      name: NAME_PLAYER_A
-    },
-    {
-      id: ID_PLAYER_B,
-      avatar: ID_AVATAR_2,
-      name: NAME_PLAYER_B
-    }
-  ]
+
 
   it('should select the list of avatars', () => {
     const modifiedState: PlayersState = {

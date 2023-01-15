@@ -5,7 +5,7 @@ import { StorageServiceMock, TranslateServiceStub, mockStorageLanguage } from ".
 import { MockStore, provideMockStore } from "@ngrx/store/testing";
 import { TranslateService } from "@ngx-translate/core";
 import { Device } from "@capacitor/device";
-import { APP_LANGUAGE_KEY, languageTypeInfo } from "../models/app/app.constants";
+import { languageTypeInfo } from "../models/app/app.constants";
 import { setLanguage } from "../store/app/app.actions";
 
 describe('LanguageService', () => {

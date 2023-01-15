@@ -3,17 +3,15 @@ import { ScoreState, scoresInitialState } from "./scores.state";
 import * as SCORES_SELECTORS from './scores.selectors';
 import { PlayerList } from "../../models/player/player.models";
 import '@angular/common/locales/global/es';
+import {
+  ID_PLAYER_A, ID_PLAYER_B,
+  ID_SCORE_A, ID_SCORE_B,
+  ID_SCORE_C, ID_SCORE_D,
+  NAME_PLAYER_A, NAME_PLAYER_B,
+  mockNewDate
+} from "../../../test/shared";
 
 describe('ScoresSelectors', () => {
-  const ID_PLAYER_A = 'a';
-  const ID_PLAYER_B = 'b';
-  const NAME_PLAYER_A = 'A';
-  const NAME_PLAYER_B = 'B';
-  const ID_SCORE_A = 'a';
-  const ID_SCORE_B = 'b';
-  const ID_SCORE_C = 'c';
-  const ID_SCORE_D = 'd';
-  const mockNewDate = (new Date(2023, 0, 2)).getTime();
   const mockInitialState: ScoreState = scoresInitialState;
   const mockScores: ScoreRecord[] = [
     {

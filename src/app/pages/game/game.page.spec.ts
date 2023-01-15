@@ -1,12 +1,26 @@
 import { MockStore, provideMockStore } from "@ngrx/store/testing";
 import { GamePage } from "./game.page";
-import { ComponentFixture, TestBed, discardPeriodicTasks, fakeAsync, tick } from "@angular/core/testing";
+import {
+  ComponentFixture, TestBed,
+  discardPeriodicTasks, fakeAsync, tick
+} from "@angular/core/testing";
 import { TranslateService } from "@ngx-translate/core";
-import { MockTranslatePipe, TranslateServiceStub } from "../../../test/shared";
+import {
+  MOCK_COLOR_CODE,
+  MockTranslatePipe, TranslateServiceStub, mockCurrentColorPlay, mockSoundPath
+} from "../../../test/shared";
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
-import { GAME_ACTIONS, initGame, resetGameData } from "../../store/game/game.actions";
+import {
+  GAME_ACTIONS, checkPlayerAction,
+  initGame, nextPlayingSequence,
+  resetGameData, startPlayerAction
+} from "../../store/game/game.actions";
 import { of } from "rxjs";
-import { getContinueGame, getGameStarted } from "../../store/game/game.selectors";
+import {
+  getAudioColorCodePlayerCheck,
+  getButtonsEnabled, getContinueGame,
+  getGameStarted, getPlayingSequence
+} from "../../store/game/game.selectors";
 import { By } from "@angular/platform-browser";
 import { ACTIONS } from "../../store/app/app.actions";
 import { GameState, gameInitialState } from "../../store/game/game.state";
@@ -42,6 +56,7 @@ describe('GamePage', () => {
 
   beforeEach(() => {
     store = TestBed.inject(MockStore);
+    store.resetSelectors();
 
     fixture = TestBed.createComponent(GamePage);
     component = fixture.componentInstance;
@@ -123,4 +138,70 @@ describe('GamePage', () => {
 
     discardPeriodicTasks();
   }));
+
+  it('should call action to start check player action on press a light button', () => {
+    const dispatchSpy = spyOn(store, 'dispatch');
+
+    store.overrideSelector(getButtonsEnabled, true);
+
+    component.lightPressed(MOCK_COLOR_CODE);
+
+    const action = startPlayerAction({
+      colorCode: MOCK_COLOR_CODE
+    });
+
+    expect(dispatchSpy).toHaveBeenCalledWith(action);
+  });
+
+  it('should play next sound of the sequence if is playing it when sound finish', () => {
+    const dispatchSpy = spyOn(store, 'dispatch');
+
+    store.overrideSelector(getPlayingSequence, true);
+
+    const action = nextPlayingSequence();
+
+    (component as any).audioEnded();
+
+    expect(dispatchSpy).toHaveBeenCalledWith(action);
+  });
+
+  it('should check player action if is player turn when sound finish', () => {
+    const dispatchSpy = spyOn(store, 'dispatch');
+
+    store.overrideSelector(getPlayingSequence, false);
+
+    const action = checkPlayerAction();
+
+    (component as any).audioEnded();
+
+    expect(dispatchSpy).toHaveBeenCalledWith(action);
+  });
+
+  it('should set color playing and audio path on call playSequenceAudio', (fakeAsync(() => {
+    (component as any).playSequenceAudio(mockCurrentColorPlay);
+
+    tick(250);
+
+    expect(component.colorPlaying).toBe(mockCurrentColorPlay.colorCodePlaying);
+    expect(component.audio.src.split('/')?.pop()).toBe(mockCurrentColorPlay.soundPath);
+
+    discardPeriodicTasks();
+  })));
+
+  it('should call action on game over', () => {
+    const dispatchSpy = spyOn(store, 'dispatch');
+
+    (component as any).checkGameOver(true);
+
+    expect(dispatchSpy).toHaveBeenCalled();
+  });
+
+  it('should set the audio path', () => {
+    store.overrideSelector(getAudioColorCodePlayerCheck, mockSoundPath);    
+    store.refreshState();
+
+    component.ionViewDidEnter();
+
+    expect(component.audio.src.split('/')?.pop()).toBe(mockSoundPath);
+  });
 });

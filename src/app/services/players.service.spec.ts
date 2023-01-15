@@ -28,7 +28,7 @@ describe('PlayersService', () => {
   it('should return value for players from storage', (done) => {
     service.getPlayersFromStorage()
       .then((result) => {
-        expect(result).toEqual(mockPlayersList)
+        expect(result).toEqual(mockPlayersList);
         done();
       });
   });
