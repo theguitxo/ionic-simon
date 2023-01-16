@@ -50,6 +50,11 @@ export class AboutPage implements OnInit {
       .subscribe((lang: string) => {
         this.links = [
           {
+            sentence: this.translate.instant('help.about.sentences.profile'),
+            button: this.translate.instant('help.about.buttons.showProfile'),
+            url: 'https://www.linkedin.com/in/amador-tello-mimbrero-a197a2ab/'
+          },
+          {
             sentence: this.translate.instant('help.about.sentences.repository'),
             button: this.translate.instant('help.about.buttons.repository'),
             url: 'https://github.com/theguitxo/ionic-simon'
@@ -66,7 +71,7 @@ export class AboutPage implements OnInit {
           },
           {
             sentence: this.translate.instant('help.about.sentences.avatarAuthor'),
-            button: this.translate.instant('help.about.buttons.avatarAuthor'),
+            button: this.translate.instant('help.about.buttons.showProfile'),
             url: 'https://dribbble.com/ceriastd/about'
           }
         ]

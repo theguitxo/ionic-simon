@@ -36,6 +36,7 @@
     "about": {
       "title": "About",
       "sentences": {
+        "profile": "My Linkedin profile",
         "repository": "The code of this game is available on this repository.",
         "documentation": "The documentation is available in this page.",
         "avatarList": "Collection of avatars available at www.svgrepo.com.",
@@ -45,7 +46,7 @@
         "repository": "Go to the Github repository",
         "documentation": "Go to the documentation page",
         "avatarList": "Visit",
-        "avatarAuthor": "Show profile"
+        "showProfile": "Show profile"
       }
     }
   },
