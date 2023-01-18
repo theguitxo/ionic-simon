@@ -52,10 +52,13 @@ export class AppEffects {
           infoType: 'user',
           value: storageLanguage || appLanguage
         }));
-        this.languageService.setLanguageInTranslate(storageLanguage ||  deviceLanguage);
-        this.store.dispatch(APP_ACTIONS.saveLanguageStorage({
-          language: storageLanguage || appLanguage
-        }));
+        this.languageService.setLanguageInTranslate(storageLanguage ||  deviceLanguage)
+          .toPromise()
+          .then(() =>{
+            this.store.dispatch(APP_ACTIONS.saveLanguageStorage({
+              language: storageLanguage || appLanguage
+            }));
+          });
       }))
     )),
     { dispatch: false}

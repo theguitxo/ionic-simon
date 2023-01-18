@@ -101,11 +101,14 @@ export class SettingsPage implements OnInit, OnDestroy {
    */
   private setLanguagesInfo(data: StateLanguages): void {
     this.deviceLanguage = data.device;
-    this.languageService.setLanguageInTranslate(data.user);
-    this.languageService.setLanguageInStore(data.user, 'user');
-    this.languagesInfo = APP_CONSTANTS.AVAILABLE_LANGUAGES.map(item => ({
-      code: item,
-      selected: item === data.user
-    }));
+    this.languageService.setLanguageInTranslate(data.user)
+      .toPromise()
+      .then(() => {
+        this.languageService.setLanguageInStore(data.user, 'user');
+        this.languagesInfo = APP_CONSTANTS.AVAILABLE_LANGUAGES.map(item => ({
+          code: item,
+          selected: item === data.user
+        }));
+      });
   }
 }

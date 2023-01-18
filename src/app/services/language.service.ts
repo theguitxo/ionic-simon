@@ -6,6 +6,7 @@ import { StorageService } from "./storage.service";
 import { AppState } from "../store/app/app.state";
 import * as APP_CONSTANTS from "../models/app/app.constants";
 import * as APP_ACTIONS from "../store/app/app.actions";
+import { Observable } from "rxjs";
 
 /**
  * EN: Service to manage the language information in the local storage.
@@ -105,8 +106,8 @@ export class LanguageService {
    * ES: Establece el idioma en el servicio de traducción.
    * @param {string} language EN: Language code./ ES: Código de idioma.
    */
-  setLanguageInTranslate(language: string): void {
+  setLanguageInTranslate(language: string): Observable<any> {
     this.translate.setDefaultLang(language);
-    this.translate.use(language);
+    return this.translate.use(language);
   }
 }
