@@ -11,6 +11,7 @@
     "test:coverage": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "start:serve": "ionic serve",
     "compodoc:es": "npx compodoc -p tsconfig.doc.json -d \"docs/es\" -n \"Simon para Ionic\" --language \"es-ES\"",
     "compodoc:en": "npx compodoc -p tsconfig.doc.json -d \"docs/en\" -n \"Simon for Ionic\" --language \"en-US\"",
     "run:external:android": "ionic cap run android -l --external",

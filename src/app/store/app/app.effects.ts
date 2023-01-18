@@ -7,6 +7,7 @@ import { LanguageService } from "../../services/language.service";
 import { AppState } from "./app.state";
 import * as APP_CONSTANTS from "../../models/app/app.constants";
 import * as APP_ACTIONS from './app.actions';
+import { Subscription } from "rxjs/internal/Subscription";
 
 /**
  * EN: Effects for the app actions.
@@ -52,13 +53,16 @@ export class AppEffects {
           infoType: 'user',
           value: storageLanguage || appLanguage
         }));
-        this.languageService.setLanguageInTranslate(storageLanguage ||  deviceLanguage)
-          .toPromise()
-          .then(() =>{
-            this.store.dispatch(APP_ACTIONS.saveLanguageStorage({
-              language: storageLanguage || appLanguage
-            }));
-          });
+        const setLangSubscription: Subscription =
+          this.languageService.setLanguageInTranslate(storageLanguage ||  deviceLanguage)
+            .subscribe((data) => {
+              if(Object.keys(data)?.length > 0) {
+                this.store.dispatch(APP_ACTIONS.saveLanguageStorage({
+                  language: storageLanguage || appLanguage
+                }));
+                setLangSubscription.unsubscribe();
+              }
+            });
       }))
     )),
     { dispatch: false}
